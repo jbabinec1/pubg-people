@@ -1,0 +1,13 @@
+.title-info-container{
+    display:inline-flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.select-season{
+    align-self: center;
+}
+
+.season-rank {
+    height: 61px;
+}

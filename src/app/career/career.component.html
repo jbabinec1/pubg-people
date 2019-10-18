@@ -1,0 +1,30 @@
+<h1 style="padding-bottom: 20px;"> Combat Survival Stats </h1>
+
+<div>  <!---Find Player by string name-->
+    <input name="searchBox"
+    [(ngModel)]="searchString"
+    placeholder="search user"
+    >
+    <button (click)="search()"> Click or don't </button>  
+</div>
+
+ 
+<div class="title-info-container">   
+<h2> j0k3r xAx </h2> <span class="select-season"> (TPP/FPP)   Current Season▼ </span> </div>
+
+<div class="season-rank"> <span>Rank Points: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
+    
+<!----
+<form  action="/players" method="get">
+    <input id="name" type="text" name="filter[playerNames]">
+    <button type="submit" onClick="inputValue">Search User</button>
+  </form> -->
+
+
+
+
+<div>  <app-combat-list> </app-combat-list></div>
+
+
+
+

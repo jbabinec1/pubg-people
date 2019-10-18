@@ -1,0 +1,130 @@
+
+<!---- Delete or not delete yet? Can I make the below code better?
+<div *ngFor="let key of objectKeys(lifeTimeStats$)">  {{ lifeTimeStats$[key].attributes.gameModeStats.solo | json}}  </div> <br> -->
+
+
+
+  <!---Use possible <div *ngIf="current"> instead of the ???  ? -->
+
+    <!--Gonna put below stuff inside table but testing table fer now 
+
+  <div> Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.kills | json }}  </div> 
+
+  <div> Daily Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.dailyKills | json }}  </div>
+
+    <div> Weekly Kills: {{lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json}}  </div>  --> 
+    
+
+    <!----
+   <div class="table-wrapper">
+    <table class="table" border="1">
+            <tbody>
+            <tr style="height: 46px;">
+            <td style="width: 58px; height: 46px;">&nbsp;Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.kills | json }}</td>
+
+            <td style="width: 123px; height: 46px;">&nbsp;Kills this Week: 0</td>
+            <td style="width: 103px; height: 46px;">&nbsp;Headshots: 0</td>
+            <td style="width: 164px; height: 46px;">&nbsp;Kills from Last Match: 0</td>
+            <td style="width: 102px; height: 46px;">&nbsp; Road Kills: 0</td>
+            <td style="width: 73px; height: 46px;">&nbsp;dBNO's:</td>
+            <td style="width: 59px; height: 46px;">&nbsp;Assists: 0</td>
+            </tr>
+            <tr style="height: 39px;">
+            <td style="width: 58px; height: 39px;">&nbsp;</td>
+            <td style="width: 123px; height: 39px;">&nbsp;</td>
+            <td style="width: 103px; height: 39px;">&nbsp;</td>
+            <td style="width: 164px; height: 39px;">&nbsp;</td>
+            <td style="width: 102px; height: 39px;">&nbsp;</td>
+            <td style="width: 73px; height: 39px;">&nbsp;</td>
+            <td style="width: 59px; height: 39px;">&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
+        </div>   -->
+
+        <div class="top-wrapper"> 
+        <div class="table-wrapper"> 
+          
+        <table class="table" border="2">
+                <tbody>
+                    <tr>
+                        <th colspan="2"> Combat </th>
+                    </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;Total Kills: {{ seasonstats?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
+                <td style="width: 133px;">&nbsp;Weekly Kills</td>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;Last Match Kills: </td>
+                <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                </tr>
+                <tr>
+                  <td style="width: 122px;">&nbsp;Headshots: </td>
+                    <td style="width: 133px;">&nbsp;Assists: </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 122px;">&nbsp;dBNOS: </td>
+                    <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                    </tr>
+                    <tr>
+                     <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
+                     <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                     </tr>
+                     <tr>
+                     <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
+                     <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                     </tr>
+                     <tr>
+                      <td style="width: 122px;">&nbsp; Longest Kill? </td>
+                      <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                     </tr>
+                </tbody>
+                </table> <!---*********---First Table End----->
+
+
+
+
+                     <div class="top-wrapper"> 
+        <div class="table-wrapper">   
+        <table class="table2 table" border="2">
+                <tbody>
+                    <tr>
+                        <th colspan="2"> Survival </th>
+                    </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;Wins</td>
+                <td style="width: 133px;">&nbsp; Top 10s </td>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp; Games Played  </td>
+                <td style="width: 133px;">&nbsp;  Losses   </td>
+                </tr>
+                <tr>
+                  <td style="width: 122px;">&nbsp; Amount of time played     </td>
+                    <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 122px;">&nbsp;  Team Revives: </td>
+                    <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                    </tr>
+                    <tr>
+                     <td style="width: 122px;">&nbsp; Survival Time  </td>
+                     <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                     </tr>
+                     <tr>
+                     <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
+                     <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                     </tr>
+                     <tr>
+                      <td style="width: 122px;">&nbsp;Drugs used </td>
+                      <td style="width: 133px;">&nbsp; Healing items used   </td>
+                     </tr>
+                </tbody>
+                </table>
+
+
+
+
+
+                
+                

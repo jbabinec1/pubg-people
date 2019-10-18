@@ -1,0 +1,39 @@
+
+.table-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-left: 62px;
+}
+ 
+.table{
+   /*
+    border-collapse: collapse;
+    width: 812px;
+    height: 74px;  */
+
+    width: 337px;
+    height: 43px; 
+    white-space: nowrap; 
+    max-width: 100%;
+   /* border-collapse: collapse; */
+   border-radius: 11px;
+}
+
+
+.table .table2 {
+    margin-left: 62px;
+}
+
+td{
+    width: auto;
+    border-bottom: 1px solid;
+    padding-top:7px;
+    padding-bottom: 7px;
+}
+
+
+/*
+.top-wrapper{
+
+    ** something that positions the combat component more
+} */
