@@ -4,6 +4,10 @@
     justify-content: center;
     padding-left: 62px;
 }
+
+.top-wrapper {
+    margin-top: 62px;
+}
  
 .table{
    /*
@@ -37,3 +41,7 @@ td{
 
     ** something that positions the combat component more
 } */
+
+.season-rank-title {
+    height: 39px; 
+}

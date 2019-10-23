@@ -5,9 +5,10 @@ import { CareerComponent } from './career/career.component';
 
 const routes: Routes = [
 
- { path: 'players', component: CareerComponent },
- { path: 'players/:name', component: CareerComponent },
- {  path: '**', redirectTo: '/players'  }
+
+    { path: 'players', pathMatch: 'full', component: CareerComponent },
+    { path: 'players/:player', component: CareerComponent },
+    {  path: '**', redirectTo: 'players'  }
 
 
 

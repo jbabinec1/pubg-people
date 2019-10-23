@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
  // public seasons: Seasons[];
  //@Input() public seasonStats: SeasonStats[];
   public ID: any;
+  static player: import("/Users/Jared/pubg-app/src/app/model/season-stats").SeasonStats[];
 
   constructor( public playerService: PlayerService, private route: ActivatedRoute) { 
     this.sendStats = new EventEmitter<Player[]>();

@@ -6,43 +6,25 @@
 
   <!---Use possible <div *ngIf="current"> instead of the ???  ? -->
 
-    <!--Gonna put below stuff inside table but testing table fer now 
 
-  <div> Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.kills | json }}  </div> 
+        <div class="season-rank-title"> <span>Rank Points on Combat List Component: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
 
-  <div> Daily Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.dailyKills | json }}  </div>
+        <div style="height: 41px;"><div>  <!---Find Player by string name-->
+          <input name="searchBox"
+          [(ngModel)]="searchString"
+          placeholder="search user"
+          >
+          <button (click)="search()"> Click or don't </button>  
+      </div></div>
 
-    <div> Weekly Kills: {{lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json}}  </div>  --> 
-    
 
-    <!----
-   <div class="table-wrapper">
-    <table class="table" border="1">
-            <tbody>
-            <tr style="height: 46px;">
-            <td style="width: 58px; height: 46px;">&nbsp;Kills: {{ lifeTimeStats?.data?.attributes?.gameModeStats?.solo?.kills | json }}</td>
-
-            <td style="width: 123px; height: 46px;">&nbsp;Kills this Week: 0</td>
-            <td style="width: 103px; height: 46px;">&nbsp;Headshots: 0</td>
-            <td style="width: 164px; height: 46px;">&nbsp;Kills from Last Match: 0</td>
-            <td style="width: 102px; height: 46px;">&nbsp; Road Kills: 0</td>
-            <td style="width: 73px; height: 46px;">&nbsp;dBNO's:</td>
-            <td style="width: 59px; height: 46px;">&nbsp;Assists: 0</td>
-            </tr>
-            <tr style="height: 39px;">
-            <td style="width: 58px; height: 39px;">&nbsp;</td>
-            <td style="width: 123px; height: 39px;">&nbsp;</td>
-            <td style="width: 103px; height: 39px;">&nbsp;</td>
-            <td style="width: 164px; height: 39px;">&nbsp;</td>
-            <td style="width: 102px; height: 39px;">&nbsp;</td>
-            <td style="width: 73px; height: 39px;">&nbsp;</td>
-            <td style="width: 59px; height: 39px;">&nbsp;</td>
-            </tr>
-            </tbody>
-            </table>
-        </div>   -->
-
+       <div class="top-dog">  
         <div class="top-wrapper"> 
+          <div> <nav><ul> <li>
+            <a>Test</a>
+          </li>     </ul> </nav>   
+        </div>
+
         <div class="table-wrapper"> 
           
         <table class="table" border="2">
@@ -51,8 +33,8 @@
                         <th colspan="2"> Combat </th>
                     </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;Total Kills: {{ seasonstats?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
-                <td style="width: 133px;">&nbsp;Weekly Kills</td>
+                <td style="width: 122px;">&nbsp;Total Kills: {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
+                <td style="width: 133px;">&nbsp;Weekly Kills: {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json }}</td>
                 </tr>
                 <tr>
                 <td style="width: 122px;">&nbsp;Last Match Kills: </td>
@@ -84,7 +66,7 @@
 
 
 
-                     <div class="top-wrapper"> 
+                 <!---    <div class="top-wrapper"> -->
         <div class="table-wrapper">   
         <table class="table2 table" border="2">
                 <tbody>
@@ -121,6 +103,8 @@
                      </tr>
                 </tbody>
                 </table>
+
+                <div> 
 
 
 

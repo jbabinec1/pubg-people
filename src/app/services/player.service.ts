@@ -11,19 +11,23 @@ import { SeasonStats } from '../model/season-stats';
   providedIn: 'root'
 })
 export class PlayerService {
+  
 
   constructor(private http: HttpClient) { }
 
   // public playerUrl = "https://api.pubg.com/shards/steam/players?filter[playerNames]=WackyJacky101"; 
 
 
-  getPlayer(query: string):Observable<Player> {
+
+  getPlayer(player: string):Observable<Player[]> {
 
     let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
   
-      return this.http.get<Player>(`https://api.pubg.com/shards/steam/players?filter[playerNames]=${query}` ,  { observe:'body',   responseType: 'json', headers: getHeaders });    
+      return this.http.get<Player[]>(`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  });    
   
       }
+
+      /* `https://api.pubg.com/shards/steam/players?filter[playerNames]=${query}`    */
 
 
 

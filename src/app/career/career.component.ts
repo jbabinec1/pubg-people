@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { lifeTimeStat} from '/Users/Jared/pubg-app/src/app/model/combat';
-import {Player } from '/Users/Jared/pubg-app/src/app/model/player';
+import { Player } from '/Users/Jared/pubg-app/src/app/model/player';
 import { CombatService } from '/Users/Jared/pubg-app/src/app/services/combat.service';
 import { PlayerService } from '/Users/Jared/pubg-app/src/app/services/player.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import {SeasonsService } from 'src/app/services/seasons.service';
 import { Seasons } from '/Users/Jared/pubg-app/src/app/model/seasons';
@@ -12,7 +12,7 @@ import { SeasonStats } from '/Users/Jared/pubg-app/src/app/model/season-stats';
 import { switchMap, map, first } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
-//import { Home } from 'src/app/home/home.component';
+//import { Home, HomeComponent } from 'src/app/home/home.component';
 
 
 
@@ -38,20 +38,37 @@ export class CareerComponent implements OnInit {
 
   ngOnInit() {
 
-   //const playerCode = this.route.snapshot.paramMap.get('name');  
+    const playerCode = this.route.snapshot.paramMap.get('player'); 
 
-   // this.playerService.getPlayer(this.searchString).subscribe(data => {this.player = data});  
+    this.playerService.getPlayer(playerCode).subscribe(data => {this.player = data});  
+
+
+    //const playerCode = this.route.snapshot.paramMap.get('player');  
+
+    /*
+
+    this.playerService.getPlayer(playerCode).pipe(
+      switchMap( player => { 
+       let playerData = player["data"][0];
+       let anotherID = playerData.id;
+       //let playerName = playerData.name;
+         
+       return this.playerService.getSeasonStats(anotherID);
+         
+     })) 
     
-  }
+     .subscribe(id => this.player = id);
+ 
+      */
+
+  
   
 
-/* Saving this failure of trying to recieve data emit here
-  search(player: Player) {
-           
-         return this.player        
-            
-       // .subscribe(id => this.player = id);
-      } */
+  //  this.playerService.getPlayer(this.searchString).subscribe(data => {this.player = data});  
+
+  
+    
+  }
 
 
   
