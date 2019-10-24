@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CareerComponent } from '/Users/Jared/pubg-app/src/app/career/career.component';
-import { query } from '@angular/core/src/render3';
+//import { query } from '@angular/core/src/render3';
 import { Player } from '../model/player';
 import { SeasonStats } from '../model/season-stats';
 

@@ -8,5 +8,9 @@ import { CombatService } from '/Users/Jared/pubg-app/src/app/services/combat.ser
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+  
   title = 'pubg-app';
 }
+
+

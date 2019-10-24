@@ -9,7 +9,7 @@
 
         <div class="season-rank-title"> <span>Rank Points on Combat List Component: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
 
-        <div style="height: 41px;"><div>  <!---Find Player by string name-->
+        <div style="height: 25px;"><div>  <!---Find Player by string name-->
           <input name="searchBox"
           [(ngModel)]="searchString"
           placeholder="search user"
@@ -17,15 +17,10 @@
           <button (click)="search()"> Click or don't </button>  
       </div></div>
 
-
-       <div class="top-dog">  
-        <div class="top-wrapper"> 
-          <div> <nav><ul> <li>
-            <a>Test</a>
-          </li>     </ul> </nav>   
-        </div>
-
-        <div class="table-wrapper"> 
+        <div class="top-wrapper">   
+        <mat-tab-group animationDuration="0ms" dynamicHeight="true">
+        <mat-tab label="Solo TPP">
+         <div class="table-wrapper"> 
           
         <table class="table" border="2">
                 <tbody>
@@ -64,11 +59,7 @@
                 </table> <!---*********---First Table End----->
 
 
-
-
-                 <!---    <div class="top-wrapper"> -->
-        <div class="table-wrapper">   
-        <table class="table2 table" border="2">
+              <table class="table2 table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Survival </th>
@@ -104,7 +95,14 @@
                 </tbody>
                 </table>
 
-                <div> 
+             </div>
+            </mat-tab> <!---END OF FIRST TAB SOLO TPP-->
+          </mat-tab-group> 
+             </div>
+             
+             
+                
+                 
 
 
 

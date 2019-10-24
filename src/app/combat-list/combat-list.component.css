@@ -1,15 +1,17 @@
 
-.table-wrapper{
+.table-wrapper {
     display: flex;
-    justify-content: center;
-    padding-left: 62px;
+    justify-content: space-evenly;
+    padding-left: 67px;
+    padding-right: 33px;
+    padding-top: 9px;
 }
 
 .top-wrapper {
-    margin-top: 62px;
+    margin-top: 1px;
 }
  
-.table{
+.table {
    /*
     border-collapse: collapse;
     width: 812px;
@@ -24,8 +26,8 @@
 }
 
 
-.table .table2 {
-    margin-left: 62px;
+.table2 {
+    margin-left: -44px;
 }
 
 td{
@@ -44,4 +46,8 @@ td{
 
 .season-rank-title {
     height: 39px; 
+}
+
+mat-tab-content-0-0 {
+    top: 16px!important;
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+//import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { OverviewAllComponent } from './overview-all/overview-all.component';
 import { WeaponMasteryComponent } from './weapon-mastery/weapon-mastery.component';
@@ -17,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import {SeasonsService } from 'src/app/services/seasons.service';
 import {SeasonstatsService} from '/Users/Jared/pubg-app/src/app/services/seasonstats.service';
 import { HomeComponent } from './home/home.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,11 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTabsModule
+    
+    
     
     
   ],

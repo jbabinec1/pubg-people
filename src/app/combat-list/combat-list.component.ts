@@ -10,6 +10,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import {SeasonsService } from 'src/app/services/seasons.service';
 import { Seasons } from '/Users/Jared/pubg-app/src/app/model/seasons';
 import { switchMap, map, first } from 'rxjs/operators';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 
 
