@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { lifeTimeStat } from '/Users/Jared/pubg-app/src/app/model/combat';
 import { CombatService } from '/Users/Jared/pubg-app/src/app/services/combat.service';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ import {SeasonsService } from 'src/app/services/seasons.service';
 import { Seasons } from '/Users/Jared/pubg-app/src/app/model/seasons';
 import { switchMap, map, first } from 'rxjs/operators';
 import { MatTabsModule } from '@angular/material/tabs';
+//import { ViewEncapsulation } from '@angular/compiler/src/core';
 
 
 
@@ -20,7 +21,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 @Component({
   selector: 'app-combat-list',
   templateUrl: './combat-list.component.html',
-  styleUrls: ['./combat-list.component.css']
+  styleUrls: ['./combat-list.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 
@@ -48,16 +50,20 @@ public seasons: Seasons[];
 
   ngOnInit() { 
 
-     const playerCode = this.route.snapshot.paramMap.get('player');  
+    const playerName: string = this.route.snapshot.queryParamMap.get('player');
 
-      this.playerService.getPlayer(playerCode).pipe(
+    // Non query string name lookup const playerCode = this.route.snapshot.paramMap.get('player');  
+
+  
+
+      this.playerService.getPlayer(playerName).pipe(
       switchMap( player => { 
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
        return this.playerService.getSeasonStats(anotherID);        
      }))    
-     .subscribe(id => this.player = id);
+     .subscribe(id => this.player = id);  
         
 
    //this.playerService.getPlayer(playerCode).subscribe(data => {this.player = data});  

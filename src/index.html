@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
+    <form method="get" action="/players">
+
+     <input name="player"
+          [(ngModel)]="searchString"
+          placeholder="search user"
+          >
+          <button type="submit" (click)="search()"> Click or don't </button> 
+    </form>
+
   <app-root></app-root>
 </body>
 </html>

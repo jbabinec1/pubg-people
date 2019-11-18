@@ -1,6 +1,6 @@
 .title-info-container{
     display:inline-flex;
-    width: 400px;
+    width: 440px;
     justify-content: space-between;
 }
 
@@ -10,4 +10,33 @@
 
 .season-rank {
     height: 61px;
+}
+
+.season-rank-title { 
+    color: #ffffff;
+}
+
+.player-name {
+    color: #ffffff;
+}
+
+.platform {
+    display: flex;
+    align-items: center; 
+}
+
+.sub-nav {
+    background-color: #000000;
+    top: 100%;
+    position: absolute;
+    display: none;
+    opacity: 1;
+    padding-right: 13px;
+    z-index: 10;
+   
+}
+
+.sub-item {
+    text-decoration: none;
+    padding: 5px 29px 0px 0px;
 }

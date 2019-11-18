@@ -32,34 +32,32 @@ export class CareerComponent implements OnInit {
   public seasons: Seasons[];
  @Input() public seasonStats: SeasonStats[];
   public ID: any;
+  @Input() public playa: Player[];
   
   
 
 
   ngOnInit() {
 
-    const playerCode = this.route.snapshot.paramMap.get('player'); 
+    const playerName: string = this.route.snapshot.queryParamMap.get('player');
 
-    this.playerService.getPlayer(playerCode).subscribe(data => {this.player = data});  
+   // Non query string way of name lookup const playerCode = this.route.snapshot.paramMap.get('player'); 
 
+    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
 
-    //const playerCode = this.route.snapshot.paramMap.get('player');  
-
-    /*
-
-    this.playerService.getPlayer(playerCode).pipe(
-      switchMap( player => { 
-       let playerData = player["data"][0];
-       let anotherID = playerData.id;
-       //let playerName = playerData.name;
-         
-       return this.playerService.getSeasonStats(anotherID);
-         
-     })) 
     
-     .subscribe(id => this.player = id);
+
+    this.playerService.getPlayer(playerName).pipe(
+      switchMap( playa => { 
+       let playerData = playa["data"][0];
+       let anotherID = playerData.id;
+         
+       return this.playerService.getSeasonStats(anotherID);        
+     }))    
+     .subscribe(id => this.playa = id); 
  
-      */
+      
+     
 
   
   

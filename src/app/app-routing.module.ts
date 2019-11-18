@@ -7,7 +7,7 @@ const routes: Routes = [
 
 
     { path: 'players', pathMatch: 'full', component: CareerComponent },
-    { path: 'players/:player', component: CareerComponent },
+    { path: 'players/?player=:player', component: CareerComponent },
     {  path: '**', redirectTo: 'players'  }
 
 

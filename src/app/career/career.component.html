@@ -1,12 +1,17 @@
-<h1 style="padding-bottom: 20px;"> Combat Survival Stats </h1>
 
-
+<div class="stats-header"> 
  
-<div class="title-info-container">   
-<h3> {{ player?.data[0].attributes?.name  }}  </h3>  <span class="select-season"> (TPP/FPP)   Current Season▼ </span> </div>
+<div class="title-info-container">  <span class="platform" *ngIf="player?.data[0].attributes?.shardId">{{player?.data[0].attributes?.shardId}}  </span> 
+<h3 class="player-name"> {{ player?.data[0].attributes?.name  }}  </h3> 
 
-<!-- Bye bye for now season rank points 
-<div class="season-rank"> <span>Rank Points: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div> -->
+ <span class="select-season"> <ul class="sub-nav">  <!--Projects sub nav-->
+  <li class="sub-item"> <a target="_blank" href="#">Previous Season</a>  </li>
+
+  </ul>
+  </span> </div>
+
+<div class="season-rank-title"> <span>Rank Points: {{ playa?.data?.attributes?.bestRankPoint | json }} </span>  </div>
+
     
 <!----
 <form  action="/players" method="get">
@@ -14,11 +19,12 @@
     <button type="submit" onClick="inputValue">Search User</button>
   </form> -->
 
+</div>
 
 
 
 <div>  <app-combat-list> </app-combat-list></div>
-
-
+<!-- <div class="footer"> </div> -->
+ 
 
 

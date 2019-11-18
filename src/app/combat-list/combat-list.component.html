@@ -7,110 +7,539 @@
   <!---Use possible <div *ngIf="current"> instead of the ???  ? -->
 
 
-        <div class="season-rank-title"> <span>Rank Points on Combat List Component: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
+ <!--- <div class="season-rank-title"> <span>Rank Points on Combat List Component: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div> -->
 
-        <div style="height: 25px;"><div>  <!---Find Player by string name-->
+
+       <div style="height: 13px;">  <!--<div>  
+          
+
           <input name="searchBox"
           [(ngModel)]="searchString"
           placeholder="search user"
           >
-          <button (click)="search()"> Click or don't </button>  
-      </div></div>
+          <button  (click)="search()"> Click or don't </button> 
+      </div>  --> </div>  
 
-        <div class="top-wrapper">   
+     
+
+       <!---  Wrapper for Combat / Survival tables --->
+        <div class="top-wrapper">
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
-        <mat-tab label="Solo TPP">
-         <div class="table-wrapper"> 
-          
+        <mat-tab class=".mat-tab-label-active" label="Solo TPP">
+         <div class="table-wrapper">
+       <div class="inner-table-wrapper"> 
+
         <table class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
                     </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;Total Kills: {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
-                <td style="width: 133px;">&nbsp;Weekly Kills: {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json }}</td>
+                 
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json }}</td>
                 </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;Last Match Kills: </td>
-                <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.dailyKills | json }}       </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:  </span> {{ player?.data?.attributes?.gameModeStats?.solo?.roadKills | json }}    </td>
                 </tr>
                 <tr>
-                  <td style="width: 122px;">&nbsp;Headshots: </td>
-                    <td style="width: 133px;">&nbsp;Assists: </td>
+                  <td style="width: 122px;">&nbsp;<span class="td-title">   Headshots:</span>{{ player?.data?.attributes?.gameModeStats?.solo?.headshotKills | json }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">    Assists:</span>{{ player?.data?.attributes?.gameModeStats?.solo?.assists | json }}     </td>
                     </tr>
                     <tr>
-                    <td style="width: 122px;">&nbsp;dBNOS: </td>
-                    <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                    <td style="width: 122px;">&nbsp;<span class="td-title">    dBNOS:</span>{{ player?.data?.attributes?.gameModeStats?.solo?.dBNOs | json }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">    Friendly Fire Kills:</span>{{ player?.data?.attributes?.gameModeStats?.solo?.teamKills | json }}   </td>
                     </tr>
                     <tr>
-                     <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
-                     <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">    Vehicles destroyed: </span></td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill?  </span></td>
                      </tr>
                      <tr>
-                     <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
-                     <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Max Kill Streaks: </span></td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt </span></td>
                      </tr>
                      <tr>
-                      <td style="width: 122px;">&nbsp; Longest Kill? </td>
-                      <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                      <td style="width: 122px;">&nbsp;<span class="td-title"> Longest Kill? </span></td>
+                      <td style="width: 133px;">&nbsp;<span class="td-title"> Most Kills in Match </span></td>
                      </tr>
                 </tbody>
-                </table> <!---*********---First Table End----->
+                </table> <!---*********---First Table End / Solo TPP Combat----->
 
 
-              <table class="table2 table" border="2">
+              <table class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Survival </th>
                     </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;Wins</td>
-                <td style="width: 133px;">&nbsp; Top 10s </td>
+                <td style="width: 122px;">&nbsp; <span class="td-title"> Wins  </span></td>
+                <td style="width: 133px;">&nbsp; <span class="td-title"> Top 10s   </span></td>
                 </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp; Games Played  </td>
-                <td style="width: 133px;">&nbsp;  Losses   </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played  </span></td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">  Losses   </span></td>
                 </tr>
                 <tr>
-                  <td style="width: 122px;">&nbsp; Amount of time played     </td>
-                    <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                  <td style="width: 122px;">&nbsp;<span class="td-title"> Amount of time played    </span> </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title"> Longest Survival Time   </span></td>
                     </tr>
                     <tr>
-                    <td style="width: 122px;">&nbsp;  Team Revives: </td>
-                    <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                    <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives: </span></td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:  </span></td>
                     </tr>
                     <tr>
-                     <td style="width: 122px;">&nbsp; Survival Time  </td>
-                     <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title"> Survival Time   </span></td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired  </span> </td>
                      </tr>
                      <tr>
-                     <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
-                     <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Distance Travelled in Vehicle </span></td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Distance Travelled Swimming  </span></td>
                      </tr>
                      <tr>
-                      <td style="width: 122px;">&nbsp;Drugs used </td>
-                      <td style="width: 133px;">&nbsp; Healing items used   </td>
+                      <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used </span></td>
+                      <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used  </span> </td>
                      </tr>
                 </tbody>
                 </table>
+          </div> 
+            </div>
 
-             </div>
-            </mat-tab> <!---END OF FIRST TAB SOLO TPP-->
-
-            <mat-tab label="Solo FPP">  
-             yoyoyoyoyoyo
-             </mat-tab>
-          </mat-tab-group> 
-             </div>
-             
-             
-                
-                 
+            </mat-tab> <!---***----*  END OF FIRST TAB SOLO TPP *----**-->
 
 
+            <!------- Solo FPP Combat ------>
+
+            <mat-tab label="Solo FPP">
+            <div class="table-wrapper">
+            <div class="inner-table-wrapper"> 
+            <table class="table" border="2">
+            <tbody>
+            <tr>
+            <th colspan="2"> Combat </th>
+              </tr>
+              <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span> {{ player?.data?.attributes?.gameModeStats["solo-fpp"].kills | json }} </td>
+              <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["solo-fpp"].weeklyKills | json }}</td>
+              </tr>
+               <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title">Last Match Kills:   </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:    </span></td>
+              </tr>
+               <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:   </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:  </span></td>
+              </tr>
+              <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title">dBNOS:   </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills: </span></td>
+              </tr>
+              <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed:  </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:  </span> </td>
+              </tr>
+              <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title">Max Kill Streaks:  </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt  </span></td>
+              </tr>
+              <tr>
+              <td style="width: 122px;">&nbsp;<span class="td-title"> Longest Kill?    </span></td>
+              <td style="width: 133px;">&nbsp;<span class="td-title"> Most Kills in Match   </span></td>
+              </tr>
+              </tbody>
+              </table> <!---*********---First Table End----->
+                         <!--Solo FPP Survival-->
+
+                          <table class="table" border="2">
+                            <tbody>
+                                <tr>
+                                    <th colspan="2"> Survival </th>
+                                </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;<span class="td-title">Wins  </span></td>
+                            <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s   </span></td>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played  </span></td>
+                            <td style="width: 133px;">&nbsp;<span class="td-title">  Losses   </span></td>
+                            </tr>
+                            <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Amount of time played    </span></td>  
+                                <td style="width: 133px;">&nbsp;<span class="td-title"> Longest Survival Time    </span></td>
+                                </tr>
+                                <tr>
+                                <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives:   </span></td>
+                                <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:   </span></td>
+                                </tr>
+                                <tr>
+                                 <td style="width: 122px;">&nbsp;<span class="td-title"> Survival Time  </span></td>
+                                 <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired   </span></td>
+                                 </tr>
+                                 <tr>
+                                 <td style="width: 122px;">&nbsp;<span class="td-title">Distance Travelled in Vehicle    </span></td>
+                                 <td style="width: 133px;">&nbsp;<span class="td-title"> Distance Travelled Swimming    </span></td>
+                                 </tr>
+                                 <tr>
+                                  <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used    </span></td>
+                                  <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used   </span></td>
+                                 </tr>
+                            </tbody>
+                            </table>
+
+                        </div>
+                        </div>
+                      </mat-tab>
+
+                      <!---- Duo third person start ---->
+
+                      <mat-tab label="Duo TPP">
+                          <div class="table-wrapper">
+                          <div class="inner-table-wrapper"> 
+                          <table class="table" border="2">
+                          <tbody>
+                          <tr>
+                          <th colspan="2"> Combat </th>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills fucka:</span> {{ player?.data?.attributes?.gameModeStats.duo?.kills | json }} </td>
+                            <td style="width: 133px;">&nbsp; <span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.weeklyKills | json }}</td>
+                            </tr>
+                             <tr>
+                            <td style="width: 122px;">&nbsp;Last Match Kills: </td>
+                            <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                            </tr>
+                             <tr>
+                            <td style="width: 122px;">&nbsp;Headshots: </td>
+                            <td style="width: 133px;">&nbsp;Assists: </td>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;dBNOS: </td>
+                            <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
+                            <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
+                            <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                            </tr>
+                            <tr>
+                            <td style="width: 122px;">&nbsp; Longest Kill? </td>
+                            <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                            </tr>
+                            </tbody>
+                            </table> <!---*********---First Table End----->
+                                       <!--Duo TPP Survival-->
+
+                                        <table class="table" border="2">
+                                          <tbody>
+                                              <tr>
+                                                  <th colspan="2"> Survival </th>
+                                              </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;Wins</td>
+                                          <td style="width: 133px;">&nbsp; Top 10s </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp; Games Played  </td>
+                                          <td style="width: 133px;">&nbsp;  Losses   </td>
+                                          </tr>
+                                          <tr>
+                                            <td style="width: 122px;">&nbsp; Amount of time played     </td>
+                                              <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                                              </tr>
+                                              <tr>
+                                              <td style="width: 122px;">&nbsp;  Team Revives: </td>
+                                              <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                              </tr>
+                                              <tr>
+                                               <td style="width: 122px;">&nbsp; Survival Time  </td>
+                                               <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                                               </tr>
+                                               <tr>
+                                               <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
+                                               <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                                               </tr>
+                                               <tr>
+                                                <td style="width: 122px;">&nbsp;Drugs used </td>
+                                                <td style="width: 133px;">&nbsp; Healing items used   </td>
+                                               </tr>
+                                          </tbody>
+                                          </table>
+
+                                      </div>
+                                      </div>
+                                    </mat-tab>
+
+
+                                  <!-- Tab for Duo FPP -->
+                                    <mat-tab label="Duo FPP">
+                                        <div class="table-wrapper">
+                                        <div class="inner-table-wrapper">   
+                                        <table class="table" border="2">
+                                        <tbody>
+                                        <tr>
+                                        <th colspan="2"> Combat </th>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].kills | json }} </td>
+                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weeklyKills | json }}</td>
+                                          </tr>
+                                           <tr>
+                                          <td style="width: 122px;">&nbsp;Last Match Kills: </td>
+                                          <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                                          </tr>
+                                           <tr>
+                                          <td style="width: 122px;">&nbsp;Headshots: </td>
+                                          <td style="width: 133px;">&nbsp;Assists: </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;dBNOS: </td>
+                                          <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
+                                          <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
+                                          <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp; Longest Kill? </td>
+                                          <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                                          </tr>
+                                          </tbody>
+                                          </table> <!---*********---First Table End----->
+                                                     <!--- Duo FPP Survival --->
+
+                                                      <table class="table" border="2">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th colspan="2"> Survival </th>
+                                                            </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;Wins</td>
+                                                        <td style="width: 133px;">&nbsp; Top 10s </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp; Games Played  </td>
+                                                        <td style="width: 133px;">&nbsp;  Losses   </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width: 122px;">&nbsp; Amount of time played     </td>
+                                                            <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                                                            </tr>
+                                                            <tr>
+                                                            <td style="width: 122px;">&nbsp;  Team Revives: </td>
+                                                            <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                                            </tr>
+                                                            <tr>
+                                                             <td style="width: 122px;">&nbsp; Survival Time  </td>
+                                                             <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                                                             </tr>
+                                                             <tr>
+                                                             <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
+                                                             <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                                                             </tr>
+                                                             <tr>
+                                                              <td style="width: 122px;">&nbsp;Drugs used </td>
+                                                              <td style="width: 133px;">&nbsp; Healing items used   </td>
+                                                             </tr>
+                                                        </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    </div>
+                                                  </mat-tab>
+
+     
+
+                                       <!--Squad TPP-->
+
+  <mat-tab label="Squad TPP">
+                                        <div class="table-wrapper">
+                                        <div class="inner-table-wrapper"> 
+                                        <table class="table" border="2">
+                                        <tbody>
+                                        <tr>
+                                        <th colspan="2"> Combat </th>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills fucka: </span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
+                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.squad?.weeklyKills | json }}</td>
+                                          </tr>
+                                           <tr>
+                                          <td style="width: 122px;">&nbsp;Last Match Kills: </td>
+                                          <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                                          </tr>
+                                           <tr>
+                                          <td style="width: 122px;">&nbsp;Headshots: </td>
+                                          <td style="width: 133px;">&nbsp;Assists: </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;dBNOS: </td>
+                                          <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
+                                          <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
+                                          <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 122px;">&nbsp; Longest Kill? </td>
+                                          <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                                          </tr>
+                                          </tbody>
+                                          </table> <!---*********---First Table End----->
+                                                     <!--- Duo FPP Survival --->
+
+                                                      <table class="table" border="2">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th colspan="2"> Survival </th>
+                                                            </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;Wins</td>
+                                                        <td style="width: 133px;">&nbsp; Top 10s </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp; Games Played  </td>
+                                                        <td style="width: 133px;">&nbsp;  Losses   </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width: 122px;">&nbsp; Amount of time played     </td>
+                                                            <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                                                            </tr>
+                                                            <tr>
+                                                            <td style="width: 122px;">&nbsp;  Team Revives: </td>
+                                                            <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                                            </tr>
+                                                            <tr>
+                                                             <td style="width: 122px;">&nbsp; Survival Time  </td>
+                                                             <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                                                             </tr>
+                                                             <tr>
+                                                             <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
+                                                             <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                                                             </tr>
+                                                             <tr>
+                                                              <td style="width: 122px;">&nbsp;Drugs used </td>
+                                                              <td style="width: 133px;">&nbsp; Healing items used   </td>
+                                                             </tr>
+                                                        </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    </div>
+                                                  </mat-tab>
+                                          
+                                                  <!---* Squadzzzz -*-->      
+
+                                                  <mat-tab label="Squad FPP">
+                                                      <div class="table-wrapper">
+                                                      <div class="inner-table-wrapper">  
+                                                      <table class="table" border="2">
+                                                      <tbody>
+                                                      <tr>
+                                                      <th colspan="2"> Combat </th>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills fucka:</span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
+                                                        <td style="width: 133px;">&nbsp;<span class="td-title">  Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.squad?.weeklyKills | json }}</td>
+                                                        </tr>
+                                                         <tr>
+                                                        <td style="width: 122px;">&nbsp;Last Match Kills: </td>
+                                                        <td style="width: 133px;">&nbsp; Road Kills:    </td>
+                                                        </tr>
+                                                         <tr>
+                                                        <td style="width: 122px;">&nbsp;Headshots: </td>
+                                                        <td style="width: 133px;">&nbsp;Assists: </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;dBNOS: </td>
+                                                        <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;Vehicles destroyed: </td>
+                                                        <td style="width: 133px;">&nbsp; Farthest Kill?  </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp;Max Kill Streaks: </td>
+                                                        <td style="width: 133px;">&nbsp; Total Damage Dealt </td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td style="width: 122px;">&nbsp; Longest Kill? </td>
+                                                        <td style="width: 133px;">&nbsp; Most Kills in Match </td>
+                                                        </tr>
+                                                        </tbody>
+                                                        </table> <!---*********---First Table End----->
+                                                                   <!--- Squad TPP Survival --->
+                                                                   <table class="table" border="2">
+                                                                      <tbody>
+                                                                          <tr>
+                                                                              <th colspan="2"> Survival </th>
+                                                                          </tr>
+                                                                      <tr>
+                                                                      <td style="width: 122px;">&nbsp;Wins</td>
+                                                                      <td style="width: 133px;">&nbsp; Top 10s </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                      <td style="width: 122px;">&nbsp; Games Played  </td>
+                                                                      <td style="width: 133px;">&nbsp;  Losses   </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td style="width: 122px;">&nbsp; Amount of time played     </td>
+                                                                          <td style="width: 133px;">&nbsp; Longest Survival Time     </td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                          <td style="width: 122px;">&nbsp;  Team Revives: </td>
+                                                                          <td style="width: 133px;">&nbsp;Friendly Fire Kills: </td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                           <td style="width: 122px;">&nbsp; Survival Time  </td>
+                                                                           <td style="width: 133px;">&nbsp; Weapons Acquired  </td>
+                                                                           </tr>
+                                                                           <tr>
+                                                                           <td style="width: 122px;">&nbsp;Distance Travelled in Vehicle </td>
+                                                                           <td style="width: 133px;">&nbsp; Distance Travelled Swimming  </td>
+                                                                           </tr>
+                                                                           <tr>
+                                                                            <td style="width: 122px;">&nbsp;Drugs used </td>
+                                                                            <td style="width: 133px;">&nbsp; Healing items used   </td>
+                                                                           </tr>
+                                                                      </tbody>
+                                                                      </table>
 
 
 
-                
-                
+                                                                  </div>
+                                                                  </div>
+                                                                </mat-tab>
+
+
+
+
+
+
+
+
+
+
+                    </mat-tab-group>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
