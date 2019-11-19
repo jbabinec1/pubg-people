@@ -33,6 +33,8 @@ export class CareerComponent implements OnInit {
  @Input() public seasonStats: SeasonStats[];
   public ID: any;
   @Input() public playa: Player[];
+  public id: any;
+  
   
   
 
@@ -43,18 +45,18 @@ export class CareerComponent implements OnInit {
 
    // Non query string way of name lookup const playerCode = this.route.snapshot.paramMap.get('player'); 
 
-    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
+    this.playerService.getPlayer(playerName).subscribe(data => {this.playa = data});  
 
     
 
     this.playerService.getPlayer(playerName).pipe(
-      switchMap( playa => { 
-       let playerData = playa["data"][0];
+      switchMap( player => { 
+       let playerData = player["data"][0];
        let anotherID = playerData.id;
          
        return this.playerService.getSeasonStats(anotherID);        
      }))    
-     .subscribe(id => this.playa = id); 
+     .subscribe(id => this.player = id); 
  
       
      
@@ -64,25 +66,50 @@ export class CareerComponent implements OnInit {
 
   //  this.playerService.getPlayer(this.searchString).subscribe(data => {this.player = data});  
 
-  
     
   }
 
 
+
+  seasonSwitch() {
+
+    const playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
+
+
+    this.playerService.getPlayer(playerName).pipe(
+      switchMap( player => { 
+       let playerData = player["data"][0];
+       let anotherID = playerData.id;
+         
+       return this.playerService.getSeasonThreeStats(anotherID);        
+     }))    
+     .subscribe(id => this.player = id); 
+
+
+  }
+
+
   
-  search() {
+ /* search() {
   
     this.playerService.getPlayer(this.searchString).pipe(
          switchMap( player => { 
           let playerData = player["data"][0];
           let anotherID = playerData.id;
             
-          return this.playerService.getSeasonStats(anotherID);
+          return this.playerService.getSeasonThreeStats(anotherID);
             
         })) 
        
         .subscribe(id => this.player = id);
 
-      } 
+      } */
+
+
+
+
+
+
 
 }

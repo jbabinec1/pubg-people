@@ -1,13 +1,13 @@
 
 <div class="stats-header"> 
  
-<div class="title-info-container">  <span class="platform" *ngIf="player?.data[0].attributes?.shardId">{{player?.data[0].attributes?.shardId}}  </span> 
-<h3 class="player-name"> {{ player?.data[0].attributes?.name  }}  </h3> 
+<div class="title-info-container">  <span class="platform" *ngIf="playa?.data[0].attributes?.shardId">{{playa?.data[0].attributes?.shardId}}  </span> 
+<h3 class="player-name"> {{ playa?.data[0].attributes?.name  }}  </h3> 
 
  
  <span class="select-season"> 
     <li class="nav-header_item item-box Seasons">
-        <a routerLink="/#" routerLinkActive="active" class="linky2 fill-div "style="text-decoration: none;">Seasons 
+     <li class="Seasons"> Seasons
 
 
 <svg version="1.1" id="Capa_1" class="linky2 fill-div" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -18,15 +18,15 @@
   c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
 </g>
 </svg> 
-        </a>
+        
        <ul class="sub-nav">  <!--Projects sub nav-->
-       <li class="sub-item"> <a target="_blank" href="github.com">GitHub</a>  </li>
+       <li class="sub-item">  <a (click)="seasonSwitch()"> Season 3</a>  </li>
 
-       </ul>
-      </li>
+       </ul> </li>
+      
   </span>   </div>
 
-<div class="season-rank-title"> <span>Rank Points: {{ playa?.data?.attributes?.bestRankPoint | json }} </span>  </div>
+<div class="season-rank-title"> <span>Rank Points: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
 
     
 <!----

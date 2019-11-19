@@ -37,6 +37,7 @@ public seasons: Seasons[];
 @Input() public seasonStats: SeasonStats[];
  public ID: any;
  public searchString: string = '';
+ @Input() public playa: Player[];
   
 
 
@@ -73,6 +74,35 @@ public seasons: Seasons[];
    //  this.seasonStats.getSeasonStats().subscribe(data => { this.seasonstats = data});
       
     }  
+
+
+
+
+
+
+
+    seasonSwitch() {
+
+      const playerName: string = this.route.snapshot.queryParamMap.get('player');
+      this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
+  
+  
+      this.playerService.getPlayer(playerName).pipe(
+        switchMap( player => { 
+         let playerData = player["data"][0];
+         let anotherID = playerData.id;
+           
+         return this.playerService.getSeasonThreeStats(anotherID);        
+       }))    
+       .subscribe(id => this.player = id); 
+  
+  
+  
+     // this.playerService.getSeasonThreeStats(this.playa).subscribe(data => {this.playa = data}); 
+    }
+
+
+
 
 
 
