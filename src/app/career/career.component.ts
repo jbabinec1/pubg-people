@@ -13,6 +13,7 @@ import { switchMap, map, first } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
 //import { Home, HomeComponent } from 'src/app/home/home.component';
+//import { CombatListComponent } from './combat-list/combat-list.component';
 
 
 
@@ -71,7 +72,7 @@ export class CareerComponent implements OnInit {
 
 
 
-  seasonSwitch() {
+  seasonThreeSwitch() {
 
     const playerName: string = this.route.snapshot.queryParamMap.get('player');
     this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
@@ -91,20 +92,23 @@ export class CareerComponent implements OnInit {
 
 
   
- /* search() {
+  seasonFourSwitch() {
+
+    const playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data}); 
   
-    this.playerService.getPlayer(this.searchString).pipe(
+    this.playerService.getPlayer(playerName).pipe(
          switchMap( player => { 
           let playerData = player["data"][0];
           let anotherID = playerData.id;
             
-          return this.playerService.getSeasonThreeStats(anotherID);
+          return this.playerService.getSeasonStats(anotherID);
             
         })) 
        
         .subscribe(id => this.player = id);
 
-      } */
+      } 
 
 
 

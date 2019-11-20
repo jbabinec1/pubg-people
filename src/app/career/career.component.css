@@ -7,11 +7,12 @@
 .select-season{
     align-self: center;
     list-style: none;
-    border: 1px solid;
+    border: 1px solid #ffffff;
     padding: 4px;
     padding-left: 21px;
     padding-right: 20px;
 }
+
 
 .season-rank {
     height: 61px;
@@ -36,23 +37,34 @@
     position: absolute;
     display: none;
     opacity: 1;
-    padding-right: 13px;
     z-index: 10;
     margin-top: 0;
     list-style: none;
+    padding-left: 0;
+    transition: opacity 0.4s 0.4s ease, visibility 0s 0.8s ease, transform 0.4s 0.4s ease;
    
 }
 
 .sub-item {
     text-decoration: none;
-    padding: 5px 29px 0px 0px;
+    padding: 5px 32px 0px 32px;
+    border: 1px solid;
+    cursor: pointer; 
+    margin-bottom: 2px;
+}
+
+.sub-item:hover{
+    color: #ffffff;
+}
+.seasons-yeah {
+    color:#ffffff;
 }
 
 /* Seasons SVG styling */
 #Capa_1 {
     width: 12px;
     height: 13px;
-    fill: currentColor;
+    fill: #ffffff; /*currentColor;*/
     position: relative;
     top: 2px;
     left: 2px;
@@ -66,5 +78,7 @@
 #Rounded_Rectangle_33_copy_4_1_:hover {
     fill: #ffffff;
     }
+
+   
 
 
