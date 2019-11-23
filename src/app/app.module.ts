@@ -19,7 +19,10 @@ import {SeasonsService } from 'src/app/services/seasons.service';
 import {SeasonstatsService} from '/Users/Jared/pubg-app/src/app/services/seasonstats.service';
 import { HomeComponent } from './home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    ReactiveFormsModule
     
     
     

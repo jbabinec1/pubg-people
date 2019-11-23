@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { lifeTimeStat} from '/Users/Jared/pubg-app/src/app/model/combat';
 import { Player } from '/Users/Jared/pubg-app/src/app/model/player';
 import { CombatService } from '/Users/Jared/pubg-app/src/app/services/combat.service';
@@ -14,19 +14,34 @@ import { of } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
 //import { Home, HomeComponent } from 'src/app/home/home.component';
 //import { CombatListComponent } from './combat-list/combat-list.component';
+import { FormBuilder } from "@angular/forms";
 
 
+export interface SeasonsSelectLink {
+  value: any;
+  viewValue: any;
+}
 
 @Component({
   selector: 'app-career',
   templateUrl: './career.component.html',
-  styleUrls: ['./career.component.css']
+  styleUrls: ['./career.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 
 export class CareerComponent implements OnInit {
 
-  constructor(public playerService: PlayerService, private route: ActivatedRoute, public seasonService: SeasonsService, public seasonstatsservice: SeasonstatsService) { }
+  selected = 'option1';
+
+ /* seasonsSelect: SeasonsSelectLink[] = [
+    //{value: 'steak-0', viewValue: 'Steak'},
+    {value: 'seasonThree-1', viewValue: 'Season Three'},
+    {value: 'seasonFour-2', viewValue: 'Season Four'}
+  ]; */
+ 
+  
+  constructor(public playerService: PlayerService, private route: ActivatedRoute, public seasonService: SeasonsService, public seasonstatsservice: SeasonstatsService, public fb: FormBuilder) { }
 
  @Input() public player: Player[];
   public searchString: string = '';
@@ -35,7 +50,6 @@ export class CareerComponent implements OnInit {
   public ID: any;
   @Input() public playa: Player[];
   public id: any;
-  
   
   
 

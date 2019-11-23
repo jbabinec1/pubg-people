@@ -1,14 +1,14 @@
 .title-info-container{
     display:inline-flex;
-    width: 440px;
+    width: 461px;
     justify-content: space-between;
 }
 
-.select-season{
+.select-season {
     align-self: center;
     list-style: none;
     border: 1px solid #ffffff;
-    padding: 4px;
+    padding: 1px;
     padding-left: 21px;
     padding-right: 20px;
 }
@@ -58,6 +58,8 @@
 }
 .seasons-yeah {
     color:#ffffff;
+    margin: 2px;
+    cursor: pointer;
 }
 
 /* Seasons SVG styling */
@@ -79,6 +81,106 @@
     fill: #ffffff;
     }
 
+
+    .mat-select-value {
+
+        color: #9a9a9a;
+
+    }
+
+    .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {
+        text-align: center;
+    }
+
+
+    .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option:hover {
+
+        color: #ffffff!important;
+        background: #000000;
+        
+    }
+
+    
+    .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple):hover {
+       color: #ffffff;
+       background: #000000;
+   }
+
+   .mat-option #mat-option-0 .mat-option.mat-selected.mat-active {
+     color: #ffffff;
+     background: #000000;
+   }
+
+   .mat-option {
+       background: #000000;
+       color: #ffffff;
+   } 
+
+   .mat-option.mat-active {
+       background: #000000!important;
+       color: #ffffff!important;
+       border: 2px solid #FFC600;
+       cursor: auto;
+   }
+
+   .mat-option.mat-active::after{
+    background: #000000!important;
+    color: #ffffff!important;
+    
+} 
+
+
+
+   .mat-form-field .mat-form-field-infix {
+
+       text-align:center!important;
+       border: 1px solid; 
+
+   }
+
+   .mat-form-field .mat-form-field-infix:hover .mat-select-value {
+
+    color: #ffffff;
+
+   }
+   .mat-form-field-infix:hover{
+    color: white;
+}
+
+.mat-select-arrow-wrapper {
+    opacity: 0;
+}
+
+   .mat-select .panelClass .mat-select:hover .ng-tns-c3-1 .ng-star-inserted {
+
+    color: white;
+    border: 1px solid white;
+
+   }
+
+   .mat-form-field-appearance-legacy .mat-form-field-underline {
+       display: none;
+   }
+
+   /*
+
+   .mat-form-field-infix {
+    border: 1px solid;
+}
+
+    .mat-form-field-infix:hover{
+    color: white;
+}
+
+
+.mat-select:hover .mat-select-value   {
+       color: white!important;
+   }  
+ 
+ */
+ 
+
+   
    
 
 
