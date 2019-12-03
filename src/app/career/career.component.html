@@ -4,50 +4,34 @@
     <div class="title-info-container">  <span class="platform" *ngIf="playa?.data[0].attributes?.shardId">{{playa?.data[0].attributes?.shardId}}  </span> 
     <h3 class="player-name"> {{ playa?.data[0].attributes?.name  }}  </h3> 
     
-     
-     <span class="select-season Seasons"> 
-        
-      <p class="seasons-yeah" value=""> <a (click)="seasonFourSwitch()"> Season 4 </a>
+
+      <mat-form-field>   
+          <mat-select class="panelClass" [(value)]="selected">
+              
+            <mat-option value="option1"(click)="seasonFourSwitch()">Season 4</mat-option>
+            <mat-option value="option2"(click)="seasonThreeSwitch()">Season 3</mat-option>
+             
+          </mat-select>
+        </mat-form-field>
     
+      </div>
     
-    <svg version="1.1" id="Capa_1" class="linky2 fill-div" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="960px" height="560px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
-    <g id="Rounded_Rectangle_33_copy_4_1_">
-    <path  d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937
-      c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937
-      c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
-    </g>
-    </svg> </p>
-            
-           <ul class="sub-nav">  <!--Projects sub nav-->
-         <!----  <li class="sub-item" value="Season 4">  <a (click)="seasonFourSwitch()"> Season 4</a>  </li> -->
-           <li class="sub-item" value="Season 3">  <a (click)="seasonThreeSwitch()"> Season 3</a>  </li>
+    <!---- Maybe have best overrall rank point here?? hmmm
+    <div class="season-rank-title-wrapper">
+    <div class="season-rank-title"> 
+      <span *ngIf="player?.data?.attributes?.bestRankPoint > 1 && player?.data?.attributes?.bestRankPoint < 1400" class="bronze-rank"> <img class="rank-img" src="../../../assets/pubg_bronze.jpg" width="30" height="30"> {{ player?.data?.attributes?.bestRankPoint | json}} / 1400   </span>   
     
-           </ul> 
-          
-      </span>   </div>
-    
-    <div class="season-rank-title"> <span>Rank Points: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div>
+      silver medal
+      <span *ngIf="player?.data?.attributes?.bestRankPoint > 1399 && player?.data?.attributes?.bestRankPoint < 1500" class="bronze-rank"> <img class="rank-img" src="../../../assets/pubg_bronze.jpg" width="30" height="30"> {{ player?.data?.attributes?.bestRankPoint | json}} / 1500  </span>  
+
+
+
+    </div>
+    </div>
+    -->
     
   
-    <mat-form-field>   
-        <mat-select class="panelClass" [(value)]="selected">
-            
-          <mat-option value="option1">Season 4</mat-option>
-          <mat-option value="option2"(click)="seasonThreeSwitch()">Season 3</mat-option>
-           
-        </mat-select>
-      </mat-form-field>
 
-
-  <!----  <mat-form-field>
-        <mat-select [(value)]="selected">
-          <mat-option value="option2">Season 3</mat-option>
-          <mat-option value="option3">Season 4</mat-option>
-        </mat-select>
-      </mat-form-field>
-    
-    </div> -->
     
     
     

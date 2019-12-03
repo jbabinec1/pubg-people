@@ -9,7 +9,7 @@
 
 .inner-table-wrapper {
     display: flex;
-    width: 87%; 
+    width: 95%; 
     justify-content: space-evenly;
 } 
 
@@ -24,16 +24,19 @@
     width: 812px;
     height: 74px;  */
 
-    width: 337px;
+  /*  width: 337px; */
     height: 43px; 
     white-space: nowrap; 
     max-width: 100%;
    /* border-collapse: collapse; */
-   border-radius: 11px;
+   border-radius: 6px;
    background: #2a2b2d;
    color: #9e9e9e; 
-   padding: 5px;
-   border-spacing: 2px;
+   border-spacing: 0px;
+   border-top: none;
+   border: 1px solid;
+   margin: 0 11px;
+   border-radius: 8px;
 }
 
 
@@ -45,20 +48,11 @@ td {
     padding-bottom: 7px;
     color: #ffffff;
     border: none;
-    padding: 12px;
+    padding: 15px;
     font-size: 13px; 
 }
 
 
-/*
-.top-wrapper{
-
-    ** something that positions the combat component more
-} */
-
-.season-rank-title {
-    height: 39px; 
-}
 
 .mat-tab-labels {
     display: flex;
@@ -71,7 +65,7 @@ td {
 }
 
 mat-tab-content-0-0 {
-    top: 16px!important;
+    top: 16px!important; 
 }
 
  .mat-tab-label-active {
@@ -98,6 +92,7 @@ th {
     padding: 13px; 
     border-right: none;
     background: linear-gradient(rgba(255 255 255) 0 0%, #333 97%, #eee 102%, #000);
+    border-radius: 8px;
 }
 
 .td-title {
@@ -107,3 +102,19 @@ th {
 .mat-tab-header {
     background: #252729;
 }
+
+.seasons-stats  {
+
+    margin: 0 11px;
+    border: 1px solid #9e9e9e;
+    border-radius: 8px;
+    color: #ffffff;
+    width: inherit; 
+} 
+
+/*
+.bronze-rank {
+    margin: 0 11px;
+    border: 1px solid;
+    width: inherit; 
+} */

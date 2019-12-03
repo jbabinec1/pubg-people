@@ -18,8 +18,16 @@
     height: 61px;
 }
 
+
+.season-rank-title-wrapper {
+    width: 974px;
+}
+
 .season-rank-title { 
     color: #ffffff;
+    width: 100%;
+    max-width: 97%;
+    height: 43px;
 }
 
 .player-name {
@@ -124,8 +132,13 @@
    }
 
    .mat-option.mat-active::after{
+       content: "\2713";
+       
+   }
+
+   .mat-option.mat-active::after{
     background: #000000!important;
-    color: #ffffff!important;
+    color:  #FFC600!important;        
     
 } 
 
@@ -135,7 +148,26 @@
 
        text-align:center!important;
        border: 1px solid; 
+       top: 10px; 
 
+   }
+
+   .mat-form-field .mat-form-field-infix .mat-select::before {
+    content: "\02C7";    /*"\25BE"; */
+    background: inherit;
+    padding-right: 4px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    font-size: 27px;
+    position: absolute;
+    left: 131px;
+    font-size: 38px; 
+    font-weight: 300;
+    
+   }
+
+   .mat-form-field-appearance-legacy .mat-form-field-infix {
+       padding: 0.5075em 1px;
    }
 
    .mat-form-field .mat-form-field-infix:hover .mat-select-value {
@@ -162,6 +194,11 @@
        display: none;
    }
 
+    #cdk-overlay-0.cdk-overlay-pane {
+
+    margin-top: -9px;
+   }
+
    /*
 
    .mat-form-field-infix {
@@ -179,7 +216,11 @@
  
  */
  
-
+ /*
+.bronze-rank {
+    background-image: url(../../assets/pubg_bronze.jpg);
+    
+} */
    
    
 

@@ -7,33 +7,37 @@
   <!---Use possible <div *ngIf="current"> instead of the ???  ? -->
 
 
- <!--- <div class="season-rank-title"> <span>Rank Points on Combat List Component: {{ player?.data?.attributes?.bestRankPoint | json }} </span>  </div> -->
+       <div class="test" style="height: 13px;">  <!--<div> --> 
+           
 
-
-       <div style="height: 13px;">  <!--<div>  
-          
-
-          <input name="searchBox"
-          [(ngModel)]="searchString"
-          placeholder="search user"
-          >
-          <button  (click)="search()"> Click or don't </button> 
-      </div>  --> </div>  
-
-     
-
-       <!---  Wrapper for Combat / Survival tables --->
         <div class="top-wrapper">
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
          <div class="table-wrapper">
        <div class="inner-table-wrapper"> 
 
+          <div class="seasons-stats" *ngIf="player?.data?.attributes?.bestRankPoint > 1 && player?.data?.attributes?.bestRankPoint < 1400">
+           <span>
+            <h3>Rank</h3> 
+           <img class="rank-img" src="../../assets/Rank_Icon_01_bronze.png" width="146px">
+          <div> {{player?.data?.attributes?.bestRankPoint | json}} / 1500 </div>  </span> 
+         </div>
+
+               <!--** Silver** -->
+         <div class="seasons-stats" *ngIf="player?.data?.attributes?.bestRankPoint > 1400 && player?.data?.attributes?.bestRankPoint < 1500">
+          <span>
+           <h3>Rank</h3> 
+          <img class="rank-img" src="../../assets/Rank_silver.png" width="146px">
+         <div> {{player?.data?.attributes?.bestRankPoint | json}} / whateva </div>  </span> 
+        </div>
+
+
         <table class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
                     </tr>
+                    
                 <tr>
                  
                 <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
@@ -103,9 +107,10 @@
                 </tbody>
                 </table>
           </div> 
-            </div>
+          </div> 
 
             </mat-tab> <!---***----*  END OF FIRST TAB SOLO TPP *----**-->
+ 
 
 
             <!------- Solo FPP Combat ------>
@@ -113,6 +118,8 @@
             <mat-tab label="Solo FPP">
             <div class="table-wrapper">
             <div class="inner-table-wrapper"> 
+
+
             <table class="table" border="2">
             <tbody>
             <tr>
@@ -190,7 +197,7 @@
                         </div>
                       </mat-tab>
 
-                      <!---- Duo third person start ---->
+          <!------------*** Duo third person start ***----------->
 
                       <mat-tab label="Duo TPP">
                           <div class="table-wrapper">
@@ -516,9 +523,11 @@
                                                                       </table>
 
 
+                                                                  
+                                                                  </div>
+                                                                  </div>
 
-                                                                  </div>
-                                                                  </div>
+                                                                
                                                                 </mat-tab>
 
 

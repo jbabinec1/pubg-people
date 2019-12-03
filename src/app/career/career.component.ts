@@ -33,6 +33,23 @@ export interface SeasonsSelectLink {
 export class CareerComponent implements OnInit {
 
   selected = 'option1';
+  n: any;
+  objectKeys = Object.keys;
+
+  ranks: any[] = [
+    {
+      "name": "bronze",
+      "rankNumber": 1399,
+      "image": File
+
+    },
+
+    {
+      "name": "silver",
+      "rankNumber": 1400
+
+    }
+  ]
 
  /* seasonsSelect: SeasonsSelectLink[] = [
     //{value: 'steak-0', viewValue: 'Steak'},
