@@ -1,0 +1,47 @@
+p {
+    color: #EACD32;
+    font-size: small;
+}
+
+.seasons-stats  {
+
+    margin: 0 11px;
+    border: 1px solid #9e9e9e;
+    border-radius: 8px;
+    color: #ffffff;
+    width: inherit; 
+    padding: 34px; 
+} 
+
+
+.inner-table-wrapper {
+    display: flex;
+    width: inherit!important; /*90%;*/
+    justify-content: space-evenly;
+}
+
+.rank-number {
+    
+    font-size: small;
+    margin-top: -9px;
+}
+
+.rank-title {
+    margin-top: 10px;
+}
+
+.rank-image {
+
+    margin-top: -11px;
+}
+
+/* Rank H3  */
+.Rank {
+
+    margin-bottom: 4px;
+    padding-top: 6px; 
+}
+
+p.no-rank {     
+    color: #eeec;
+}

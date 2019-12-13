@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { OverviewAllComponent } from './overview-all/overview-all.component';
 import { WeaponMasteryComponent } from './weapon-mastery/weapon-mastery.component';
 import { CareerComponent } from './career/career.component';
-import { PlayerRankComponent } from './player-rank/player-rank.component';
+import { PlayerRankComponent } from './all-ranks/player-rank/player-rank.component';
 import { CombatComponent } from './combat/combat.component';
 import { CombatService } from './services/combat.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +22,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RankSoloFppComponent } from './all-ranks/rank-solo-fpp/rank-solo-fpp.component';
+import { DuoTppComponent } from './all-ranks/duo-tpp/duo-tpp.component';
+import { DuoFppComponent } from './all-ranks/duo-fpp/duo-fpp.component';
+import { SquadTppComponent } from './all-ranks/squad-tpp/squad-tpp.component';
+import { SquadFppComponent } from './all-ranks/squad-fpp/squad-fpp.component';
+
 
 
 @NgModule({
@@ -34,6 +40,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CombatComponent,
     CombatListComponent,
     HomeComponent,
+    RankSoloFppComponent,
+    DuoTppComponent,
+    DuoFppComponent,
+    SquadTppComponent,
+    SquadFppComponent,
+    
     
     
   ],

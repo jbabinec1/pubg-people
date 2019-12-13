@@ -9,7 +9,7 @@
 
 .inner-table-wrapper {
     display: flex;
-    width: 95%; 
+    width: 90%; 
     justify-content: space-evenly;
 } 
 
@@ -92,7 +92,7 @@ th {
     padding: 13px; 
     border-right: none;
     background: linear-gradient(rgba(255 255 255) 0 0%, #333 97%, #eee 102%, #000);
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .td-title {
@@ -118,3 +118,9 @@ th {
     border: 1px solid;
     width: inherit; 
 } */
+
+.player-rank-app {
+
+    display: flex; 
+    width: 89%;
+}

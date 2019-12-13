@@ -103,7 +103,7 @@ export class CareerComponent implements OnInit {
 
 
 
-  seasonThreeSwitch() {
+  seasonFourSwitch() {
 
     const playerName: string = this.route.snapshot.queryParamMap.get('player');
     this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
@@ -114,7 +114,7 @@ export class CareerComponent implements OnInit {
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonThreeStats(anotherID);        
+       return this.playerService.getSeasonFourStats(anotherID);        
      }))    
      .subscribe(id => this.player = id); 
 
@@ -123,7 +123,7 @@ export class CareerComponent implements OnInit {
 
 
   
-  seasonFourSwitch() {
+  seasonFiveSwitch() {
 
     const playerName: string = this.route.snapshot.queryParamMap.get('player');
     this.playerService.getPlayer(playerName).subscribe(data => {this.player = data}); 

@@ -92,7 +92,7 @@ public seasons: Seasons[];
          let playerData = player["data"][0];
          let anotherID = playerData.id;
            
-         return this.playerService.getSeasonThreeStats(anotherID);        
+         return this.playerService.getSeasonFourStats(anotherID);        
        }))    
        .subscribe(id => this.player = id); 
   

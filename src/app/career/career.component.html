@@ -2,14 +2,17 @@
 <div class="stats-header"> 
  
     <div class="title-info-container">  <span class="platform" *ngIf="playa?.data[0].attributes?.shardId">{{playa?.data[0].attributes?.shardId}}  </span> 
+     
+     <!--- <span *ngIf="player?.data[0].relationships?.season?.data?.id"> {{player?.data[0].relationships?.season?.data?.id}} </span> -->
+      
     <h3 class="player-name"> {{ playa?.data[0].attributes?.name  }}  </h3> 
     
 
       <mat-form-field>   
           <mat-select class="panelClass" [(value)]="selected">
               
-            <mat-option value="option1"(click)="seasonFourSwitch()">Season 4</mat-option>
-            <mat-option value="option2"(click)="seasonThreeSwitch()">Season 3</mat-option>
+            <mat-option value="option1"(click)="seasonFiveSwitch()">Current Season</mat-option>
+            <mat-option value="option2"(click)="seasonFourSwitch()">Season 4 </mat-option>
              
           </mat-select>
         </mat-form-field>

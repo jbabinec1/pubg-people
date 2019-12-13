@@ -1,7 +1,8 @@
-.title-info-container{
+.title-info-container {
     display:inline-flex;
     width: 461px;
     justify-content: space-between;
+    padding-bottom: 12px;
 }
 
 .select-season {
@@ -37,6 +38,7 @@
 .platform {
     display: flex;
     align-items: center; 
+    font-weight: 400;
 }
 
 .sub-nav {
@@ -160,7 +162,7 @@
     padding-left: 2px;
     font-size: 27px;
     position: absolute;
-    left: 131px;
+    left: 146px;
     font-size: 38px; 
     font-weight: 300;
     
@@ -187,7 +189,12 @@
 
     color: white;
     border: 1px solid white;
+    font-weight: 400;
 
+   }
+
+   .ng-tns-c3-1 .ng-star-inserted p {
+       font-weight: 400;
    }
 
    .mat-form-field-appearance-legacy .mat-form-field-underline {
