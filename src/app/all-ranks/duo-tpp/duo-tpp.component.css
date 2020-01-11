@@ -12,6 +12,7 @@
     display: flex;
     width: 90%;
     justify-content: space-evenly;
+    width: 1241px!important;
 }
 
 .rank-number {
@@ -30,11 +31,11 @@
 }
 
 
-p {
+/*p {
     color: #EACD32;
     font-size: small;
     padding-bottom: 9px;
-}
+} */
 
 p.no-rank {     
     color: #eeec;

@@ -1,0 +1,204 @@
+header {
+    transition: top 0.2s ease-in-out;
+}
+
+.headerContainer {
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    right:0;
+    background: #161616; /* was #111111*/
+    color: grey;
+    z-index: 1;
+    padding: 0px;
+    height: 62px; /* 83px  */
+   /* overflow: hidden;  Testing SVG image in*/
+   transition: top 0.2s ease-in-out;
+    
+}
+
+.nav-container{
+    display: flex;
+    height: inherit;
+    justify-content: flex-start;
+    position: absolute; 
+    width: 100%;
+
+}
+
+.navScroll {
+
+    margin-top: -40px;
+}
+
+/*.ONLY 0 PADDING ON LEFT SIDE FOR LOGO */
+li.nav-header_item.JWB{
+    padding-left:0;
+}
+
+/* flex UL container */
+.item-container {
+    display: flex;
+    align-items:center; 
+    width: 523px;
+    padding-left: 0px;
+    min-height: 39px;
+    width: 100%;
+ 
+}
+
+a {
+    cursor: pointer;
+} 
+
+.links, .links a {
+    padding: 10px;
+    color: red;
+   
+   
+   
+}
+
+.links a.active {
+    /*background-color: rgb(128, 128, 128); */
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-header_item {
+font-family: Teko,Oswald,sans-serif;
+font-size: 15px;
+padding: 0px 12px;
+}
+
+.nav-header_item a {
+    color:#ADADAD;
+}
+
+.nav-header_item a:hover  {
+    color: white;
+    
+}
+
+
+/* This sets inner logo intials on hover 
+#path0:hover{
+    pointer-events: all;
+    fill: #ffffff;
+} */
+
+
+
+      /* Dropdown SVG */
+#Rounded_Rectangle_33_copy_4_1_:hover{
+    fill: #ffffff;
+}
+
+
+
+
+/* Makes clicking links easier like they're blocks  */
+a.fill-div{
+    display: flex;
+    align-items: center;
+    height: 43px;
+    
+    text-decoration: none;
+}
+
+
+
+
+/* Sets the active regular nav links to white */
+a.linky2.active{
+    color: #ffffff;
+} 
+
+
+
+
+/* Logooo */
+ .linky-logo .image {
+    
+    padding: 0 27px;
+    width: 125px;
+    height: 45px; /* was 105px  */
+    border: 1px solid red;
+    display: none;
+    
+} 
+
+
+
+/* Fills SVG path color when its active - YEY!! thanx angular Need to make up damn mind on logo   */
+a.linky-logo.image.active #path0.logo-active {
+    fill: #ffffff;
+}
+
+/* TEST with new JWB svg  */
+a.linky-logo.image.active #path0.logo-active {
+    fill: #ffffff;
+}
+
+
+
+
+/* Sets border bottom underline when regular nav links are active */
+.item-box .active{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    border-bottom: 2px solid white;
+}
+
+/*
+li.nav-header_item.item-box{
+    height: 100%
+}*/
+
+img.linky-logo.image {
+    background-color:none;
+}
+
+
+
+
+svg.logo {
+    width: 125px;
+    height: 45px;
+       
+} 
+
+/* TEST with new JWB svg */ 
+svg.logo_header {
+
+    width: 143px;
+    height: 128px;
+    padding-top: 18px;
+
+}
+
+ 
+.nav-list {
+    
+    display: flex;
+    width: 84%;
+    justify-content: flex-end; 
+}
+
+
+.stats-header {
+
+    margin-top: 8px;
+}
+
+#path1 {
+    fill: #ffffff;
+}
+
+#path0 {
+    fill: #f2a900;
+}

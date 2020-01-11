@@ -1,8 +1,12 @@
 .title-info-container {
     display:inline-flex;
-    width: 461px;
+    width: 504px;
     justify-content: space-between;
-    padding-bottom: 12px;
+    
+    height: 40px; 
+    align-items: flex-start;
+    padding-left: 18px;
+    padding-bottom: 11px;
 }
 
 .select-season {
@@ -33,6 +37,7 @@
 
 .player-name {
     color: #ffffff;
+    margin-top: 0;
 }
 
 .platform {
@@ -150,7 +155,7 @@
 
        text-align:center!important;
        border: 1px solid; 
-       top: 10px; 
+       /*top: 10px; */
 
    }
 
@@ -228,7 +233,33 @@
     background-image: url(../../assets/pubg_bronze.jpg);
     
 } */
+
+.stats-header {
+
+    padding-top: 27px;
+}
    
+   
+.outer-div {
+    display: flex!important; 
+    justify-content: flex-end;
+    max-width: 67%;
+    width: 71%;
+    color: #ffffff;
+    font-size: medium;
+    
+}
+
+.inner-div {
+    max-width: 39%;
+    width: 100%;
    
 
+}
+
+.seasonNumber {
+    margin-left: 8px;
+    font-size: 20px;
+    margin-bottom: 9px;
+}
 

@@ -7,14 +7,31 @@
   <!---Use possible <div *ngIf="current"> instead of the ???  ? -->
 
 
-       <div class="test" style="height: 13px;">  <!--<div> --> 
+       <div class="test" style="height: 13px;">  <div> 
            
      <!--****** RANK POINT COMPONENT HERE ****-->
         <div class="top-wrapper">
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
+          <div class="wrapper-holder"> 
+<!----
+   <div class="outer-season-name">        
+    <div>    
+        <div class="outer-div" style="display:flex"> 
+            <div class="inner-div"> 
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 5 </p> </span> 
+      
+                <div> 
+                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-04'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
+              
+              </div>           
+            </div> 
+    </div>   
+    </div>
+  -->
+
          <div class="table-wrapper">
-       <div class="inner-table-wrapper"> 
+       <div class="inner-table-wrapper" > 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
@@ -88,6 +105,7 @@
                 </table>
           </div> 
           </div> 
+          </div>
 
             </mat-tab> <!---***----*  END OF FIRST TAB SOLO TPP *----**-->
  
@@ -97,12 +115,13 @@
 
             <mat-tab label="Solo FPP">
             <div class="table-wrapper">
+
             <div class="inner-table-wrapper"> 
 
       <app-rank-solo-fpp [player]="player" class="player-rank-app"></app-rank-solo-fpp> 
 
             <table class="table" border="2">
-            <tbody>
+            <tbody> 
             <tr>
             <th colspan="2"> Combat </th>
               </tr>
@@ -342,7 +361,7 @@
                                         <th colspan="2"> Combat </th>
                                           </tr>
                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills fucka: </span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
+                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
                                           <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.squad?.weeklyKills | json }}</td>
                                           </tr>
                                            <tr>
@@ -477,7 +496,8 @@
                                                                            </tr>
                                                                       </tbody>
                                                                       </table>
-
+                                                                 
+                                                                   
 
                                                                   
                                                                   </div>
@@ -486,7 +506,7 @@
                                                                 
                                                                 </mat-tab>
 
-
+       
 
 
 

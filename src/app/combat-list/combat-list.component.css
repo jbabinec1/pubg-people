@@ -1,16 +1,16 @@
 
 .table-wrapper {
     display: flex;
-    justify-content: space-evenly;
-    padding-left: 67px;
-    padding-right: 33px;
-    padding-top: 9px;
+    justify-content: center;
+    /*padding-left: 67px;
+    padding-right: 33px; */
+    padding-top: 0px;
 }
 
 .inner-table-wrapper {
     display: flex;
-    width: 90%; 
-    justify-content: space-evenly;
+    justify-content: center;
+   
 } 
 
 .top-wrapper {
@@ -24,15 +24,15 @@
     width: 812px;
     height: 74px;  */
 
-  /*  width: 337px; */
+    width: 135%; 
     height: 43px; 
-    white-space: nowrap; 
+  /* white-space: nowrap; */
     max-width: 100%;
    /* border-collapse: collapse; */
    border-radius: 6px;
    background: #2a2b2d;
    color: #9e9e9e; 
-   border-spacing: 0px;
+   border-spacing: 0px; 
    border-top: none;
    border: 1px solid;
    margin: 0 11px;
@@ -84,8 +84,14 @@ mat-tab-content-0-0 {
 
 .mat-tab-body-wrapper {
     background: #17181a;
-    padding-top: 31px;
+    padding-top: 18px;
 }
+
+.outer-season-name {
+
+    max-width: 78%; 
+}
+
 
 th {
     color: #ffffff;
@@ -124,3 +130,39 @@ th {
     display: flex; 
     width: 89%;
 }
+
+.tables {
+    overflow-x: auto;
+}
+
+
+@media screen and (max-width: 611px) {
+
+    .inner-table-wrapper {
+        display: block!important;
+        width: 1241px!important;
+        justify-content: space-evenly;
+    } 
+
+
+    .player-rank-app {
+        width: 102%;
+    }
+
+    .table {
+        width: 98%;
+    }
+}
+
+
+p.ng-star-inserted {
+    color: #EACD32;
+    font-size: small;
+    padding-bottom: 9px;
+}
+
+.seasonNumber {
+
+    margin: 2;
+    
+} 

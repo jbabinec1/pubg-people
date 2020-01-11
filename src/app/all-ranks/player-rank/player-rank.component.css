@@ -6,6 +6,7 @@
     color: #ffffff;
     width: inherit; 
     padding: 18px!important;
+   
 } 
 
 
@@ -13,7 +14,8 @@
     display: flex;
     width: 90%;
     justify-content: space-evenly;
-}
+    width: 1241px!important;
+} 
 
 .rank-number {
     
@@ -31,12 +33,16 @@
     margin-top: -11px;
 }
 
-p {
+p .ng-star-inserted.no-rank {
     color: #EACD32;
     font-size: small;
     padding-bottom: 9px;
+} 
+
+div.no-ranks {
+    color: red;
 }
 
+/*
 p.no-rank {     
-    color: #eeec;
-}
+    */

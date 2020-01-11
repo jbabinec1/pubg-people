@@ -1,18 +1,34 @@
-<h2> Home </h2>
-<p>
-Have search form here that routes to the player profile page 
+<div class="page"> 
+<div class="searchArea">
+
+<div>  
+<img src="../../assets/helm3.png" style="max-height:132px;">
+</div>
+<p style="color: #9a9a9a!important; font-size: 14px; padding-top: 8px;">
+Find player stats 
 </p>
 
-<div>
+<div class="label"> 
+      <form autocomplete="off" class="the-form" ngNoForm style="background-color: #17181a;" method="get" action="/players">
+        <input class="input" name="player"
+             [(ngModel)]="searchString"
+             placeholder="case sensitive"
+             required
+             [(ngModel)]="ID"
+             >
+             <div *ngIf="this?.errors?.required">
+              Enter a player name fool
+             </div>
+   
+             <button class="btn" type="submit" (click)="search()"> Search </button> 
+       </form>
+       </div>
+      <div class="copyright"> <p> © PUBG People <br>
+        2020
+        </p> </div>
+      </div>
+    </div> 
 
-<h4>  </h4>
 
-<div>  <!---Find Player by string name-->
-  <input name="searchBox"
-  [(ngModel)]="searchString"
-  placeholder="search user"
-  >
-  <button (click)="search($event)"> Click </button>  
-</div>
 
-</div>
+

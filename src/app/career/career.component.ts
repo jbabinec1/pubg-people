@@ -9,7 +9,7 @@ import {SeasonsService } from 'src/app/services/seasons.service';
 import { Seasons } from '/Users/Jared/pubg-app/src/app/model/seasons';
 import {SeasonstatsService} from '/Users/Jared/pubg-app/src/app/services/seasonstats.service';
 import { SeasonStats } from '/Users/Jared/pubg-app/src/app/model/season-stats';
-import { switchMap, map, first } from 'rxjs/operators';
+import { switchMap, map, first, share, delay, retryWhen } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
 //import { Home, HomeComponent } from 'src/app/home/home.component';
@@ -36,21 +36,7 @@ export class CareerComponent implements OnInit {
   n: any;
   objectKeys = Object.keys;
 
-  ranks: any[] = [
-    {
-      "name": "bronze",
-      "rankNumber": 1399,
-      "image": File
-
-    },
-
-    {
-      "name": "silver",
-      "rankNumber": 1400
-
-    }
-  ]
-
+  
  /* seasonsSelect: SeasonsSelectLink[] = [
     //{value: 'steak-0', viewValue: 'Steak'},
     {value: 'seasonThree-1', viewValue: 'Season Three'},
@@ -67,28 +53,29 @@ export class CareerComponent implements OnInit {
   public ID: any;
   @Input() public playa: Player[];
   public id: any;
-  
+public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
   
 
 
   ngOnInit() {
 
-    const playerName: string = this.route.snapshot.queryParamMap.get('player');
+    //const playerName: string = this.route.snapshot.queryParamMap.get('player');
 
    // Non query string way of name lookup const playerCode = this.route.snapshot.paramMap.get('player'); 
 
-    this.playerService.getPlayer(playerName).subscribe(data => {this.playa = data});  
+  
+     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.playa = data});  
 
     
 
-    this.playerService.getPlayer(playerName).pipe(
+    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),
       switchMap( player => { 
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
        return this.playerService.getSeasonStats(anotherID);        
      }))    
-     .subscribe(id => this.player = id); 
+     .subscribe(id => this.player = id);
  
       
      
@@ -105,16 +92,16 @@ export class CareerComponent implements OnInit {
 
   seasonFourSwitch() {
 
-    const playerName: string = this.route.snapshot.queryParamMap.get('player');
-    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data});  
+  /*  const playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(playerName).pipe(share()).subscribe(data => {this.player = data});  */
 
 
-    this.playerService.getPlayer(playerName).pipe(
+    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
       switchMap( player => { 
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonFourStats(anotherID);        
+       return this.playerService.getSeasonFourStats(anotherID).pipe(share());        
      }))    
      .subscribe(id => this.player = id); 
 
@@ -125,10 +112,10 @@ export class CareerComponent implements OnInit {
   
   seasonFiveSwitch() {
 
-    const playerName: string = this.route.snapshot.queryParamMap.get('player');
-    this.playerService.getPlayer(playerName).subscribe(data => {this.player = data}); 
+   // const playerName: string = this.route.snapshot.queryParamMap.get('player');
+    //this.playerService.getPlayer(playerName).pipe(share()).subscribe(data => {this.player = data}); 
   
-    this.playerService.getPlayer(playerName).pipe(
+    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
          switchMap( player => { 
           let playerData = player["data"][0];
           let anotherID = playerData.id;

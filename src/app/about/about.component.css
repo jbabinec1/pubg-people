@@ -1,0 +1,39 @@
+
+.about {
+    
+    height: 72%;
+    justify-content: center;
+    display: flex; 
+    padding-top: 21px;
+    color: #000000;
+}
+
+.inner-about {
+    
+    width: 59%;
+    display: flex;
+    border: 1px solid;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 11px; 
+
+}
+
+.inner-inner-about {
+    max-width: auto;
+}
+
+.outer-about {
+    height: 72%;
+}
+
+h3 {
+    color: #000000;
+}
+
+.about-details {
+    /*font-size: small;*/
+    max-width: 643px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

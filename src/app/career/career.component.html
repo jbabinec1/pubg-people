@@ -1,9 +1,10 @@
 
 <div class="stats-header"> 
+
  
     <div class="title-info-container">  <span class="platform" *ngIf="playa?.data[0].attributes?.shardId">{{playa?.data[0].attributes?.shardId}}  </span> 
+
      
-     <!--- <span *ngIf="player?.data[0].relationships?.season?.data?.id"> {{player?.data[0].relationships?.season?.data?.id}} </span> -->
       
     <h3 class="player-name"> {{ playa?.data[0].attributes?.name  }}  </h3> 
     
@@ -15,9 +16,39 @@
             <mat-option value="option2"(click)="seasonFourSwitch()">Season 4 </mat-option>
              
           </mat-select>
-        </mat-form-field>
-    
+        </mat-form-field> <br>
+
+
+
+      
       </div>
+      
+
+      <div class="outer-season-name">     
+     
+          <div>  
+            
+            
+              <div class="outer-div" style="display:flex"> 
+                  <div class="inner-div"> 
+                      <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 5 </p> </span> 
+            
+                      <div> 
+                          <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-04'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
+                    
+                    </div> 
+                  
+            
+                  
+                  </div> 
+          
+          
+        
+          </div>   
+          </div>
+
+    
+     
     
     <!---- Maybe have best overrall rank point here?? hmmm
     <div class="season-rank-title-wrapper">

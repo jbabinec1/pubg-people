@@ -1,7 +1,7 @@
-p {
+/* p {
     color: #EACD32;
     font-size: small;
-}
+} */
 
 .seasons-stats  {
 
@@ -16,7 +16,7 @@ p {
 
 .inner-table-wrapper {
     display: flex;
-    width: inherit!important; /*90%;*/
+    width: 1241px!important;
     justify-content: space-evenly;
 }
 

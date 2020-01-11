@@ -3,7 +3,7 @@
 <div class="seasons-stats" [ngSwitch]="player?.data?.attributes?.gameModeStats?.duo?.rankPointsTitle">
 
 
-<div *ngIf="player"> 
+<div *ngIf="player">
 <p *ngIf="player && player?.data?.attributes?.gameModeStats?.duo?.rankPoints == player?.data?.attributes?.bestRankPoint && player?.data?.attributes?.gameModeStats?.solo?.rankPoints  > 0">Best Rank Point</p> </div>
 
     <!------* START BEGINNER TITLES ------->
@@ -11,217 +11,216 @@
         <span>
      <div class="rank-title">Beginner V</div>
         <img class="rank-img" src="../../assets/Emblems/emblem-beginner-5.png" width="146px">
-        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>   
+        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>
         </span>
         </div>
-  
+
   <!--Beginner 1-4-->
    <div *ngSwitchCase="'1-4'">
    <span>
-   <h3>Rank</h3>
+    <div class="rank-title">Beginner IV</div>
    <img class="rank-img" src="../../assets/Emblems/emblem-beginner-4.png" width="146px">
    <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>
-   <div class="rank-title">Beginner IV</div>
+
    </span>
    </div>
-  
-  
+
+
   <!--- Beginner 1-3 --->
    <div *ngSwitchCase="'1-3'">
          <span>
-         <h3>Rank</h3>
+         <div class="rank-title">Beginner III</div>
          <img class="rank-img" src="../../assets/Emblems/emblem-beginner-3.png" width="146px">
          <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>
-         <div class="rank-title">Beginner III</div>
+
          </span>
          </div>
-  
+
   <!-- Beginner 1-2 --->
    <div *ngSwitchCase="'1-2'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title">Beginner II</div>
         <img class="rank-img" src="../../assets/Emblems/emblem-beginner-2.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>
-        <div class="rank-title">Beginner II</div>
+
         </span>
         </div>
-  
+
   <!--- Beginner 1-1 --->
    <div *ngSwitchCase="'1-1'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title">Beginner I</div>
         <img class="rank-img" src="../../assets/Emblems/emblem-beginner-1.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 999 </div>
-        <div class="rank-title">Beginner I</div>
+
         </span>
         </div>
-  
-  
+
+
         <!--*** Begin Silver Novice **--->
-  
+
    <div *ngSwitchCase="'2-5'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title">Novice V</div>
         <img class="rank-img" src="../../assets/Emblems/emblem-novice-5.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 1999 </div>
-        <div class="rank-title">Novice V</div>
+
         </span>
         </div>
-  
+
      <!--Silver Novice 4 -->
    <div *ngSwitchCase= "'2-4'">
         <span>
-        <h3>Rank</h3>
+       <div class="rank-title"> Novice IV </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-novice-4.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 1999 </div>
-        <div class="rank-title"> Novice IV </div>
+
         </span>
         </div>
-  
+
      <!-- Silver 3-->
    <div *ngSwitchCase="'2-3'">
         <span>
-        <h3>Rank</h3>
+       <div class="rank-title"> Novice III </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-novice-3.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 1999 </div>
-        <div class="rank-title"> Novice III </div>
+
         </span>
         </div>
-  
-  
+
+
          <!---- Silver  2 ------>
-  
+
    <div *ngSwitchCase="'2-2'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title"> Novice II </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-novice-2.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 1999 </div>
-        <div class="rank-title"> Novice II </div>
+
         </span>
         </div>
-  
-  
-  
+
+
+
            <!--Silver 1-->
-  
+
    <div *ngSwitchCase="'2-1'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title"> Novice I </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-novice-1.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 1999 </div>
-        <div class="rank-title"> Novice I </div>
+
         </span>
         </div>
-  
-  
+
+
   <!---**  EXPERIENCED 5 **--->
    <div *ngSwitchCase="'3-5'">
         <span>
-        <h3>Rank</h3>
+       <div class="rank-title"> Experienced V </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-experienced-5.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 2999 </div>
-        <div class="rank-title"> Experienced V </div>
+
         </span>
         </div>
-  
-  
+
+
    <div *ngSwitchCase="'3-4'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title"> Experienced IV </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-experienced-4.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 2999 </div>
-        <div class="rank-title"> Experienced IV </div>
         </span>
         </div>
-  
-  
+
+
   <div *ngSwitchCase="'3-3'">
         <span>
-        <h3>Rank</h3>
+        <div class="rank-title"> Experienced III </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-experienced-3.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 2999 </div>
-        <div class="rank-title"> Experienced III </div>
+
         </span>
         </div>
-  
-  
+
+
   <div *ngSwitchCase="'3-2'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Experienced II </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-experienced-2.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 2999 </div>
-       <div class="rank-title"> Experienced II </div>
+
        </span>
        </div>
-  
-  
+
+
   <div *ngSwitchCase="'3-1'">
        <span>
-        <h3>Rank</h3>
+        <div class="rank-title"> Experienced I </div>
         <img class="rank-img" src="../../assets/Emblems/emblem-experienced-1.png" width="146px">
         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 2999 </div>
-        <div class="rank-title"> Experienced I </div>
+
         </span>
         </div>
-  
-  
+
+
         <!--** SKILLED V BEGIN **-->
-  
-  
+
+
   <div *ngSwitchCase="'4-5'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Skilled V </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-skilled-5.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 3999 </div>
-       <div class="rank-title"> Skilled V </div>
+
        </span>
        </div>
-  
+
   <div *ngSwitchCase="'4-4'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Skilled IV </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-skilled-4.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 3999 </div>
-       <div class="rank-title"> Skilled IV </div>
+
        </span>
        </div>
-  
-  
+
+
   <div *ngSwitchCase="'4-3'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Skilled III </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-skilled-3.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 3999 </div>
-       <div class="rank-title"> Skilled III </div>
+
        </span>
        </div>
-  
-  
-  
+
+
+
   <div *ngSwitchCase="'4-2'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Skilled II </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-skilled-2.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 3999 </div>
-       <div class="rank-title"> Skilled II </div>
+
        </span>
        </div>
-  
-  
+
+
   <div *ngSwitchCase="'4-1'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Skilled I </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-skilled-1.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 3999 </div>
-       <div class="rank-title"> Skilled I </div>
+
        </span>
        </div>
-  
-  
-  
-  
+
+
+
+
   <!--** Specialist V Start **-->
-  
+
   <div *ngSwitchCase="'5-5'">
       <span>
       <h3>Rank</h3>
@@ -230,81 +229,80 @@
       <div class="rank-title"> Specialist V </div>
       </span>
       </div>
-  
-  
+
+
   <div *ngSwitchCase="'5-4'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Specialist IV </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-specialist-4.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 4999 </div>
-       <div class="rank-title"> Specialist IV </div>
+
        </span>
        </div>
-  
-  
+
+
   <div *ngSwitchCase="'5-3'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Specialist III </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-specialist-3.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 4999 </div>
-       <div class="rank-title"> Specialist III </div>
+
        </span>
        </div>
-  
-  
-  
+
+
+
   <div *ngSwitchCase="'5-2'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Specialist II </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-specialist-2.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 4999 </div>
-       <div class="rank-title"> Specialist II </div>
+
        </span>
        </div>
-  
-  
+
+
   <div *ngSwitchCase="'5-1'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Specialist I </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-specialist-5.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 4999 </div>
-       <div class="rank-title"> Specialist I </div>
        </span>
        </div>
-  
-  
-  
-  
+
+
+
+
   <!--** EXPERT ** -->
   <div *ngSwitchCase="'6-0'">
       <span>
-      <h3>Rank</h3>
+      <div class="rank-title"> Expert </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-expert.png" width="146px">
       <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}} / 6000 </div>
-      <div class="rank-title"> Expert </div>
+      
       </span>
       </div>
-  
+
       <!--** Survivor **-->
-  
+
   <div *ngSwitchCase="'7-0'">
        <span>
-       <h3>Rank</h3>
+       <div class="rank-title"> Survivor </div>
        <img class="rank-img" src="../../assets/Emblems/emblem-expert.png" width="146px">
        <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.duo?.rankPoints | json}}  </div>
-       <div class="rank-title"> Survivor </div>
+       
        </span>
        </div>
-  
-  
+
+
       <div *ngSwitchDefault>
               <span>
      <p class="no-rank">No Rank</p>
            <img class="rank-img" src="../../assets/Emblems/medal-untitled.png" width="146px"> </span>
-        
+
         </div>
-  
-  
-  
+
+
+
 
       </div>

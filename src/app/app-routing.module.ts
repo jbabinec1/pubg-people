@@ -2,13 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CombatListComponent } from './combat-list/combat-list.component';
 import { CareerComponent } from './career/career.component';
+import {HomeComponent} from '/Users/Jared/pubg-app/src/app/home/home.component';
+import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
 
 
     { path: 'players', pathMatch: 'full', component: CareerComponent },
     { path: 'players/?player=:player', component: CareerComponent },
-    {  path: '**', redirectTo: 'players'  }
+    { path: 'home', component: HomeComponent  },
+    { path: 'about', pathMatch: 'full', component: AboutComponent },
+    { path: 'not-found', component: RedirectComponentComponent },
+    {  path: '**', redirectTo: 'home'  }
+    
 
 
 

@@ -10,7 +10,7 @@ import { CareerComponent } from './career/career.component';
 import { PlayerRankComponent } from './all-ranks/player-rank/player-rank.component';
 import { CombatComponent } from './combat/combat.component';
 import { CombatService } from './services/combat.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { lifeTimeStat } from '/Users/Jared/pubg-app/src/app/model/combat';
 import { CombatListComponent } from './combat-list/combat-list.component';
 import { PlayerService } from './services/player.service';
@@ -27,6 +27,15 @@ import { DuoTppComponent } from './all-ranks/duo-tpp/duo-tpp.component';
 import { DuoFppComponent } from './all-ranks/duo-fpp/duo-fpp.component';
 import { SquadTppComponent } from './all-ranks/squad-tpp/squad-tpp.component';
 import { SquadFppComponent } from './all-ranks/squad-fpp/squad-fpp.component';
+import { PlayerInterceptor } from './services/player-interceptor';
+import { from } from 'rxjs';
+import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
+
+
+ 
+
 
 
 
@@ -45,6 +54,9 @@ import { SquadFppComponent } from './all-ranks/squad-fpp/squad-fpp.component';
     DuoFppComponent,
     SquadTppComponent,
     SquadFppComponent,
+    RedirectComponentComponent,
+    HeaderComponent,
+    AboutComponent,
     
     
     
@@ -63,7 +75,12 @@ import { SquadFppComponent } from './all-ranks/squad-fpp/squad-fpp.component';
     
     
   ],
-  providers: [CombatService],
+  providers: [
+    CombatService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: PlayerInterceptor,
+      multi: true,
+    } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
