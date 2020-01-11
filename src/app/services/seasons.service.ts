@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { CareerComponent } from '/Users/Jared/pubg-app/src/app/career/career.component';
+
 
 
 @Injectable({

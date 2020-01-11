@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { PlayerService } from '/Users/Jared/pubg-app/src/app/services/player.service';
-import {Player } from '/Users/Jared/pubg-app/src/app/model/player';
+import { PlayerService } from '.././services/player.service';
+import {Player } from '.././model/player';
 import { Subject, Observable } from 'rxjs';
 import { switchMap, map, first, share } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
  // public seasons: Seasons[];
  //@Input() public seasonStats: SeasonStats[];
   public ID: any;
-  static player: import("/Users/Jared/pubg-app/src/app/model/season-stats").SeasonStats[];
+  static player: import(".././model/season-stats").SeasonStats[];
 
   constructor(  public playerService: PlayerService, private route: ActivatedRoute) { 
     this.sendStats = new EventEmitter<Player[]>();
