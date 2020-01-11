@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { lifeTimeStat } from '/Users/Jared/pubg-app/src/app/model/combat';
+import { lifeTimeStat } from './model/combat';
 
 
 @Component({
