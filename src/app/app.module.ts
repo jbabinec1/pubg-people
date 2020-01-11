@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { OverviewAllComponent } from './overview-all/overview-all.component';
 import { WeaponMasteryComponent } from './weapon-mastery/weapon-mastery.component';
 import { CareerComponent } from './career/career.component';
+
 import { PlayerRankComponent } from './all-ranks/player-rank/player-rank.component';
-import { CombatComponent } from './combat/combat.component';
+//import { CombatComponent } from '/Users/Jared/pubg-app/src/app/combat';
 import { CombatService } from './services/combat.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { lifeTimeStat } from '/Users/Jared/pubg-app/src/app/model/combat';
@@ -46,7 +47,6 @@ import { AboutComponent } from './about/about.component';
     WeaponMasteryComponent,
     CareerComponent,
     PlayerRankComponent,
-    CombatComponent,
     CombatListComponent,
     HomeComponent,
     RankSoloFppComponent,
