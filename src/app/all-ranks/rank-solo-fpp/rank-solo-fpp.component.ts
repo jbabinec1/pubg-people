@@ -1,8 +1,8 @@
 
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { PlayerService } from '/Users/Jared/pubg-app/src/app/services/player.service';
+import { PlayerService } from '../../services/player.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Player } from '/Users/Jared/pubg-app/src/app/model/player';
+import {Player } from '../../model/player';
 
 @Component({
   selector: 'app-rank-solo-fpp',
