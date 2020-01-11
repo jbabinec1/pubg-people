@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 
-import { lifeTimeStat} from 'src/app/model/combat';
+import { lifeTimeStat} from '.././model/combat';
 
 
 
