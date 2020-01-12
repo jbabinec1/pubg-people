@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  search(event) {
+  search() {
     this.playerService.getPlayer(this.searchString).pipe(
          switchMap( player => { 
 
