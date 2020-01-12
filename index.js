@@ -7,7 +7,7 @@ app.use(express.static('src'))
 const port = process.env.PORT || 3000; 
 
 app.get('/api', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'app.component.html'));
 });
 
 app.listen(port, function(){
