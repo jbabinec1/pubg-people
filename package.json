@@ -2,7 +2,8 @@
   "name": "pubg-app",
   "version": "0.0.0",
   "engines": {
-    "node": "11.10.1"
+    "node": "11.10.1",
+    "npm": "6.11.3"
   },
   "scripts": {
     "ng": "ng",
@@ -10,7 +11,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {

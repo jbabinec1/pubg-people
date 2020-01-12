@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use(express.static('src'))
+app.use(express.static('/dist/pubg-app'))
 
 const port = process.env.PORT || 3000; 
 
-app.get('/api', function(req, res) {
-    res.sendFile(path.join(__dirname, 'app.component.html'));
-});
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
+}); 
 
 app.listen(port, function(){
     console.log('Your node js server is running');
