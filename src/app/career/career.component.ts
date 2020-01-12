@@ -53,7 +53,7 @@ export class CareerComponent implements OnInit {
   @Input() public playa: Player[];
   public id: any;
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
-product:any={};
+
   
 
 

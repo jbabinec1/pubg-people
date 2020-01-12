@@ -2,6 +2,6 @@ export interface Player {
 
     playerID: string,
     player: string,
-    id: string
+    id: string,
     data: any
 }
