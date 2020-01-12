@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 import { Player } from '../model/player';
 import { SeasonStats } from '../model/season-stats';
 import { catchError,retry, shareReplay, share, retryWhen } from 'rxjs/operators';
+import {index} from '../../../index.js'
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +26,10 @@ export class PlayerService {
 
   getPlayer(player: string):Observable<Player[]> {
 
-    const api_key = process.env.API_KEY;
+    //const api_key = process.env.API_KEY;
+    let API_KEY: any;
 
-    let getHeaders = new HttpHeaders({'Authorization': api_key, 'Accept': 'application/vnd.api+json'}); 
+    let getHeaders = new HttpHeaders({'Authorization': API_KEY, 'Accept': 'application/vnd.api+json'}); 
   
       return this.http.get<Player[]> (`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share());    
   
@@ -37,9 +41,10 @@ export class PlayerService {
 
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
-        const api_key = process.env.API_KEY;
+        //const api_key = process.env.API_KEY;
+        let API_KEY: any;
 
-        let getHeaders = new HttpHeaders({'Authorization': api_key, 'Accept': 'application/vnd.api+json'}); 
+        let getHeaders = new HttpHeaders({'Authorization': API_KEY, 'Accept': 'application/vnd.api+json'}); 
       
           return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
