@@ -11,7 +11,8 @@ import {Player } from '../../model/player';
 })
 export class DuoFppComponent implements OnInit {
 
-  @Input() public player: Player[];
+  @Input() public player: any = [];
+
 
   constructor(private http: HttpClient, public playerService: PlayerService) { }
 

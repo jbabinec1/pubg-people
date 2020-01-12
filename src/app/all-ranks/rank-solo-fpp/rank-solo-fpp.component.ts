@@ -12,8 +12,9 @@ import {Player } from '../../model/player';
 })
 export class RankSoloFppComponent implements OnInit {
 
-  @Input() public playersolofpp: Player[];
-  @Input() public player: Player[];
+  @Input() public playersolofpp: any = [];
+  @Input() public player: any = [];
+  
 
   constructor(private http: HttpClient, public playerService: PlayerService) { }
 

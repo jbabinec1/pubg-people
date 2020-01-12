@@ -14,7 +14,7 @@ export class PlayerRankComponent implements OnInit {
  @Input() rankPoints: number;
  @Input() bestRankPoint: number;
 
-  @Input() public player: Player[];
+ @Input() public player: any = [];
 
   constructor(private http: HttpClient, public playerService: PlayerService) { }
 
