@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 import { Player } from '../model/player';
 import { SeasonStats } from '../model/season-stats';
 import { catchError,retry, shareReplay, share, retryWhen } from 'rxjs/operators';
-import {index} from '../../../index.js'
+//import {index} from '../../../index.js'
 
 
 
