@@ -6,6 +6,7 @@ const fetch = require('node-fetch');
 const API_KEY = process.env.API_KEY;
 
 
+/*
 
  app.get('/players/:player',  async (request, response) => {
 
@@ -19,7 +20,7 @@ const API_KEY = process.env.API_KEY;
     const json = await fetch_response.json();
     response.json(json);
 
-}  ) 
+}); */
 
 
 
