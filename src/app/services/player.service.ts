@@ -41,9 +41,9 @@ export class PlayerService {
 
     //const api_key = process.env.API_KEY;
 
-    let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
+    //let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
   
-    return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share()); 
+    return this.http.get<Player[]> (`https://pubg-people.herokuapp.com/players/${player}`,  { observe:'body',   responseType: 'json' }).pipe(share()); 
   
       } 
 
