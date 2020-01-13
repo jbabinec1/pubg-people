@@ -23,7 +23,7 @@ export class PlayerService {
   // public playerUrl = "https://api.pubg.com/shards/steam/players?filter[playerNames]=WackyJacky101"; 
 
 
-
+/*
  getPlayer(player: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
@@ -33,10 +33,10 @@ export class PlayerService {
   
       return this.http.get<Player[]> (`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share());    
   
-      }  
+      }  */
 
 
-/*
+
   getPlayer(player: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
@@ -44,7 +44,7 @@ export class PlayerService {
   
       return this.http.get<Player[]> (`/players/players/players?filter[playerNames]=${player}`).pipe(share());    
   
-      } */
+      } 
 
       /* `https://api.pubg.com/shards/steam/players?filter[playerNames]=${query}`    */
 

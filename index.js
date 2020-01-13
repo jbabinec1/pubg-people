@@ -6,11 +6,11 @@ const fetch = require('node-fetch');
 const API_KEY = process.env.API_KEY;
 
 
-/*
+
 
  app.get('/players/:player',  async (request, response) => {
 
-    res.send('players' + req.params.player); 
+    res.send('players' + req.query.player); 
     // const playername = request.params.player;
      const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${playername}`;
 
@@ -20,7 +20,7 @@ const API_KEY = process.env.API_KEY;
     const json = await fetch_response.json();
     response.json(json);
 
-}); */
+}); 
 
 
 
