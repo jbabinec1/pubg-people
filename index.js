@@ -1,8 +1,25 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const fetch = require('node-fetch');
 
 const API_KEY = process.env.API_KEY;
+
+
+
+ app.get('/players/:player',  async (request, response) => {
+
+     const playername = request.params.playername;
+     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+
+       
+
+    const fetch_response = await fetch(api_url, { method: GET, observe:'body', 'Content-Type': 'application/json', headers: {'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json' }, body: JSON.stringify(data)});
+    const json = await response.json();
+    response.json(json);
+
+}  ) 
+
 
 app.use(express.static('dist/pubg-app'))
 
