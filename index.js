@@ -7,10 +7,10 @@ const API_KEY = process.env.API_KEY;
 
 
 
- app.get('/players',  async (request, response) => {
+ app.get('/players/:player',  async (request, response) => {
 
-   //  const player = request.params.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=shroud`;
+     const playername = request.params.player;
+     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${playername}`;
 
        
 

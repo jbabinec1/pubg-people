@@ -42,7 +42,7 @@ export class PlayerService {
     //const api_key = process.env.API_KEY;
    
   
-      return this.http.get<Player[]> (`/players/players/players?filter[playerNames]=shroud`).pipe(share());    
+      return this.http.get<Player[]> (`/players/players/players?filter[playerNames]=${player}`).pipe(share());    
   
       } 
 
