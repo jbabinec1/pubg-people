@@ -29,7 +29,7 @@ const http = require('https');
 
     let data = "";
 
-    let apiRequest = http.request(url, options, function (res) {
+    let apiRequest = http.request(api_url, options, function (res) {
 
         console.log("connected sonion");
 
