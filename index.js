@@ -9,12 +9,12 @@ const http = require('https');
 
 
 
- app.get('/players/:player',  function(request, response) {
+ app.get('/players/',  function(request, response) {
 
     // res.send('players:' + req.query.player); 
     //const player = request.params.player;
      const player = request.query.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=shroud`;
      
      var options = {
 
