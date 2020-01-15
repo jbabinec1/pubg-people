@@ -41,10 +41,14 @@ let data = "";
             data += chunk;
         })
 
+        response.send(JSON.stringify(data));
+
       /*  res.on("end", () => {
             console.log("data collect");
 
            response.end(JSON.stringify(data));
+
+          
         }) */
 
     })
