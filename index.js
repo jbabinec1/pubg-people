@@ -41,7 +41,7 @@ let data = "";
             data += chunk;
         })
 
-        response.send(JSON.stringify(data));
+        response.write(JSON.stringify(data));
 
       /*  res.on("end", () => {
             console.log("data collect");
@@ -82,7 +82,7 @@ let data = "";
     
             let playerStatsRequest = http.request(api_url, options, function (res) {
         
-                console.log("connected sonion");
+            
         
                 res.on("data", chunk => {
                     data += chunk;
@@ -95,6 +95,7 @@ let data = "";
                 })
         
             });
+            
             playerStatsRequest.end();
         }); 
 
