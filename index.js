@@ -41,10 +41,10 @@ let data = "";
             data += chunk;
         })
 
-      /*  res.on("end", () => {
+        res.on("end", () => {
             console.log("data collect");
            response.end(JSON.stringify(data));
-        }) */
+        }) 
 
     })
 
@@ -52,49 +52,6 @@ let data = "";
 
      }) /* end of player id request */
 
-
-
-
-    /* Get seasons stats for player endpoint   */
-
-     app.get('/players/stats/:stat',  function(request, response) {
-
-        //const player = request.params.player;
-         const stat = request.params.stat;
-         const api_url = `https://api.pubg.com/shards/steam/players/${stat}/seasons/division.bro.official.pc-2018-05`;
-         
-         var options = {
-    
-            method: "GET",
-            observe: 'body',
-            responseType: 'json',
-            headers: {
-                "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-                "accept": 'application/vnd.api+json' }
-            };
-     
-            //let data = "";
-    
-            let playerStatsRequest = http.request(api_url, options, function (res) {
-        
-                console.log("connected sonion");
-        
-                res.on("data", chunk => {
-                    data += chunk;
-                })
-        
-                res.on("end", () => {
-                    console.log("data collect");
-        
-                    response.end(JSON.stringify(data));
-                })
-        
-            });
-            playerStatsRequest.end();
-        }); 
-
-
-  
 
 
 
