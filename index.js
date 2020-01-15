@@ -35,7 +35,6 @@ let data = "";
 
     let apiRequest = http.request(api_url, options, function (res) {
 
-        console.log("connected sonion");
 
         res.on("data", chunk => {
             data += chunk;
@@ -62,11 +61,11 @@ let data = "";
 
     /* Get seasons stats for player endpoint   */
 
-     app.get('/player/:stat',  function(request, response) {
+     app.get('/players/:stat',  function(request, response) {
 
         //const player = request.params.player;
          const stat = request.params.stat;
-         const api_url = `https://api.pubg.com/shards/steam/players/${stat}/seasons/division.bro.official.pc-2018-05`;
+         const stats_url = `https://api.pubg.com/shards/steam/players/${stat}/seasons/division.bro.official.pc-2018-05`;
          
          var options = {
     
@@ -80,7 +79,7 @@ let data = "";
      
             //let data = "";
     
-            let playerStatsRequest = http.request(api_url, options, function (res) {
+            let playerStatsRequest = http.request(stats_url, options, function (res) {
         
             
         
@@ -91,7 +90,7 @@ let data = "";
                 res.on("end", () => {
                     console.log("data collect");
         
-                    response.end(JSON.stringify(data));
+                    res.end(JSON.stringify(data));
                 })
         
             });
