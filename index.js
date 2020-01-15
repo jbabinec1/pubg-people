@@ -41,7 +41,7 @@ let data = "";
             data += chunk;
         })
 
-        response.write(JSON.stringify(data));
+       // response.write(JSON.stringify(data));
 
       /*  res.on("end", () => {
             console.log("data collect");
@@ -62,7 +62,7 @@ let data = "";
 
     /* Get seasons stats for player endpoint   */
 
-     app.get('/players/stats/:stat',  function(request, response) {
+     app.get('/player/:stat',  function(request, response) {
 
         //const player = request.params.player;
          const stat = request.params.stat;
