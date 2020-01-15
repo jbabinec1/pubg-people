@@ -53,7 +53,7 @@ var router = express.Router();
 
 
   /* Get seasons stats for player endpoint   */
-     app.get('/stats/:stat',  function(request, response) {
+     app.get('players/stats/:stat',  function(request, response) {
 
         //const player = request.params.player;
          const stat = request.params.stat;
