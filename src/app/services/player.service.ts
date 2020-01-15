@@ -55,14 +55,14 @@ export class PlayerService {
 
 
 
-      getSeasonStats(stats: string):Observable<SeasonStats[]> {
+      getSeasonStats(stat: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;
         
 
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
       
-          return this.http.get<SeasonStats[]>(`/stats/${stats}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<SeasonStats[]>(`/stats/${stat}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
   
         }

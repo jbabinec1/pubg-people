@@ -53,11 +53,11 @@ var router = express.Router();
 
 
   /* Get seasons stats for player endpoint   */
-     app.get('/stats/:stats',  function(request, response) {
+     app.get('/stats/:stat',  function(request, response) {
 
         //const player = request.params.player;
-         const stats = request.params.stats;
-         const api_url = `https://api.pubg.com/shards/steam/players/${stats}/seasons/division.bro.official.pc-2018-05`;
+         const stat = request.params.stat;
+         const api_url = `https://api.pubg.com/shards/steam/players/${stat}/seasons/division.bro.official.pc-2018-05`;
          
          var options = {
     
@@ -71,7 +71,7 @@ var router = express.Router();
      
             let data = "";
 
-            let apiRequest = http.request(api_url, options, function (res) {
+            let playerStatsRequest = http.request(api_url, options, function (res) {
         
                 console.log("connected sonion");
         
@@ -86,7 +86,7 @@ var router = express.Router();
                 })
         
             });
-            apiRequest.end();
+            playerStatsRequest.end();
         }); 
 
 
