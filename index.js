@@ -8,10 +8,6 @@ var router = express.Router();
 //const API_KEY = process.env.API_KEY;
 
 
-
-//let data = "";
-
-
 // Make request to get ID property of player (steam) ORIGINAL COPY 
 
  app.get('/players/:player',  function(request, response) {
@@ -38,42 +34,30 @@ var router = express.Router();
         
         res.on("data", chunk => {
             data += chunk;
-        });
+        })
 
        // response.write(JSON.stringify(data));
 
-       res.on("end", () => {
+         res.on("end", () => {
             console.log("data collect");
 
            response.end(JSON.stringify(data));
+    
+        })
 
-          
-        }); 
-
-    });
+    })
 
     apiRequest.end();
 
 
-     }); /* end of player id request (app.get) ORIGINAL */
+     }) /* end of player id request (app.get) ORIGINAL */
 
 
 
 
 
 
-   
-   
-   
-         /* end of player id request (app.get) */
-
-
-
-
-    /* Get seasons stats for player endpoint   
-
-
-    
+    /*
 
      app.get('/players/:stat',  function(request, response) {
 
@@ -110,8 +94,9 @@ var router = express.Router();
             });
             
             playerStatsRequest.end();
-        }); */
+        }); 
 
+        */
 
   
 

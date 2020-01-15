@@ -47,13 +47,13 @@ export class PlayerService {
     return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
       } 
-      /* `https://api.pubg.com/shards/steam/players?filter[playerNames]=${query}`    */
 
 
 
 
 
 
+/*
 
       getSeasonStats(player: string):Observable<SeasonStats[]> {
 
@@ -65,7 +65,7 @@ export class PlayerService {
           return this.http.get<SeasonStats[]>(`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
   
-        }  
+        }   */
       
 
 
