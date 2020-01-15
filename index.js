@@ -14,7 +14,7 @@ let data = "";
 
 // Make request to get ID property of player (steam)
 
- app.get('/players/:player',  function(request, response) {
+ app.get('/players/:player', function(request, response) {
 
     //const player = request.params.player;
      const player = request.params.player;
@@ -29,7 +29,6 @@ let data = "";
             "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
             "accept": 'application/vnd.api+json' }
         };
-
 
   //  let data = "";
 
