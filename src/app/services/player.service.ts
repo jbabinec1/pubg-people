@@ -22,7 +22,7 @@ export class PlayerService {
 
   // public playerUrl = "https://api.pubg.com/shards/steam/players?filter[playerNames]=WackyJacky101"; 
 
-/*
+/* Original getPlayer call to get the ID property of PUBG name 
 
  getPlayer(player: string):Observable<Player[]> {
 
@@ -40,7 +40,6 @@ export class PlayerService {
   getPlayer(player: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
-
     //let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
 
     let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
@@ -48,7 +47,6 @@ export class PlayerService {
     return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
       } 
-
       /* `https://api.pubg.com/shards/steam/players?filter[playerNames]=${query}`    */
 
 
@@ -57,14 +55,14 @@ export class PlayerService {
 
 
 
-      getSeasonStats(id: string):Observable<SeasonStats[]> {
+      getSeasonStats(stats: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;
         
 
-        let getHeaders = new HttpHeaders({'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
+        let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
       
-          return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<SeasonStats[]>(`/stats/${stats}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
   
         }
