@@ -10,7 +10,8 @@ const routes: Routes = [
 
 
     { path: 'players', pathMatch: 'full', component: CareerComponent },
-    { path: 'players/?player=:player', component: CareerComponent },
+    { path: 'players/?player=:player/:stat', component: CareerComponent },
+    //{ path: 'player/:stat', component: CareerComponent },
     { path: 'home', component: HomeComponent  },
     { path: 'about', pathMatch: 'full', component: AboutComponent },
     { path: 'not-found', component: RedirectComponentComponent },
