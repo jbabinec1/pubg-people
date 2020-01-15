@@ -34,7 +34,7 @@ var router = express.Router();
 
      let data = "";
 
-    let apiRequest = http.request(api_url, stats_url, options, function (res) {
+    let apiRequest = http.request(api_url, options, function (res) {
 
         res.on("data", chunk => {
             data += chunk;
