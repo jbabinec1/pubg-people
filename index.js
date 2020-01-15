@@ -38,7 +38,7 @@ var router = express.Router();
         
         res.on("data", chunk => {
             data += chunk;
-        })
+        });
 
        // response.write(JSON.stringify(data));
 
@@ -48,14 +48,14 @@ var router = express.Router();
            response.end(JSON.stringify(data));
 
           
-        }) 
+        }); 
 
-    })
+    });
 
     apiRequest.end();
 
 
-     }) /* end of player id request (app.get) ORIGINAL */
+     }); /* end of player id request (app.get) ORIGINAL */
 
 
 
