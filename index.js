@@ -9,7 +9,7 @@ var router = express.Router();
 
 
 
-let data = "";
+//let data = "";
 
 
 // Make request to get ID property of player (steam)
@@ -30,11 +30,9 @@ let data = "";
             "accept": 'application/vnd.api+json' }
         };
 
-
-  //  let data = "";
+     let data = "";
 
     let apiRequest = http.request(api_url, options, function (res) {
-
 
         res.on("data", chunk => {
             data += chunk;
@@ -42,13 +40,13 @@ let data = "";
 
        // response.write(JSON.stringify(data));
 
-      /*  res.on("end", () => {
+       res.on("end", () => {
             console.log("data collect");
 
            response.end(JSON.stringify(data));
 
           
-        }) */
+        }) 
 
     })
 
@@ -59,7 +57,10 @@ let data = "";
 
 
 
-    /* Get seasons stats for player endpoint   */
+    /* Get seasons stats for player endpoint   
+
+
+    
 
      app.get('/players/:stat',  function(request, response) {
 
@@ -96,7 +97,7 @@ let data = "";
             });
             
             playerStatsRequest.end();
-        }); 
+        }); */
 
 
   
