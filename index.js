@@ -10,12 +10,12 @@ var router = express.Router();
 
 // Make request to get ID property of player (steam) ORIGINAL COPY 
 
- app.get('/players/:player',  function(request, response) {
+ app.get('/players/:player', function(request, response) {
 
-     const player = request.params.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+     let player = request.params.player;
+     let api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
      const stats_url = `https://api.pubg.com/shards/steam/players/${stat}/seasons/division.bro.official.pc-2018-05`;
-     const stat = request.params.stat;
+     let stat = request.params.stat;
      
      var options = {
 
