@@ -73,7 +73,7 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
            let callbackThree = function(error, resp, body) {
             var data = JSON.parse(body);
             //res.send(JSON.stringify(data));
-            res.send({ data: data});
+            response.send({ data: data});
           }
         
           let callbackTwo = function(error, resp, body) {
