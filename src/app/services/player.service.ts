@@ -46,7 +46,7 @@ export class PlayerService {
 
     let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
   
-    return this.http.get<Player[]> (`/player/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
+    return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
       }  
 
