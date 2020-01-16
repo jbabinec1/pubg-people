@@ -62,7 +62,7 @@ export class PlayerService {
 
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
       
-          return this.http.get<SeasonStats[]>(`/players/player/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<SeasonStats[]>(`/players/player`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
   
         }   
