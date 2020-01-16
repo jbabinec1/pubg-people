@@ -50,44 +50,45 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
      }) /* end of player id request  ORGINAL COPY END*/
 
-     const request = require('request');
+     let data = "";  
 
-     app.get('/players/:player', function(request, response) {
+ app.get('/players/:player', function(request, response) {
 
-        const player = request.params.player;
-        const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+     const player = request.params.player;
+     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
 
-        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
-        
-        var options = {
-   
-           method: "GET",
-           observe: 'body',
-           responseType: 'json',
-           headers: {
-               "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-               "accept": 'application/vnd.api+json' }
-           };
+     const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
+     
+     var options = {
 
+        method: "GET",
+        observe: 'body',
+        responseType: 'json',
+        headers: {
+            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
+            "accept": 'application/vnd.api+json' }
+        };
 
-           let callbackThree = function(error, resp, body) {
-            var data = JSON.parse(body);
-            //res.send(JSON.stringify(data));
-            response.send({ data: data});
-          }
-        
-          let callbackTwo = function(error, resp, body) {
-            request(options, stats_url, callBackThree);
-          }
-        
-          let callbackOne = function(error, resp, body) {
-            request(options, id_url, callBackTwo);
-          }
-        
-          request(options, callBackOne);
+  //  let data = "";
 
+    let apiRequest = http.request(player_season, options, function (res) {
+
+        console.log("connected sonion");
+
+        res.on("data", chunk => {
+            data += chunk;
         })
 
+        res.on("end", () => {
+            console.log("data collect");
+           response.end(JSON.stringify(data));
+        }) 
+
+    })
+
+    apiRequest.end();
+
+     })
 
 
 
