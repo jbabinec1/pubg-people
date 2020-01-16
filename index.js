@@ -33,15 +33,16 @@ let data = "";
 
     let apiRequest = http.request(api_url, options, function (res) {
 
-        console.log("connected sonion");
+      //  console.log("connected sonion");
 
         res.on("data", chunk => {
             data += chunk;
         })
 
         res.on("end", () => {
-            console.log("data collect");
-           response.end(JSON.parse(data));
+            
+            response.end(JSON.stringify(data));
+
         }) 
 
     })
@@ -80,8 +81,10 @@ let data = "";
            })
    
            res.on("end", () => {
-               console.log("data collect");
-              response.end(JSON.parse(data));
+               console.log("data collect motha efffa");
+              //response.end(JSON.parse(data));
+              response.end(JSON.stringify(data));
+
            }) 
    
        })
