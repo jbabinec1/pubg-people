@@ -43,7 +43,7 @@ app.get('/hello', function(req, res){
 
         res.on("end", () => {
             
-              response.end(JSON.stringify(data));
+              response.json((data));
                //response.end(JSON.parse(data));
 
         }) 
