@@ -11,8 +11,8 @@ const http = require('https');
 
 // Make request to get ID property of player (steam)
 
-/*
-let data = "";  ORIGINAL COPY OF GET PLAYER 
+
+let data = "";
 
  app.get('/players/:player', function(request, response) {
 
@@ -48,12 +48,12 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
     apiRequest.end();
 
-     }) /* end of player id request  ORGINAL COPY END*/
+     }) 
 
      let data = "";  
      
 
-
+/*
  app.get('/players/:player', function(request, res) {
 
     const request = require('request');
@@ -81,27 +81,12 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
   //  let data = "";
 
   
-
-  function httpGet(callback) {
-    const optionz = options;
-    request(optionz,
-      function(err, res, body) {
-        callback(err, body);
-      }
-    );
-  }
-  
-  const urls= [`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`, `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`];
-  
-  async.map(urls, httpGet, function (err, res){
-    if (err) return console.log(err);
-    console.log(res);
-  });
+  /* UGHHHHHHHHH 
 
 
 
 
-     })
+     }) */
 
 
 
