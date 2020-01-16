@@ -54,18 +54,18 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
      
 
 
- app.get('/players/:player/:id', function(request, response) {
+ app.get('/players/:player', function(request, response) {
 
     const request = require('request');
     const http = require('http');
     const https = require('https');
 
      const player = request.params.player;
-     const id = request.params.id;
+     //const id = request.params.id;
 
      const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
 
-     const player_season = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
+     const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
      
      var options = {
 
