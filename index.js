@@ -82,8 +82,8 @@ let data = "";
    
            res.on("end", () => {
                console.log("data collect motha efffa");
-              //response.end(JSON.parse(data));
-              response.end(JSON.stringify(data));
+              response.end(JSON.parse(data));
+             // response.end(JSON.stringify(data));
 
            }) 
    
