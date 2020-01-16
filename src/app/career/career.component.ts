@@ -56,7 +56,6 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 
   
 
-
   ngOnInit() {
 
     //const playerName: string = this.route.snapshot.queryParamMap.get('player');
@@ -67,7 +66,6 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
      this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.playa = data});  
 
     
-
     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),
       switchMap( player => { 
        let playerData = player["data"][0];

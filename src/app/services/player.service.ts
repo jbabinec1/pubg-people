@@ -52,24 +52,18 @@ export class PlayerService {
 
 
 
-
-
-
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;
         
-
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
       
-          return this.http.get<SeasonStats[]>(`/players/player`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<SeasonStats[]>(`/seasons/${id}`,  {observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
-  
         }   
       
 
-
-      /*  OG Get season Stats Do not Delete
+    /*
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
           let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
