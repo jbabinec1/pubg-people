@@ -52,12 +52,12 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
      let data = "";  
 
- app.get('/players/:player', function(request, response) {
+ app.get('/players/:player/:id', function(request, response) {
 
      const player = request.params.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+     const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
 
-     const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
+     const player_season = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
      
      var options = {
 
@@ -71,22 +71,26 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
   //  let data = "";
 
-    let apiRequest = http.request(player_season, options, function (res) {
 
-        console.log("connected sonion");
+  let callbackThree = function(error, resp, body) {
+    var data = JSON.parse(body);
+    //res.send(JSON.stringify(data));
+    response.send({ "data": data});
+  }
 
-        res.on("data", chunk => {
-            data += chunk;
-        })
+  let callbackTwo = function(error, resp, body) {
+    request(player_season, callBackThree);
+  }
 
-        res.on("end", () => {
-            console.log("data collect");
-           response.end(JSON.stringify(data));
-        }) 
+  let callbackOne = function(error, resp, body) {
+    request(id_url, callBackTwo);
+  }
 
-    })
+  request(options, callBackOne);
 
-    apiRequest.end();
+    
+
+  
 
      })
 
