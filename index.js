@@ -54,9 +54,9 @@ let data = "";
 
 
 
-     app.get('/seasons/:id', function(request, response) {
+     app.get('player/:id/seasons', function(request, response) {
 
-        const player = request.params.id;
+        const id = request.params.id;
         const api_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
         
         var options = {
