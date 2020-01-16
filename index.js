@@ -70,16 +70,17 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
            };
 
 
-           var callbackThree = function(error, resp, body) {
+           let callbackThree = function(error, resp, body) {
             var data = JSON.parse(body);
-            res.send(JSON.stringify(data));
+            //res.send(JSON.stringify(data));
+            res.send({ data: data});
           }
         
-          var callbackTwo = function(error, resp, body) {
+          let callbackTwo = function(error, resp, body) {
             request(stats_url, callBackThree);
           }
         
-          var callbackOne = function(error, resp, body) {
+          let callbackOne = function(error, resp, body) {
             request(id_url, callBackTwo);
           }
         
