@@ -14,7 +14,7 @@ const http = require('https');
 
 let data = "";
 
- app.get('/players/:player', function(request, response) {
+ app.get('/players/:player/id', function(request, response) {
 
      const player = request.params.player;
      const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
@@ -54,7 +54,7 @@ let data = "";
 
 
 
-     app.get('player/:id/seasons', function(request, response) {
+     app.get('/players/player/:id', function(request, response) {
 
         const id = request.params.id;
         const api_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
