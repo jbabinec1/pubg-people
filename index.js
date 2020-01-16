@@ -69,7 +69,7 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
      const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
      
      var options = {
-
+       
         method: "GET",
         observe: 'body',
         responseType: 'json',
@@ -82,9 +82,9 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
   
 
-  function httpGet(url, callback) {
+  function httpGet(callback) {
     const optionz = options;
-    request(options,
+    request(optionz,
       function(err, res, body) {
         callback(err, body);
       }
