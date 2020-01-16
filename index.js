@@ -3,20 +3,19 @@ const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
 const http = require('https');
-var router = express.Router();
+
 
 //const API_KEY = process.env.API_KEY;
 
 
 
-let data = "";
-
-
 // Make request to get ID property of player (steam)
+
+/*
+let data = "";  ORIGINAL COPY OF GET PLAYER 
 
  app.get('/players/:player', function(request, response) {
 
-    //const player = request.params.player;
      const player = request.params.player;
      const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
      
@@ -49,10 +48,44 @@ let data = "";
 
     apiRequest.end();
 
-     }) /* end of player id request */
+     }) /* end of player id request  ORGINAL COPY END*/
+
+     const request = require('request');
+
+     app.get('/players/:player', function(request, response) {
+
+        const player = request.params.player;
+        const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+
+        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
+        
+        var options = {
+   
+           method: "GET",
+           observe: 'body',
+           responseType: 'json',
+           headers: {
+               "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
+               "accept": 'application/vnd.api+json' }
+           };
 
 
+           var callbackThree = function(error, resp, body) {
+            var data = JSON.parse(body);
+            res.send(JSON.stringify(data));
+          }
+        
+          var callbackTwo = function(error, resp, body) {
+            request(stats_url, callBackThree);
+          }
+        
+          var callbackOne = function(error, resp, body) {
+            request(id_url, callBackTwo);
+          }
+        
+          request(options, callBackOne);
 
+        })
 
 
 
