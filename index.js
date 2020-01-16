@@ -43,8 +43,8 @@ app.get('/hello', function(req, res){
 
         res.on("end", () => {
             
-            response.end(JSON.stringify(data));
-              // response.end(JSON.parse(data));
+            //response.end(JSON.stringify(data));
+               response.end(JSON.parse(data));
 
         }) 
 
@@ -85,15 +85,15 @@ app.get('/hello', function(req, res){
    
            res.on("end", () => {
                console.log("data collect motha efffa");
-               response.end(JSON.stringify(data));
+               response.end(JSON.parse(data));
               //response.end(JSON.stringify(data));
 
            }) 
-   
        })
+
    
        seasonRequest.end();
-       if (err) return console.log(err);
+       //if (err) return console.log(err);
    
         }) 
    
