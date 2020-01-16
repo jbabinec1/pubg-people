@@ -14,7 +14,7 @@ const http = require('https');
 
 let data = "";
 
- app.get('/players/:player', function(request, response) {
+ app.get('/playaz/:player', function(request, response) {
 
      const player = request.params.player;
      const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
