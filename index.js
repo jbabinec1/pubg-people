@@ -7,6 +7,10 @@ const http = require('https');
 
 //const API_KEY = process.env.API_KEY;
 
+app.get('/hello', function(req, res){
+    res.send("Hello World!");
+ });
+
 
 
 // Make request to get ID property of player object
@@ -69,7 +73,7 @@ const http = require('https');
                "accept": 'application/vnd.api+json' }
            };
    
-     //  let data = "";
+      let data = "";
    
        let seasonRequest = http.request(stats_url, options, function (res) {
    
