@@ -9,10 +9,8 @@ const http = require('https');
 
 
 
-// Make request to get ID property of player (steam)
+// Make request to get ID property of player object
 
-
-let data = "";
 
  app.get('/players/:player', function(request, response) {
 
@@ -29,7 +27,7 @@ let data = "";
             "accept": 'application/vnd.api+json' }
         };
 
-  //  let data = "";
+    let data = "";
 
     let apiRequest = http.request(api_url, options, function (res) {
 
@@ -41,7 +39,8 @@ let data = "";
 
         res.on("end", () => {
             
-            response.end(JSON.stringify(data));
+          //  response.end(JSON.stringify(data));
+               response.end(JSON.parse(data));
 
         }) 
 
@@ -82,8 +81,8 @@ let data = "";
    
            res.on("end", () => {
                console.log("data collect motha efffa");
-              response.end(JSON.parse(data));
-             // response.end(JSON.stringify(data));
+               response.end(JSON.parse(data));
+              //response.end(JSON.stringify(data));
 
            }) 
    
