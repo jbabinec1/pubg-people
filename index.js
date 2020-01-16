@@ -77,11 +77,11 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
           }
         
           let callbackTwo = function(error, resp, body) {
-            request(stats_url, callBackThree);
+            request(options, stats_url, callBackThree);
           }
         
           let callbackOne = function(error, resp, body) {
-            request(id_url, callBackTwo);
+            request(options, id_url, callBackTwo);
           }
         
           request(options, callBackOne);
