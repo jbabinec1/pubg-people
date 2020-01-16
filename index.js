@@ -54,9 +54,10 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
      
 
 
- app.get('/players/:player', function(request, response) {
+ app.get('/players/:player', function(request, res) {
 
     const request = require('request');
+    const async = require('async');
     const http = require('http');
     const https = require('https');
 
@@ -79,22 +80,24 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
 
   //  let data = "";
 
+  
 
-  let callbackThree = function(error, resp, body) {
-    var data = JSON.parse(body);
-    //res.send(JSON.stringify(data));
-    response.send({ "data": data});
+  function httpGet(url, callback) {
+    const optionz = options;
+    request(options,
+      function(err, res, body) {
+        callback(err, body);
+      }
+    );
   }
+  
+  const urls= [`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`, `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`];
+  
+  async.map(urls, httpGet, function (err, res){
+    if (err) return console.log(err);
+    console.log(res);
+  });
 
-  let callbackTwo = function(error, resp, body) {
-    request(player_season, callBackThree);
-  }
-
-  let callbackOne = function(error, resp, body) {
-    request(id_url, callBackTwo);
-  }
-
-  request(options, callBackOne);
 
 
 
