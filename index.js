@@ -51,6 +51,7 @@ let data = "";  ORIGINAL COPY OF GET PLAYER
      }) /* end of player id request  ORGINAL COPY END*/
 
      let data = "";  
+     const request = require('request');
 
  app.get('/players/:player/:id', function(request, response) {
 
