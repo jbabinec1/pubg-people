@@ -46,33 +46,31 @@ export class PlayerService {
 
     let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
   
-    return this.http.get<Player[]> (`/playaz/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
+    return this.http.get<Player[]> (`/player/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
       }  
 
 
 
-/*
-
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
-        //const api_key = process.env.API_KEY;
-        
+        //const api_key = process.env.API_KEY;  
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
       
-          return this.http.get<SeasonStats[]>(`/player/${id}`,  {observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<SeasonStats[]>(`/player/${id}`, {observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
-        }   */
+        }   
+
       
 
-    
+    /*    NOT THE PIECE OF SHIT CODE I CAN'T GET TO WORK ABOVE 
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
           let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
         
             return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
-          } 
+          } */
 
 
 

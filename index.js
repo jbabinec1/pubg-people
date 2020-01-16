@@ -41,7 +41,7 @@ let data = "";
 
         res.on("end", () => {
             console.log("data collect");
-           response.end(JSON.stringify(data));
+           response.end(JSON.parse(data));
         }) 
 
     })
@@ -81,12 +81,13 @@ let data = "";
    
            res.on("end", () => {
                console.log("data collect");
-              response.end(JSON.stringify(data));
+              response.end(JSON.parse(data));
            }) 
    
        })
    
        seasonRequest.end();
+       if (err) return console.log(err);
    
         }) 
    
