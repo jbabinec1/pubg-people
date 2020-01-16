@@ -39,8 +39,8 @@ const http = require('https');
 
         res.on("end", () => {
             
-          //  response.end(JSON.stringify(data));
-               response.end(JSON.parse(data));
+            response.end(JSON.stringify(data));
+              // response.end(JSON.parse(data));
 
         }) 
 
