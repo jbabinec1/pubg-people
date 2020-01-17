@@ -89,7 +89,7 @@ app.get('/hello', function(req, res){
                //response.end(JSON.stringify(data));
               
                let objectParsed = JSON.parse(data);
-               res.send(objectParsed);
+               response.send(objectParsed);
 
            }) 
        })
