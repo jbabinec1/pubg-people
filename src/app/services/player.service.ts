@@ -16,7 +16,6 @@ import { catchError,retry, shareReplay, share, retryWhen } from 'rxjs/operators'
 })
 export class PlayerService {
   
-  
 
   constructor(private http: HttpClient) { }
 
@@ -56,7 +55,6 @@ export class PlayerService {
 
         //const api_key = process.env.API_KEY;  
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
-      
           return this.http.get<SeasonStats[]>(`/player/${id}`, {observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share());
              
         }   
