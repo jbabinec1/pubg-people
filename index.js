@@ -7,14 +7,8 @@ const http = require('https');
 
 //const API_KEY = process.env.API_KEY;
 
-app.get('/hello', function(req, res){
-    res.send("Hello World!");
- });
-
-
 
 // Make request to get ID property of player object
-
 
  app.get('/players/:player', function(request, response) {
 
@@ -58,6 +52,7 @@ app.get('/hello', function(req, res){
 
 
 
+
      app.get('/player/:id', function(request, response) {
 
         const id = request.params.id;
@@ -72,6 +67,7 @@ app.get('/hello', function(req, res){
                "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
                "accept": 'application/vnd.api+json' }
            };
+
    
       let data = "";
    
@@ -99,44 +95,6 @@ app.get('/hello', function(req, res){
    
 
       
-     
-
-/*
- app.get('/players/:player', function(request, res) {
-
-    const request = require('request');
-    const async = require('async');
-    const http = require('http');
-    const https = require('https');
-
-     const player = request.params.player;
-     //const id = request.params.id;
-
-     const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
-
-     const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
-     
-     var options = {
-       
-        method: "GET",
-        observe: 'body',
-        responseType: 'json',
-        headers: {
-            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-            "accept": 'application/vnd.api+json' }
-        };
-
-  //  let data = "";
-
-  
-  /* UGHHHHHHHHH 
-
-
-
-
-     }) */
-
-
 
 
 
