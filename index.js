@@ -46,7 +46,7 @@ app.get('/hello', function(req, res){
               //response.json((data));
                //response.end(JSON.parse(data));
                let objectParsed = JSON.parse(data);
-               res.send(objectParsed);
+               response.send(objectParsed);
 
         }) 
 
@@ -89,8 +89,9 @@ app.get('/hello', function(req, res){
                console.log("data collect motha efffa");
                //response.end(JSON.parse(data));
                //response.end(JSON.stringify(data));
-               let objectParsed = JSON.parse(data);
-               res.send(objectParsed);
+              
+              // let objectParsed = JSON.parse(data);
+              // res.send(objectParsed);
 
            }) 
        })
