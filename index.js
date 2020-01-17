@@ -58,8 +58,6 @@ app.get('/hello', function(req, res){
 
 
 
-
-
      app.get('/player/:id', function(request, response) {
 
         const id = request.params.id;
@@ -90,16 +88,13 @@ app.get('/hello', function(req, res){
                //response.end(JSON.parse(data));
                //response.end(JSON.stringify(data));
               
-              // let objectParsed = JSON.parse(data);
-              // res.send(objectParsed);
+               let objectParsed = JSON.parse(data);
+               res.send(objectParsed);
 
            }) 
        })
-
-   
        seasonRequest.end();
        //if (err) return console.log(err);
-   
         }) 
    
 
