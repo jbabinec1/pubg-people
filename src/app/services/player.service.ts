@@ -28,15 +28,13 @@ export class PlayerService {
     //const api_key = process.env.API_KEY;
     let API_KEY: any;
 
-    let getHeaders = new HttpHeaders({'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug' , 'Accept': 'application/vnd.api+json'}); 
+    let getHeaders = new HttpHeaders({'Authorization': 'API_KEY' , 'Accept': 'application/vnd.api+json'}); 
   
       return this.http.get<Player[]> (`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share());    
   
       }  */
 
 
-
-      /* THE ONLY THING KIND OF FUCKING WORKING */
 
   getPlayer(player: string):Observable<Player[]> {
 
@@ -64,7 +62,7 @@ export class PlayerService {
     /*    NOT THE PIECE OF SHIT CODE I CAN'T GET TO WORK ABOVE 
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
-          let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
+          let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
         
             return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
@@ -75,7 +73,7 @@ export class PlayerService {
 
         getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
-          let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
+          let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
         
             return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
