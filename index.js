@@ -139,7 +139,7 @@ const http = require('https');
 
      /* Season 4 lookup  */
 
-     app.get('/player/:seasonfour', function(request, response) {
+     app.get('/player/:id', function(request, response) {
 
         const id = request.params.id;
         const stats_url = `https://api.pubg.com/shards/steam/players/${seasonfour}/seasons/division.bro.official.pc-2018-04`;
