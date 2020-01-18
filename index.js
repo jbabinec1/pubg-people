@@ -143,7 +143,7 @@ const http = require('https');
      app.get('/season4/:id', function(request, response) {
 
         const id = request.params.id;
-        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`;
+        const statsfour_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`;
         
         var options = {
    
@@ -158,7 +158,7 @@ const http = require('https');
    
       let data = "";
    
-       let seasonRequestTwo = http.request(stats_url, options, function (res) {
+       let seasonRequestTwo = http.request(statsfour_url, options, function (res) {
    
            console.log("connected sonion");
    
