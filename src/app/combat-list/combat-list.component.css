@@ -136,13 +136,6 @@ th {
 }
 
 
-@media screen and (max-width: 611px) {
-
-    .inner-table-wrapper {
-        display: block!important;
-        width: 1241px!important;
-        justify-content: space-evenly;
-    } 
 
 
     .player-rank-app {
@@ -165,4 +158,25 @@ p.ng-star-inserted {
 
     margin: 2;
     
+
 } 
+
+
+@media screen and (max-width: 611px) {
+
+    .inner-table-wrapper {
+        display: block!important;
+        width: 1241px!important;
+        justify-content: space-evenly;
+
+    }
+        
+        td {
+            font-size: 12px;
+        }
+
+    }
+
+    
+     
+
