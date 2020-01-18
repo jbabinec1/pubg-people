@@ -138,7 +138,7 @@ const http = require('https');
 
 
 
-     /* Season 4 lookup  */
+     /* Season 4 lookup  
 
      app.get('/season4/:id', function(request, response) {
 
@@ -179,6 +179,8 @@ const http = require('https');
        seasonRequestTwo.end();
        //if (err) return console.log(err);
         }) 
+
+        */
    
 
       
