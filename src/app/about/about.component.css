@@ -1,7 +1,7 @@
 
 .about {
     
-    height: 72%;
+    height: 79%;
     justify-content: center;
     display: flex; 
     padding-top: 21px;
@@ -10,7 +10,7 @@
 
 .inner-about {
     
-    width: 59%;
+    width: 83%;
     display: flex;
     border: 1px solid;
     justify-content: center;
