@@ -80,7 +80,7 @@ app.get('/players/:player', function(request, response) {
   
           res.on("end", () => {
               console.log("data collect motha efffa");
-              //response.end(JSON.parse(data));
+           
               //response.end(JSON.stringify(data));
              
               let objectParsed = JSON.parse(data);
