@@ -74,11 +74,11 @@ export class PlayerService {
 
 
 
-        getSeasonFourStats(idd: string):Observable<SeasonStats[]> {
+        getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
           let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
         
-            return this.http.get<SeasonStats[]>(`/season4/${idd}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
+            return this.http.get<SeasonStats[]>(`/season4/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
           } 
 
