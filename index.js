@@ -134,14 +134,15 @@ const http = require('https');
 
     apiRequest.end();
 
-     }) 
+     });
+
 
 
      /* Season 4 lookup  */
 
      app.get('/season_4/:idd', function(request, response) {
 
-        const idd = request.params.id;
+        const idd = request.params.idd;
         const stats_url = `https://api.pubg.com/shards/steam/players/${idd}/seasons/division.bro.official.pc-2018-04`;
         
         var options = {
@@ -157,7 +158,7 @@ const http = require('https');
    
       let data = "";
    
-       let seasonRequest = http.request(stats_url, options, function (res) {
+       let seasonRequestTwo = http.request(stats_url, options, function (res) {
    
            console.log("connected sonion");
    
@@ -170,12 +171,12 @@ const http = require('https');
                //response.end(JSON.parse(data));
                //response.end(JSON.stringify(data));
               
-               let objectParsed = JSON.parse(data);
-               response.send(objectParsed);
+               let objectParsedd = JSON.parse(data);
+               response.send(objectParsedd);
 
            }) 
        })
-       seasonRequest.end();
+       seasonRequestTwo.end();
        //if (err) return console.log(err);
         }) 
    
