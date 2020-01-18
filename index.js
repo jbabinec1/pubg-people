@@ -24,9 +24,11 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }
        };
 
-   let data = "";
 
    let apiRequest = http.request(api_url, options, function (res) {
+
+
+   let data = "";
 
      //  console.log("connected sonion");
 
