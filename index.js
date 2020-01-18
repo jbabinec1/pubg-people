@@ -8,49 +8,6 @@ const http = require('https');
 //const API_KEY = process.env.API_KEY;
 
 
-// Make request to get ID property of player object
-
- app.get('/players/:player', function(request, response) {
-
-     const player = request.params.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
-     
-     var options = {
-
-        method: "GET",
-        observe: 'body',
-        responseType: 'json',
-        headers: {
-            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-            "accept": 'application/vnd.api+json' }
-        };
-
-    let data = "";
-
-    let apiRequest = http.request(api_url, options, function (res) {
-
-      //  console.log("connected sonion");
-
-        res.on("data", chunk => {
-            data += chunk;
-        })
-
-        res.on("end", () => {
-            
-              //response.json((data));
-               //response.end(JSON.parse(data));
-               let objectParsed = JSON.parse(data);
-               response.send(objectParsed);
-
-        }) 
-
-    })
-
-    apiRequest.end();
-
-     }) 
-
-
 
 
      app.get('/player/:id', function(request, response) {
