@@ -110,8 +110,6 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
   
   seasonFiveSwitch() {
 
-   // const playerName: string = this.route.snapshot.queryParamMap.get('player');
-    //this.playerService.getPlayer(playerName).pipe(share()).subscribe(data => {this.player = data}); 
   
     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
          switchMap( player => { 
