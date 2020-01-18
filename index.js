@@ -9,7 +9,6 @@ const http = require('https');
 // Make request to get ID property of player object
 
 
-/*  BRB
 app.get('/players/:player', function(request, response) {
 
     const player = request.params.player;
@@ -95,7 +94,7 @@ app.get('/players/:player', function(request, response) {
   
 
      
-    */
+    
 
 
 

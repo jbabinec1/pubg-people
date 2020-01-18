@@ -20,7 +20,7 @@ export class PlayerService {
   constructor(private http: HttpClient) { }
 
 
-/* Testing version of getPlayer until I get the proxy working for testing */
+/* Testing version of getPlayer until I get the proxy working for testing 
 
  getPlayer(player: string):Observable<Player[]> {
 
@@ -31,11 +31,11 @@ export class PlayerService {
   
       return this.http.get<Player[]> (`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share());    
   
-      }  
+      }  */
 
 
 
-      /* THE node ONLY THING KIND OF FUCKING WORKING 
+      /* THE node ONLY THING KIND OF FUCKING WORKING */
 
   getPlayer(player: string):Observable<Player[]> {
 
@@ -46,22 +46,22 @@ export class PlayerService {
   
     return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
-      }  */
+      }  
 
 
 
-      /* GET SEASON 5 STATS HIDING KEY
+      /* GET SEASON 5 STATS HIDING KEY */
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;  
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
           return this.http.get<SeasonStats[]>(`/player/${id}`, {observe:'body', responseType: 'json', headers: getHeaders }).pipe(share());
              
-        }   */
-        
+        }   
+
    
 
-    /*    Testing version of getSeasonStats until I can get my proxy working */
+    /*    Testing version of getSeasonStats until I can get my proxy working 
 
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
@@ -69,7 +69,7 @@ export class PlayerService {
         
             return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
-          } 
+          } */
 
 
 
