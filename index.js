@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const http = require('https');
-var toobusy = require('toobusy');
+const rateLimit = require("express-rate-limit");
+
 
 
 
@@ -132,18 +133,18 @@ app.get('/players/:player', function(request, res) {
  /* UGHHHHHHHHH 
     }) */
 
-
-    app.use(function(req, res, next) {
-        // check if we're toobusy() - note, this call is extremely fast, and returns
-        // state that is cached at a fixed interval
-        if (toobusy()) res.send(503, "I'm busy right now, sorry.");
-        else next();
+    const limiter = rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 9 // limit each IP to 100 requests per windowMs
       });
 
 
 
 
-app.use(express.static('dist/pubg-app'))
+
+
+app.use(express.static('dist/pubg-app'));
+app.use(limiter);
 
 const port = process.env.PORT || 3000; 
 
