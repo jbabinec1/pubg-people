@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const http = require('https');
+var toobusy = require('toobusy');
 
 
 
@@ -131,6 +132,13 @@ app.get('/players/:player', function(request, res) {
  /* UGHHHHHHHHH 
     }) */
 
+
+    app.use(function(req, res, next) {
+        // check if we're toobusy() - note, this call is extremely fast, and returns
+        // state that is cached at a fixed interval
+        if (toobusy()) res.send(503, "I'm busy right now, sorry.");
+        else next();
+      });
 
 
 
