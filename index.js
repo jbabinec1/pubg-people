@@ -41,10 +41,8 @@ app.get('/players/:player', function(request, response) {
            
              //response.json((data));
               //response.end(JSON.parse(data));
-              if(error) {
-                return console.dir(error);
-            }
-              if(res.statusCode != 200){
+           
+              if(res.statusCode = 200){
                    //200 is the status code on successful requests in this case
                 let objectParsed = JSON.parse(data);
                 response.send(objectParsed);
