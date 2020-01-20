@@ -43,7 +43,8 @@ app.get('/players/:player', function(request, response) {
               //response.end(JSON.parse(data));
            
             
-                let objectParsed = JSON.parse(data);
+                //let objectParsed = JSON.parse(data);
+              let objectParsed =  JSON.parse(JSON.stringify(data));
                 response.send(objectParsed);
                 
             
