@@ -10,7 +10,7 @@ const rateLimit = require("express-rate-limit");
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response) {
+app.get('/players/:player', function(request, response, next) {
 
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
@@ -42,12 +42,11 @@ app.get('/players/:player', function(request, response) {
              //response.json((data));
               //response.end(JSON.parse(data));
            
-              if(res.statusCode = 200){
-                   //200 is the status code on successful requests in this case
+            
                 let objectParsed = JSON.parse(data);
                 response.send(objectParsed);
                 
-            }
+            
 
 
 
@@ -57,11 +56,16 @@ app.get('/players/:player', function(request, response) {
 
 
 
-   })
+   }).catch(next);
 
    apiRequest.end();
 
     }) 
+
+
+    app.use(function (err, req, res, next){
+        console.log(err);
+    })
 
 
 
