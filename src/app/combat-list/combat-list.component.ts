@@ -11,6 +11,7 @@ import {SeasonsService } from '.././services/seasons.service';
 import { Seasons } from '.././model/seasons';
 import { switchMap, map, first, catchError, share, retryWhen, retry, delay } from 'rxjs/operators';
 import { MatTabsModule } from '@angular/material/tabs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 //import { ViewEncapsulation } from '@angular/compiler/src/core';
 
 

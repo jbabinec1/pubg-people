@@ -9,6 +9,8 @@ import { Seasons } from '../model/seasons';
 import {SeasonstatsService} from '../services/seasonstats.service';
 import { SeasonStats } from '../model/season-stats';
 import { switchMap, map, first, share, delay, retryWhen } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { of } from 'rxjs';
 import { isNgTemplate } from '@angular/compiler';
 //import { Home, HomeComponent } from 'src/app/home/home.component';
