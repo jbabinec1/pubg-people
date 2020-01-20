@@ -35,11 +35,8 @@ export class PlayerService {
 
 
 
-<<<<<<< HEAD
       /* THE node ONLY THING KIND OF FUCKING WORKING */
 
-=======
->>>>>>> 60d65193f3f4eb92c49ead57595508b4d216da67
   getPlayer(player: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
@@ -81,11 +78,7 @@ export class PlayerService {
 /*
         getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
-<<<<<<< HEAD
-          let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
-=======
           let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
->>>>>>> 60d65193f3f4eb92c49ead57595508b4d216da67
         
             return this.http.get<SeasonStats[]>(`/season4/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
