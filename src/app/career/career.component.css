@@ -263,3 +263,10 @@
     margin-bottom: 9px;
 }
 
+
+
+@media screen and (max-width: 375px) {
+    .mat-form-field-wrapper {
+      margin-right: 97px;
+    }
+  }

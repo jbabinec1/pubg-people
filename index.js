@@ -37,24 +37,16 @@ app.get('/players/:player', function(request, response) {
            data += chunk;
        })
 
-       res.on("end", () => {
-           
-             //response.json((data));
-              //response.end(JSON.parse(data));
-           
+       res.on("end", () => {          
             
-                //let objectParsed = JSON.parse(data);
+             //let objectParsed = JSON.parse(data);
               let objectParsed =  JSON.parse(JSON.stringify(data));
                 response.send(objectParsed);
                 
-            
-
-
 
            //   let objectParsed = JSON.parse(data);
           //    response.send(objectParsed);
        }) 
-
 
 
    })
