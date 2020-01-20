@@ -27,7 +27,7 @@ export class PlayerService {
     //const api_key = process.env.API_KEY;
     let API_KEY: any;
 
-    let getHeaders = new HttpHeaders({'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug' , 'Accept': 'application/vnd.api+json'}); 
+    let getHeaders = new HttpHeaders({'Authorization': 'API_KEY' , 'Accept': 'application/vnd.api+json'}); 
   
       return this.http.get<Player[]> (`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders,  }).pipe(share());    
   
@@ -35,8 +35,11 @@ export class PlayerService {
 
 
 
+<<<<<<< HEAD
       /* THE node ONLY THING KIND OF FUCKING WORKING */
 
+=======
+>>>>>>> 60d65193f3f4eb92c49ead57595508b4d216da67
   getPlayer(player: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
@@ -65,7 +68,7 @@ export class PlayerService {
 
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
-          let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
+          let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
         
             return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
@@ -78,7 +81,11 @@ export class PlayerService {
 /*
         getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
+<<<<<<< HEAD
           let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
+=======
+          let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
+>>>>>>> 60d65193f3f4eb92c49ead57595508b4d216da67
         
             return this.http.get<SeasonStats[]>(`/season4/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
