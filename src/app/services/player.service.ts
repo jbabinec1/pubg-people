@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 //import { query } from '@angular/core/src/render3';
 import { Player } from '../model/player';
 import { SeasonStats } from '../model/season-stats';
-import { catchError,retry, shareReplay, share, retryWhen } from 'rxjs/operators';
+import { catchError, retry, shareReplay, share, retryWhen } from 'rxjs/operators';
 //import {index} from '../../../index.js'
 
 
@@ -42,7 +42,7 @@ export class PlayerService {
     //const api_key = process.env.API_KEY;
     //let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
 
-    let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'X-RateLimit-Limit': '9' }); 
+    let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
   
     return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
