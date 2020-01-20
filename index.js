@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const http = require('https');
 const rateLimit = require("express-rate-limit");
+var retry = require('retry');
 
 
 
@@ -137,7 +138,21 @@ app.get('/players/:player', function(request, res) {
  //  let data = "";
  
  /* UGHHHHHHHHH 
+
     }) */
+
+
+    var operation = retry.operation({
+        retries: 5,
+        factor: 3,
+        minTimeout: 1 * 1000,
+        maxTimeout: 60 * 1000,
+        randomize: true,
+      });
+
+
+
+
 
     const limiter = rateLimit({
         windowMs: 4 * 60 * 1000, // 15 minutes
