@@ -37,7 +37,8 @@ app.get('/players/:player', function(request, response) {
             res.on("end", function () {
              let objectParsed =  JSON.parse(JSON.stringify(data));
                 if (objectParsed.success) {
-                    callback(objectParsed);
+                    callback(objectParsed)
+                    response.send(objectParsed); ;
                 }
                 else {
                     sendRequest(options, callback);
