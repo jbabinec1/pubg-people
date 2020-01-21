@@ -4,7 +4,7 @@ const path = require('path');
 const https = require('https');
 const rateLimit = require("express-rate-limit");
 const retry = require('retry');
- 
+
 
 //var request = require('requestretry');
 
@@ -33,13 +33,13 @@ app.get('/players/:player', function(request, response) {
        request(api_url, options, function (err, response, body) {
 
         if (err) { return console.log(err); }
-        //let objectParsed =  JSON.parse(JSON.stringify(body));           
-       //response.send(objectParsed); 
+        let objectParsed =  JSON.parse(JSON.stringify(body));           
+        response.send(objectParsed); 
     })
  
    // apiRequest.end();
 
-    response.send(objectParsed);
+    
     }); 
 
 
