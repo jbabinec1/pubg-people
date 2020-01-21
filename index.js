@@ -32,9 +32,34 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }     
 
        };
+
+
+
+
+
+       function sendRequest(options, callback) {
+        let apiRequest = https.request(api_url,options, function (res) {
+            let data = "";
+            res.on("data", chunk => {
+                data + chunk;
+            });
+            res.on("end", function () {
+              objectParsed =  JSON.parse(JSON.stringify(data));
+                if (objectParsed) {
+                    callback(objectParsed);
+                }
+                else {
+                    sendRequest(options, callback);
+                }
+            });
+        });
+        apiRequest.end();
+    }
+    
+    sendRequest(options, callback);
        
       
-    /*   request( options, function (err, res, body) {
+     /*   request(options, function (err, res, body) {
 
         if (err) { return console.log(err); 
         }
@@ -45,7 +70,7 @@ app.get('/players/:player', function(request, response) {
    // apiRequest.end();
 
    
-   let apiRequest = https.request(api_url, options, function (res) {
+ /*  let apiRequest = https.request(api_url, options, function (res) {
 
     let data = "";
 
@@ -60,9 +85,9 @@ app.get('/players/:player', function(request, response) {
            
             response.send(objectParsed);               
     }) 
-}) 
+})  */
 
- apiRequest.end();
+ //apiRequest.end();
 
 
     
