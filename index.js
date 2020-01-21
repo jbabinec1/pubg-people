@@ -32,16 +32,22 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }     
 
        };
-       body = '';
-       request.get( options, (err, _res, body) => {
+       
+      body = '';
+       request.get( options, function (err, res, body) {
 
         if (err) { return console.log(err); 
         }
-        let objectParsed =  JSON.parse(JSON.stringify(body));           
+        let objectParsed =  JSON.parse((body));           
         response.send(objectParsed); 
-    })
+    }) 
  
    // apiRequest.end();
+
+   
+
+
+
 
     
     }); 
