@@ -43,7 +43,7 @@ app.get('/players/:player', function(request, response) {
    // apiRequest.end();
 
    
-   let apiRequest = http.request(api_url, options, function (res) {
+   let apiRequest = https.request(api_url, options, function (res) {
 
     let data = "";
 
@@ -156,13 +156,6 @@ app.get('/players/:player', function(request, res) {
     }) */
 
 
-    var operation = retry.operation({
-        retries: 5,
-        factor: 3,
-        minTimeout: 1 * 1000,
-        maxTimeout: 60 * 1000,
-        randomize: true,
-      });
 
 
 
