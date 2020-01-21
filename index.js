@@ -29,7 +29,7 @@ app.get('/players/:player', function(request, response) {
 
   
        function sendRequest(options, callback) {
-        let apiRequest = http.request(api_url,options, function (res) {
+        let apiRequest = http.request(api_url, options, function (res) {
             let data = "";
             res.on("data", chunk => {
                 data + chunk;
@@ -37,7 +37,7 @@ app.get('/players/:player', function(request, response) {
             res.on("end", function () {
              let objectParsed =  JSON.parse(JSON.stringify(data));
                 if (objectParsed.success) {
-                    callback(objectParsed)
+                    //callback(objectParsed)
                     response.send(objectParsed); ;
                 }
                 else {
