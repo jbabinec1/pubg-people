@@ -29,7 +29,7 @@ app.get('/players/:player', function(request, response) {
        };
 
   
-       let apiRequest =  request(api_url, options, function (err, response, body) {
+       request(api_url, options, function (err, response, body) {
 
         if (err) { return console.log(err); }
         let objectParsed =  JSON.parse(JSON.stringify(body));           
@@ -39,7 +39,7 @@ app.get('/players/:player', function(request, response) {
  
   //sendRequest end
  
-    apiRequest.end();
+   // apiRequest.end();
 
   /*  async.retry(3, apiRequest, function(err, result) {
         response.send(objectParsed);  
