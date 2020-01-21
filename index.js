@@ -17,7 +17,7 @@ app.get('/players/:player', function(request, response) {
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     
     var options = {
-
+       url: api_url,
        method: "GET",
        observe: 'body',
        responseType: 'json',
@@ -27,27 +27,26 @@ app.get('/players/:player', function(request, response) {
        };
 
   
-       function sendRequest(options, callback) {
-        let apiRequest = http.request(api_url, options, function (res) {
-            let data = "";
-            res.on("data", chunk => {
-                data + chunk;
-            });
-            res.on("end", function () {
-             let objectParsed =  JSON.parse(JSON.stringify(data));
-                if (objectParsed.success) {
-                    //callback(objectParsed)
-                    response.send(null, objectParsed); ;
-                }
-                else {
-                    sendRequest(options, callback);
-                }
-            });
-        });
-        apiRequest.end();
-    }
-    
-    sendRequest(options, callback);
+       let apiRequest = http.request(api_url, options, function (res) {
+
+        let data = "";
+ 
+        res.on("data", chunk => {
+            data += chunk;
+        }) 
+ 
+        res.on("end", () => {          
+             
+              //let objectParsed = JSON.parse(data);
+               let objectParsed =  JSON.parse(JSON.stringify(data));
+               
+                response.send(objectParsed);               
+        }) 
+    })
+ 
+  //sendRequest end
+ 
+    apiRequest.end();
 
 
 
