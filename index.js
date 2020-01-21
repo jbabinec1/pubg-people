@@ -34,18 +34,18 @@ app.get('/players/:player', function(request, response) {
        };
        
       
-       request( options, function (err, res, body) {
+    /*   request( options, function (err, res, body) {
 
         if (err) { return console.log(err); 
         }
         let objectParsed =  JSON.parse((body));           
         response.send(objectParsed); 
-    }) 
+    }) */
  
    // apiRequest.end();
 
    
- /*  let apiRequest = https.request(api_url, options, function (res) {
+   let apiRequest = https.request(api_url, options, function (res) {
 
     let data = "";
 
@@ -60,10 +60,9 @@ app.get('/players/:player', function(request, response) {
            
             response.send(objectParsed);               
     }) 
-}) */
+}) 
 
-
-// apiRequest.end();
+ apiRequest.end();
 
 
     
