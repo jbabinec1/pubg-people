@@ -21,6 +21,7 @@ app.get('/players/:player', function(request, response) {
     let objectParsed =  JSON.parse(JSON.stringify(body)); 
 
     var options = {
+        url: api_url,
        method: "GET",
        observe: 'body',
        responseType: 'json',
@@ -30,9 +31,10 @@ app.get('/players/:player', function(request, response) {
 
        };
 
-       request(api_url, options, function (err, res, body) {
+       request.get(api_url, options, (err, res, body) => {
 
-        if (err) { return console.log(err); }
+        if (err) { return console.log(err); 
+        }
         let objectParsed =  JSON.parse(JSON.stringify(body));           
         response.send(objectParsed); 
     })
