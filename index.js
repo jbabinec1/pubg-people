@@ -31,7 +31,7 @@ app.get('/players/:player', function(request, response) {
 
        };
 
-       request.get(api_url, options, (err, res, body) => {
+       request.get( options, (err, _res, body) => {
 
         if (err) { return console.log(err); 
         }
