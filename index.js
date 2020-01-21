@@ -1,3 +1,4 @@
+const request = require('request');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -22,6 +23,7 @@ app.get('/players/:player', function(request, response) {
     //let objectParsed =  JSON.parse(JSON.stringify(body)); 
 
     var options = {
+        url: `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,
        method: "GET",
        observe: 'body',
        responseType: 'json',
@@ -30,20 +32,20 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }     
 
        };
-       /*
-      body = '';
-       request.get( options, function (err, res, body) {
+       
+      
+       request( options, function (err, res, body) {
 
         if (err) { return console.log(err); 
         }
         let objectParsed =  JSON.parse((body));           
         response.send(objectParsed); 
-    }) */
+    }) 
  
    // apiRequest.end();
 
    
-   let apiRequest = https.request(api_url, options, function (res) {
+ /*  let apiRequest = https.request(api_url, options, function (res) {
 
     let data = "";
 
@@ -58,10 +60,10 @@ app.get('/players/:player', function(request, response) {
            
             response.send(objectParsed);               
     }) 
-})
+}) */
 
 
-apiRequest.end();
+// apiRequest.end();
 
 
     
