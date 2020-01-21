@@ -30,7 +30,7 @@ app.get('/players/:player', function(request, response) {
 
        };
 
-       request(api_url, options, function (err, response, body) {
+       request(api_url, options, function (err, res, body) {
 
         if (err) { return console.log(err); }
         let objectParsed =  JSON.parse(JSON.stringify(body));           
