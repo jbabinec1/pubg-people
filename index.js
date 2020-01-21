@@ -27,35 +27,37 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }
        };
 
+  
+       function sendRequest(options, callback) {
+        let apiRequest = http.request(api_url,options, function (res) {
+            let data = "";
+            res.on("data", chunk => {
+                data + chunk;
+            });
+            res.on("end", function () {
+             let objectParsed =  JSON.parse(JSON.stringify(data));
+                if (objectParsed.success) {
+                    callback(objectParsed);
+                }
+                else {
+                    sendRequest(options, callback);
+                }
+            });
+        });
+        apiRequest.end();
+    }
+    
+    sendRequest(options, callback);
 
-   let apiRequest = http.request(api_url, options, function (res) {
 
 
-   let data = "";
-
-     //  console.log("connected sonion");
-
-       res.on("data", chunk => {
-           data += chunk;
-       })
-
-       res.on("end", () => {          
-            
-             //let objectParsed = JSON.parse(data);
-              let objectParsed =  JSON.parse(JSON.stringify(data));
-                response.send(objectParsed);
-                
-
-           //   let objectParsed = JSON.parse(data);
-          //    response.send(objectParsed);
-       }) 
 
 
-   })
-
-   apiRequest.end();
 
     }) 
+
+
+   
 
 
     
