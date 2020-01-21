@@ -16,14 +16,12 @@ const retry = require('retry');
 
 app.get('/players/:player', function(request, response) {
   
-    const request = require('request');
 
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     //let objectParsed =  JSON.parse(JSON.stringify(body)); 
 
     var options = {
-       url: api_url,
        method: "GET",
        observe: 'body',
        responseType: 'json',
