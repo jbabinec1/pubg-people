@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const http = require('http');
+const https = require('https');
 const rateLimit = require("express-rate-limit");
 var retry = require('retry');
-//var request = require('requestretry');
-let request = require('request');
 
+//const request = require('request');
+//var request = require('requestretry');
 
 
 
@@ -25,11 +25,12 @@ app.get('/players/:player', function(request, response) {
        headers: {
            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
            "accept": 'application/vnd.api+json' }
+           
 
        };
 
   
-      let apiRequest = request(api_url, options, function (res) {
+       let apiRequest = https.request(api_url, options, function (res) {
 
         let data = "";
  
@@ -53,8 +54,6 @@ app.get('/players/:player', function(request, response) {
   /*  async.retry(3, apiRequest, function(err, result) {
         response.send(objectParsed);  
     }); */
-
-
 
 
 
