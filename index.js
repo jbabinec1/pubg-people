@@ -1,10 +1,10 @@
-const request = require('request');
 const express = require('express');
 const app = express();
 const path = require('path');
 const https = require('https');
 const rateLimit = require("express-rate-limit");
 const retry = require('retry');
+const request = require('request');
 
 
 
@@ -32,45 +32,10 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }     
 
        };
-
-
-
-
-
-       function sendRequest(options, callback) {
-        let apiRequest = https.request(api_url,options, function (res) {
-            let data = "";
-            res.on("data", chunk => {
-                data + chunk;
-            });
-            res.on("end", function () {
-              objectParsed =  JSON.parse(JSON.stringify(data));
-                if (objectParsed) {
-                    callback(objectParsed);
-                }
-                else {
-                    sendRequest(options, callback);
-                }
-            });
-        });
-        apiRequest.end();
-    }
-    
-    sendRequest(options, callback);
        
-      
-     /*   request(options, function (err, res, body) {
-
-        if (err) { return console.log(err); 
-        }
-        let objectParsed =  JSON.parse((body));           
-        response.send(objectParsed); 
-    }) */
- 
-   // apiRequest.end();
 
    
- /*  let apiRequest = https.request(api_url, options, function (res) {
+   let apiRequest = https.request(api_url, options, function (res) {
 
     let data = "";
 
@@ -85,9 +50,9 @@ app.get('/players/:player', function(request, response) {
            
             response.send(objectParsed);               
     }) 
-})  */
+})  
 
- //apiRequest.end();
+ apiRequest.end();
 
 
     
@@ -95,11 +60,6 @@ app.get('/players/:player', function(request, response) {
 
 
    
-
-
-    
-
-
 
 
     app.get('/player/:id', function(request, response) {
@@ -145,11 +105,14 @@ app.get('/players/:player', function(request, response) {
 
      
     
-   /*    app.use(function(err, req, res, next) {
-        res.status(503);
-        res.send("Oops, something went wrong.")
-     }); */
+      /*    request(options, function (err, res, body) {
 
+        if (err) { return console.log(err); 
+        }
+        let objectParsed =  JSON.parse((body));           
+        response.send(objectParsed); 
+    }) */
+   // apiRequest.end();
 
 
 
