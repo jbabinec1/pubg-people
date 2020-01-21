@@ -21,6 +21,7 @@ app.get('/players/:player', function(request, response) {
        url: api_url,
        maxAttempts: 5,  // (default) try 5 times 
        retryDelay: 5000,
+       retrySrategy: request.RetryStrategies.HTTPOrNetworkError,
        method: "GET",
        observe: 'body',
        responseType: 'json',
