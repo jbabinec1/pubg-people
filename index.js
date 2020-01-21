@@ -4,6 +4,7 @@ const path = require('path');
 const http = require('https');
 const rateLimit = require("express-rate-limit");
 var retry = require('retry');
+var request = require('requestretry');
 
 
 
@@ -18,6 +19,8 @@ app.get('/players/:player', function(request, response) {
     
     var options = {
        url: api_url,
+       maxAttempts: 5,  // (default) try 5 times 
+       retryDelay: 5000,
        method: "GET",
        observe: 'body',
        responseType: 'json',
@@ -48,6 +51,9 @@ app.get('/players/:player', function(request, response) {
  
     apiRequest.end();
 
+  /*  async.retry(3, apiRequest, function(err, result) {
+        response.send(objectParsed);  
+    }); */
 
 
 
