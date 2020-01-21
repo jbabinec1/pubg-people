@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const http = require('https');
+const http = require('http');
 const rateLimit = require("express-rate-limit");
 var retry = require('retry');
-var request = require('requestretry');
-//var request = require('request');
+//var request = require('requestretry');
+let request = require('request');
 
 
 
@@ -19,16 +19,13 @@ app.get('/players/:player', function(request, response) {
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     
     var options = {
-       url: api_url,
        method: "GET",
        observe: 'body',
        responseType: 'json',
        headers: {
            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-           "accept": 'application/vnd.api+json' },
-           maxAttempts: 5,  // (default) try 5 times 
-           retryDelay: 5000,
-           retrySrategy: request.RetryStrategies.HTTPOrNetworkError
+           "accept": 'application/vnd.api+json' }
+
        };
 
   
