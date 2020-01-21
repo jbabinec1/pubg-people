@@ -29,21 +29,12 @@ app.get('/players/:player', function(request, response) {
        };
 
   
-       let apiRequest = https.request(api_url, options, function (res) {
+       let apiRequest =  request(api_url, options, function (err, response, body) {
 
-        let data = "";
- 
-        res.on("data", chunk => {
-            data += chunk;
-        }) 
- 
-        res.on("end", () => {          
-             
-              //let objectParsed = JSON.parse(data);
-               let objectParsed =  JSON.parse(JSON.stringify(data));
-               
-                response.send(objectParsed);               
-        }) 
+        if (err) { return console.log(err); }
+        let objectParsed =  JSON.parse(JSON.stringify(body));           
+       response.send(objectParsed);
+    
     })
  
   //sendRequest end
