@@ -85,7 +85,7 @@ app.get('/players/:player', function(request, response) {
   
      let data = "";
   
-      let seasonRequest = http.request(stats_url, options, function (res) {
+      let seasonRequest = https.request(stats_url, options, function (res) {
   
           console.log("connected sonion");
   
