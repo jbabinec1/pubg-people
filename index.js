@@ -4,7 +4,7 @@ const path = require('path');
 const https = require('https');
 const rateLimit = require("express-rate-limit");
 const retry = require('retry');
-const request = require('request'); 
+ 
 
 //var request = require('requestretry');
 
@@ -14,11 +14,12 @@ const request = require('request');
 
 
 app.get('/players/:player', function(request, response) {
+    const request = require('request');
 
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     let objectParsed =  JSON.parse(JSON.stringify(body)); 
-       
+
     var options = {
        method: "GET",
        observe: 'body',
