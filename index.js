@@ -28,39 +28,13 @@ app.get('/players/:player', function(request, response) {
        responseType: 'json',
        headers: {
            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-           "accept": 'application/vnd.api+json' }     
+           "accept": 'application/vnd.api+json', 'Cache-Control': 'no-cache' }     
 
        };
 
 
 
-       function sendRequest(options, callback) {
-        let apiRequest = http.request(api_url, options, function (res) {
-            let data = "";
-            res.on("data", chunk => {
-                data + chunk;
-            });
-            res.on("end", function () {
-              objectParsed =  JSON.parse(JSON.stringify(data));
-                if (objectParsed) {
-                    callback(objectParsed);
-                }
-                else {
-                    sendRequest(options, callback);
-                }
-            });
-        });
-        apiRequest.end();
-    }
-    
-    sendRequest(options, callback);
-
-     
-
-
-
-
-   /*   let apiRequest = https.request(api_url, options, function (res) {
+      let apiRequest = https.request(api_url, options, function (res) {
         
         let data = "";
         res.on("data", chunk => {
@@ -74,13 +48,8 @@ app.get('/players/:player', function(request, response) {
                
                 response.send(objectParsed);               
         }) 
-    }) */
- 
-
-
-  //sendRequest end
-  
-   //apiRequest.end();
+    }) 
+   apiRequest.end();
     }) 
 
 
