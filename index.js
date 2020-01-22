@@ -17,7 +17,7 @@ const request = require('request');
 
 app.get('/players/:player', function(req, res) {
     var options = {
-    url: api_url,    
+    url: `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,    
     method: "GET",
     observe: 'body',
     responseType: 'json',
@@ -26,7 +26,7 @@ app.get('/players/:player', function(req, res) {
         "accept": 'application/vnd.api+json' }     
     };
     const player = request.params.player;
-     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+     //const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     let data = "";
     var callback = function(response) {
     res.on("data", chunk => {
