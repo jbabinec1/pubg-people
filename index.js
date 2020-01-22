@@ -5,6 +5,7 @@ const https = require('https');
 const rateLimit = require("express-rate-limit");
 const retry = require('retry');
 const request = require('request');
+let httpService = require('http-request-retry');
 
 
 
@@ -21,6 +22,9 @@ app.get('/players/:player', function(request, response) {
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     
     var options = {
+        url: api_url,
+        retry:3,    //optional; type NUMBER
+       timeout: 5000,
        method: "GET",
        observe: 'body',
        responseType: 'json',
@@ -30,7 +34,22 @@ app.get('/players/:player', function(request, response) {
 
        };
 
-       let apiRequest = https.request(api_url, options, function (res) {
+       httpService.config({
+        debug: false, //log consle if error
+        delay: 1000, //waiting time between each retry
+      });
+
+      httpService.requestPromise(options).then(response =>{
+        let objectParsed =  JSON.parse(JSON.stringify(data));        
+        response.send(objectParsed);  
+      }).catch(err=>{
+        console.error(err);
+      })
+
+
+
+
+   /*   let apiRequest = https.request(api_url, options, function (res) {
         
         let data = "";
         res.on("data", chunk => {
@@ -44,10 +63,13 @@ app.get('/players/:player', function(request, response) {
                
                 response.send(objectParsed);               
         }) 
-    })
+    }) */
  
+
+
   //sendRequest end
-    apiRequest.end();
+  
+   //apiRequest.end();
     }) 
 
 
