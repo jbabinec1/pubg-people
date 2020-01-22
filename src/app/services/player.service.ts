@@ -42,7 +42,7 @@ export class PlayerService {
     //const api_key = process.env.API_KEY;
     //let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
 
-    let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
+    let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'Cache-Control': 'no-cache'}); 
   
     return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
@@ -54,7 +54,7 @@ export class PlayerService {
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;  
-        let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json'}); 
+        let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'Cache-Control': 'no-cache'}); 
           return this.http.get<SeasonStats[]>(`/player/${id}`, {observe:'body', responseType: 'json', headers: getHeaders }).pipe(share());
              
         }   
