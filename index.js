@@ -2,10 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const https = require('https');
-const rateLimit = require("express-rate-limit");
 const retry = require('retry');
 const request = require('request');
-let httpService = require('http-request-retry');
 
 
 
@@ -21,22 +19,21 @@ app.get('/players/:player', function(request, response) {
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     
-    let options = {
-        url: api_url,
+    var options = {
        method: "GET",
        observe: 'body',
        responseType: 'json',
        headers: {
            "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-           "accept": 'application/vnd.api+json', 'Cache-Control': 'no-cache' }     
+           "accept": 'application/vnd.api+json' }     
 
        };
 
+  
+       let apiRequest = https.request(api_url, options, function (res) {
 
-
-      let apiRequest = https.request(api_url, options, function (res) {
-        
         let data = "";
+ 
         res.on("data", chunk => {
             data += chunk;
         }) 
@@ -48,18 +45,14 @@ app.get('/players/:player', function(request, response) {
                
                 response.send(objectParsed);               
         }) 
-    }) 
-   apiRequest.end();
+    })
+ 
+    apiRequest.end();
+
     }) 
 
 
    
-
-
-    
-
-
-
 
     app.get('/player/:id', function(request, response) {
 
@@ -152,10 +145,7 @@ app.get('/players/:player', function(request, res) {
 
 
 
-    const limiter = rateLimit({
-        windowMs: 4 * 60 * 1000, // 15 minutes
-        max: 9 // limit each IP to 100 requests per windowMs
-      });
+   
 
 
 
@@ -163,7 +153,7 @@ app.get('/players/:player', function(request, res) {
 
 
 app.use(express.static('dist/pubg-app'));
-app.use(limiter);
+
 
 const port = process.env.PORT || 3000; 
 
