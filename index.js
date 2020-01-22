@@ -15,10 +15,10 @@ const request = require('request');
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response) {
+app.get('/players/:player', function(req, response) {
 
-const player = request.params.player;
-   const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`; 
+const player = req.params.player;
+  api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
 
     var options = {
        
@@ -30,7 +30,7 @@ const player = request.params.player;
         "accept": 'application/vnd.api+json' }     
     };
    
-    request(api_url, options, function (error, response, body) {
+    request(`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`, options, function (error, response, body) {
         console.log('error:', error); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         console.log('body:', body); // Print the HTML for the Google homepage.
