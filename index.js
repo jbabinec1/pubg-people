@@ -15,34 +15,46 @@ const request = require('request');
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(req, response) {
+app.get('/players/:player', function(request, response) {
 
-const player = req.params.player;
-  api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
-
+    const player = request.params.player;
+    const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+    
     var options = {
-       
-    method: "GET",
-    observe: 'body',
-    responseType: 'json',
-    headers: {
-        "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-        "accept": 'application/vnd.api+json' }     
-    };
+       method: "GET",
+       observe: 'body',
+       responseType: 'json',
+       headers: {
+           "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
+           "accept": 'application/vnd.api+json' }     
+
+       };
+
+       let apiRequest = https.request(api_url, options, function (res) {
+        
+        let data = "";
+        res.on("data", chunk => {
+            data += chunk;
+        }) 
+ 
+        res.on("end", () => {          
+             
+              //let objectParsed = JSON.parse(data);
+               let objectParsed =  JSON.parse(JSON.stringify(data));
+               
+                response.send(objectParsed);               
+        }) 
+    })
+ 
+  //sendRequest end
+    apiRequest.end();
+    }) 
+
+
    
-    request(`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`, options, function (error, response, body) {
-
-         if (error) { return console.log(err);}
-
-         let objectParsed = JSON.parse(body);
-         response.send(objectParsed);
-
-});
-
-})
 
 
-   
+    
 
 
 
@@ -90,20 +102,17 @@ const player = req.params.player;
 
      
     
-      /*    request(options, function (err, res, body) {
-
-        if (err) { return console.log(err); 
-        }
-        let objectParsed =  JSON.parse((body));           
-        response.send(objectParsed); 
-    }) */
-   // apiRequest.end();
+   /*    app.use(function(err, req, res, next) {
+        res.status(503);
+        res.send("Oops, something went wrong.")
+     }); */
 
 
 
 
-/*
- OLD ARCHIVED PROBABLY SHOULD DELETE 
+
+
+/* OLD ARCHIVED PROBABLY SHOULD DELETE 
 app.get('/players/:player', function(request, res) {
    const request = require('request');
    const async = require('async');
@@ -125,10 +134,26 @@ app.get('/players/:player', function(request, res) {
        };
  //  let data = "";
  
+ /* UGHHHHHHHHH 
+    }) */
 
 
-    })  */
+    var operation = retry.operation({
+        retries: 5,
+        factor: 3,
+        minTimeout: 1 * 1000,
+        maxTimeout: 60 * 1000,
+        randomize: true,
+      });
 
+
+
+
+
+    const limiter = rateLimit({
+        windowMs: 4 * 60 * 1000, // 15 minutes
+        max: 9 // limit each IP to 100 requests per windowMs
+      });
 
 
 
@@ -136,8 +161,7 @@ app.get('/players/:player', function(request, res) {
 
 
 app.use(express.static('dist/pubg-app'));
-
-//app.use(limiter);
+app.use(limiter);
 
 const port = process.env.PORT || 3000; 
 
