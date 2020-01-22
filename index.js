@@ -32,30 +32,27 @@ app.get('/players/:player', function(request, response) {
            "accept": 'application/vnd.api+json' }     
 
        };
-       
-
    
-   let apiRequest = https.request(api_url, options, function (res) {
-
-    let data = "";
-
-    res.on("data", chunk => {
-        data += chunk;
-    }) 
-
-    res.on("end", () => {          
-         
-          //let objectParsed = JSON.parse(data);
-           let objectParsed =  JSON.parse(JSON.stringify(data));
-           
-            response.send(objectParsed);               
-    }) 
-})  
-
- apiRequest.end();
+       let data = "";
+       var callback = function(response) {
+       res.on("data", chunk => {
+           data += chunk;
+       }) 
+       res.on("end", () => {          
+             //let objectParsed = JSON.parse(data);
+              let objectParsed =  JSON.parse(JSON.stringify(data));
+               response.send(objectParsed);               
+       }) 
+   }
+   var req = http.request(options, callback);
+    req.end();
 
 
-    
+
+
+
+
+  
     }); 
 
 
@@ -144,16 +141,6 @@ app.get('/players/:player', function(request, res) {
 
     }) */
 
-
-
-
-
-
-
-    const limiter = rateLimit({
-        windowMs: 4 * 60 * 1000, // 15 minutes
-        max: 9 // limit each IP to 100 requests per windowMs
-      });
 
 
 
