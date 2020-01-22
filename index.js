@@ -40,7 +40,7 @@ app.get('/players/:player', function(request, response) {
       });
 
       httpService.requestPromise(options).then(response =>{
-        let objectParsed =  JSON.parse(JSON.stringify(data));        
+        let objectParsed =  JSON.parse((response));        
         response.send(objectParsed);  
       }).catch(err=>{
         console.error(err);
