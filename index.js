@@ -39,8 +39,12 @@ const player = req.params.player;
 
 });
 
+})
+
 
    
+
+
 
 
     app.get('/player/:id', function(request, response) {
