@@ -15,12 +15,13 @@ const request = require('request');
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(req, res) {
+app.get('/players/:player', function(request, response) {
 
-    const player = request.params.player;
+const player = request.params.player;
+   const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`; 
 
     var options = {
-    url: `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,    
+       
     method: "GET",
     observe: 'body',
     responseType: 'json',
@@ -29,7 +30,7 @@ app.get('/players/:player', function(req, res) {
         "accept": 'application/vnd.api+json' }     
     };
    
-    request(options, function (error, response, body) {
+    request(api_url, options, function (error, response, body) {
         console.log('error:', error); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         console.log('body:', body); // Print the HTML for the Google homepage.
@@ -98,8 +99,8 @@ app.get('/players/:player', function(req, res) {
 
 
 
-
-/* OLD ARCHIVED PROBABLY SHOULD DELETE 
+/*
+ OLD ARCHIVED PROBABLY SHOULD DELETE 
 app.get('/players/:player', function(request, res) {
    const request = require('request');
    const async = require('async');
@@ -121,9 +122,9 @@ app.get('/players/:player', function(request, res) {
        };
  //  let data = "";
  
- /* UGHHHHHHHHH 
 
-    }) */
+
+    })  */
 
 
 
