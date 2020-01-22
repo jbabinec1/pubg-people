@@ -29,19 +29,14 @@ app.get('/players/:player', function(req, res) {
         "accept": 'application/vnd.api+json' }     
     };
    
-    let data = "";
-    var callback = function(response) {
-    res.on("data", chunk => {
-        data += chunk;
-    }) 
-    res.on("end", () => {          
-          //let objectParsed = JSON.parse(data);
-           let objectParsed =  JSON.parse(JSON.stringify(data));
-            response.send(objectParsed);               
-    }) 
-}
-var req = http.request(options, callback);
- req.end();
+    request(options, function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('body:', body); // Print the HTML for the Google homepage.
+    });
+
+
+
 });
 
 
