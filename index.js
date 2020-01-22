@@ -15,45 +15,32 @@ const request = require('request');
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response) {
-  
-
-    const player = request.params.player;
-    const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
-    //let objectParsed =  JSON.parse(JSON.stringify(body)); 
-
+app.get('/players/:player', function(req, res) {
     var options = {
-        url: `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`,
-       method: "GET",
-       observe: 'body',
-       responseType: 'json',
-       headers: {
-           "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-           "accept": 'application/vnd.api+json' }     
-
-       };
-   
-       let data = "";
-       var callback = function(response) {
-       res.on("data", chunk => {
-           data += chunk;
-       }) 
-       res.on("end", () => {          
-             //let objectParsed = JSON.parse(data);
-              let objectParsed =  JSON.parse(JSON.stringify(data));
-               response.send(objectParsed);               
-       }) 
-   }
-   var req = http.request(options, callback);
-    req.end();
-
-
-
-
-
-
-  
-    }); 
+    url: api_url,    
+    method: "GET",
+    observe: 'body',
+    responseType: 'json',
+    headers: {
+        "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
+        "accept": 'application/vnd.api+json' }     
+    };
+    const player = request.params.player;
+     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+    let data = "";
+    var callback = function(response) {
+    res.on("data", chunk => {
+        data += chunk;
+    }) 
+    res.on("end", () => {          
+          //let objectParsed = JSON.parse(data);
+           let objectParsed =  JSON.parse(JSON.stringify(data));
+            response.send(objectParsed);               
+    }) 
+}
+var req = http.request(options, callback);
+ req.end();
+});
 
 
    
@@ -148,7 +135,8 @@ app.get('/players/:player', function(request, res) {
 
 
 app.use(express.static('dist/pubg-app'));
-app.use(limiter);
+
+//app.use(limiter);
 
 const port = process.env.PORT || 3000; 
 
