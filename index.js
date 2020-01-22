@@ -32,9 +32,9 @@ const player = req.params.player;
    
     request(`https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`, options, function (error, response, body) {
 
-         if (err) { return console.log(err);}
+         if (error) { return console.log(err);}
 
-         let objectParsed = JSON.parse(data);
+         let objectParsed = JSON.parse(body);
          response.send(objectParsed);
 
 });
