@@ -100,7 +100,7 @@ app.use(express.static('dist/pubg-app'));
 
 //const port = process.env.PORT || 3000; 
 
-app.get('/*', function(req, res) {
+app.use('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
 }); 
 
