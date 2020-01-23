@@ -39,7 +39,8 @@ public seasons: Seasons[];
  public ID: any;
  public searchString: string = '';
  @Input() public playa: any = [];
-public playerName: string = this.route.snapshot.queryParamMap.get('player');  
+//public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
+public playerName: string = this.route.snapshot.paramMap.get('player');  
 
 
   constructor(public combatService: CombatService, public seasonStatsService: SeasonstatsService, public seasonService: SeasonsService, private route: ActivatedRoute, public playerService: PlayerService
