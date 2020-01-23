@@ -14,7 +14,7 @@ const request = require('request');
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response) {
+app.get('/players/:player', function(request, response, next) {
 
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
@@ -51,7 +51,7 @@ app.get('/players/:player', function(request, response) {
 
    
 
-    app.get('/player/:id', function(request, response) {
+    app.get('/player/:id', function(request, response, next) {
 
        const id = request.params.id;
        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
@@ -94,11 +94,11 @@ app.get('/players/:player', function(request, response) {
 
      
     
-       app.use((err, req, res, next) => {
+       app.use((req, res, next) => {
 
         const error = new Error('Not found')
         error.status = 404;
-        res.send("Oops, something went wrong.");
+        res.send("Yeah, something went wrong.");
         next(error);
      }); 
 
