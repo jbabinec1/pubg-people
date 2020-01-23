@@ -99,13 +99,6 @@ app.get('/players/:player', function(request, response, next) {
 
 app.use(express.static('dist/pubg-app'));
 
-
-const port = process.env.PORT || 3000; 
-
-app.get('/*', function(req, res) {
-   res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
-}); 
-
 app.use((req, res, next) => {
 
     const error = new Error('Not found')
@@ -116,17 +109,21 @@ app.use((req, res, next) => {
 
 
  app.use((error, req, res, next) => {
+    res.status(error.status || 500).send({
+      error: {
+        status: error.status || 500,
+        message: error.message || 'Internal Server Error',
+      },
+    });
+  });
 
-    res.status(error.status || 500);
-    res.json({
-        
-        error: {
-            message: error.message
-        }
 
-    })
+const port = process.env.PORT || 3000; 
 
- });
+app.get('/*', function(req, res) {
+   res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
+}); 
+
 
 app.listen(port, function(){
    console.log('Your node js server is running');
