@@ -94,18 +94,15 @@ app.get('/players/:player', function(request, response, next) {
 
      
 
-    app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
-     }); 
 
 
 app.use(express.static('dist/pubg-app'));
 
-const port = process.env.PORT || 3000; 
+//const port = process.env.PORT || 3000; 
 
-/*app.get('/*', function(req, res) {
+app.get('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
-}); */
+}); 
 
 app.use((req, res, next) => {
 
@@ -125,7 +122,7 @@ app.use((req, res, next) => {
     });
   });
 
-
+const port = process.env.PORT || 3000;
 app.listen(port, function(){
    console.log('Your node js server is running');
 });
