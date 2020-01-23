@@ -94,43 +94,27 @@ app.get('/players/:player', function(request, response) {
 
      
     
-   /*    app.use(function(err, req, res, next) {
-        res.status(503);
-        res.send("Oops, something went wrong.")
-     }); */
+       app.use((err, req, res, next) => {
+
+        const error = new Error('Not found')
+        error.status = 404;
+        res.send("Oops, something went wrong.");
+        next(error);
+     }); 
 
 
+     app.use((error, res, res, next) => {
 
+        res.status(error.status || 500);
+        res.json({
+            
+            error: {
+                message: error.message
+            }
 
+        })
 
-
-/* OLD ARCHIVED PROBABLY SHOULD DELETE 
-app.get('/players/:player', function(request, res) {
-   const request = require('request');
-   const async = require('async');
-   const http = require('http');
-   const https = require('https');
-    const player = request.params.player;
-    //const id = request.params.id;
-    const id_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
-    const player_season = `https://api.pubg.com/shards/steam/players/account.c0e530e9b7244b358def282782f893af/seasons/division.bro.official.pc-2018-05`;
-    
-    var options = {
-      
-       method: "GET",
-       observe: 'body',
-       responseType: 'json',
-       headers: {
-           "authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug',
-           "accept": 'application/vnd.api+json' }
-       };
- //  let data = "";
- 
- /* UGHHHHHHHHH 
-    }) */
-
-
-
+     });
 
 
 
