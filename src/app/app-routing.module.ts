@@ -9,8 +9,8 @@ import { AboutComponent } from './about/about.component';
 const routes: Routes = [
 
 
-    { path: 'players/:player', pathMatch: 'full', component: CareerComponent },
-   // { path: 'players/?player=:player', component: CareerComponent },
+    { path: 'players', pathMatch: 'full', component: CareerComponent },
+    { path: 'players/:player', component: CareerComponent },
     //{ path: 'player/:stat', component: CareerComponent },
     { path: 'home', component: HomeComponent  },
     { path: 'about', pathMatch: 'full', component: AboutComponent },
