@@ -54,8 +54,8 @@ export class CareerComponent implements OnInit {
   public ID: any;
   @Input() public playa: any =[];
   public id: any;
-public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
-
+//public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
+public playerName: string = this.route.snapshot.paramMap.get('player'); 
   
 
   ngOnInit() {
