@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, empty } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 //import { CareerComponent } from '/Users/Jared/pubg-app/src/app/career/career.component';
 //import { query } from '@angular/core/src/render3';

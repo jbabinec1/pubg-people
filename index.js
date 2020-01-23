@@ -16,7 +16,7 @@ const request = require('request');
 
 app.get('/players/:player', function(request, response, next) {
 
-    res.status(403).send({message : "You are forbidden from seeing this"})
+    
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
     
