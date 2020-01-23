@@ -84,7 +84,6 @@ app.get('/players/:player', function(request, response, next) {
              
               let objectParsed = JSON.parse(data);
               response.send(objectParsed);
-              res.sendStatus(200)
 
           }) 
       })
