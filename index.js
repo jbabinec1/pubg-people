@@ -94,10 +94,18 @@ app.get('/players/:player', function(request, response, next) {
 
      
 
-
+    app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
+     }); 
 
 
 app.use(express.static('dist/pubg-app'));
+
+const port = process.env.PORT || 3000; 
+
+/*app.get('/*', function(req, res) {
+   res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
+}); */
 
 app.use((req, res, next) => {
 
@@ -116,13 +124,6 @@ app.use((req, res, next) => {
       },
     });
   });
-
-
-const port = process.env.PORT || 3000; 
-
-app.get('/*', function(req, res) {
-   res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
-}); 
 
 
 app.listen(port, function(){
