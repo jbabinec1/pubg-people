@@ -103,7 +103,7 @@ app.get('/players/:player', function(request, response, next) {
      }); 
 
 
-     app.use((error, res, res, next) => {
+     app.use((error, req, res, next) => {
 
         res.status(error.status || 500);
         res.json({
