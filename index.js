@@ -2,19 +2,24 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const https = require('https');
+const rateLimit = require("express-rate-limit");
 const retry = require('retry');
 const request = require('request');
 
 
 
-//var request = require('requestretry');
 
 
+const apiLimiter = rateLimit({
+    windowMs: 60000, // 15 minutes
+    max: 6,
+    message: "Too many requests. Wait one minute. "
+  });
 
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response, next) {
+app.get('/players/:player', function(request, response, apiLimiter) {
 
     
     const player = request.params.player;
@@ -29,6 +34,7 @@ app.get('/players/:player', function(request, response, next) {
            "accept": 'application/vnd.api+json' }     
 
        };
+
   
        let apiRequest = https.request(api_url, options, function (res) {
 
@@ -104,6 +110,8 @@ app.use(express.static('dist/pubg-app'));
 app.use('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
 }); 
+
+app.use("/player/:id", apiLimiter);
 
 app.use((req, res, next) => {
 
