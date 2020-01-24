@@ -58,7 +58,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
 
    
 
-    app.get('/player/:id', apiLimiter, function(request, response, next) {
+    app.get('/player/:id', function(request, response, next) {
 
        const id = request.params.id;
        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
