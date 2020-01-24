@@ -11,7 +11,7 @@ const request = require('request');
 
 
 const apiLimiter = rateLimit({
-    windowMs: 60000, // 15 minutes
+    windowMs: 60000, // 1 minute waiting time
     max: 6,
     message: "Too many requests. Wait one minute. "
   });
