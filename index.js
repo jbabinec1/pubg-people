@@ -19,7 +19,7 @@ const apiLimiter = rateLimit({
 // Make request to get ID property of player object
 
 
-app.get('/players/:player', function(request, response, apiLimiter) {
+app.get('/players/:player', apiLimiter, function(request, response) {
 
     
     const player = request.params.player;
@@ -58,7 +58,7 @@ app.get('/players/:player', function(request, response, apiLimiter) {
 
    
 
-    app.get('/player/:id', function(request, response, next) {
+    app.get('/player/:id', apiLimiter, function(request, response, next) {
 
        const id = request.params.id;
        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
