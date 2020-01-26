@@ -60,7 +60,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
 
    
 
-    app.get('/player/:id', function(request, response, next) {
+    app.get('/player/:id', apiLimiter, function(request, response, next) {
 
       var key = process.env.API_KEY;
 
@@ -115,6 +115,7 @@ app.use('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
 }); 
 
+app.use("/player/:player", apiLimiter);
 app.use("/player/:id", apiLimiter);
 
 app.use((req, res, next) => {
