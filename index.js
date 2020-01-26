@@ -22,7 +22,7 @@ const apiLimiter = rateLimit({
 
 app.get('/players/:player', apiLimiter, function(request, response) {
 
-   var key = process.env.API_AUTH;
+   var key = process.env.API_KEY;
     
     const player = request.params.player;
     const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
@@ -32,7 +32,8 @@ app.get('/players/:player', apiLimiter, function(request, response) {
        observe: 'body',
        responseType: 'json',
        headers: {
-           "authorization": `Bearer ${key}`}     
+           "authorization": key,
+           "accept": 'application/vnd.api+json'}     
 
        };
 
@@ -61,7 +62,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
 
     app.get('/player/:id', function(request, response, next) {
 
-      var key = process.env.API_AUTH;
+      var key = process.env.API_KEY;
 
        const id = request.params.id;
        const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
@@ -72,7 +73,8 @@ app.get('/players/:player', apiLimiter, function(request, response) {
           observe: 'body',
           responseType: 'json',
           headers: {
-              "authorization": `Bearer ${key}` }
+              "authorization": key,
+              "accept": 'application/vnd.api+json' }
           };
   
      let data = "";
