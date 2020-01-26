@@ -92,7 +92,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
            
               //response.end(JSON.stringify(data));
              
-              let objectParsed = JSON.parse(data);
+              let objectParsed =  JSON.parse(JSON.stringify(data)); 
               response.send(objectParsed);
 
           }) 
