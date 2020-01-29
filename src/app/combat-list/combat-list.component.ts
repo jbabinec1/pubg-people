@@ -33,14 +33,13 @@ export class CombatListComponent implements OnInit {
  
 @Input() public lifeTimeStats:lifeTimeStat[];
 @Input() public seasonstats: SeasonStats[];
-//@Input() public player: any = [];
-@Input() public player: Player[];
+@Input() public player: any = [];
 public seasons: Seasons[];
 @Input() public seasonStats: SeasonStats[];
  public ID: any;
  public searchString: string = '';
- //@Input() public playa: any = [];
- @Input() public playa: Player;
+ @Input() public playa: any = [];
+ 
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player');  
 
