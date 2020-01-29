@@ -11,6 +11,7 @@ export interface Player {
     downs?: number,
     friendly?: number,
     vehicles?: number,
-    farthestkill?: number
+    farthestkill?: number,
+    data?: any
 
 }
