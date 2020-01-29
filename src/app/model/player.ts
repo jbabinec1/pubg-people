@@ -12,6 +12,6 @@ export interface Player {
     friendly?: number,
     vehicles?: number,
     farthestkill?: number,
-    data?: any
+    data: any
 
 }
