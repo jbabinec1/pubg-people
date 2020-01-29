@@ -2,9 +2,9 @@ import { MergeMapSubscriber } from 'rxjs/internal/operators/mergeMap';
 
 export interface Player {
  
-    data?: any,
-    totalkills?: number,
-    weeklykills?: number,
+    
+    totalKills?: number,
+    weeklyKills?: number,
     lastmatchkills?: number,
     roadkills?: number,
     headshots?: number,
