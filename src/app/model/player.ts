@@ -1,7 +1,8 @@
 import { MergeMapSubscriber } from 'rxjs/internal/operators/mergeMap';
 
 export interface Player {
-
+ 
+    data?: any,
     totalkills?: number,
     weeklykills?: number,
     lastmatchkills?: number,
@@ -12,6 +13,6 @@ export interface Player {
     friendly?: number,
     vehicles?: number,
     farthestkill?: number,
-    data: any
+    
 
 }
