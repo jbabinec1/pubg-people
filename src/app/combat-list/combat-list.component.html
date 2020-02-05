@@ -18,13 +18,13 @@
           <div class="wrapper-holder"> 
 
 
-         <div *ngIf="player != null" class="table-wrapper">
+         <div *ngIf="player.data !== null" class="table-wrapper">
        <div class="inner-table-wrapper"> 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
 
-        <table *ngIf="player != null" class="table" border="2">
+        <table *ngIf="player.data !== null" class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
