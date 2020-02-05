@@ -76,7 +76,9 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 
    //  this.seasonStats.getSeasonStats().subscribe(data => { this.seasonstats = data});
 
-   this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
+   
+/*
+   this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); */
       
     }  
 
