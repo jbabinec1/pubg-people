@@ -11,7 +11,7 @@
            
      <!--****** RANK POINT COMPONENT HERE ****-->
         
-        <div *ngIf="player" class="top-wrapper">
+        <div class="top-wrapper">
         
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
@@ -32,7 +32,7 @@
     </div>
   -->
 
-         <div class="table-wrapper">
+         <div *ngIf="player" class="table-wrapper">
        <div class="inner-table-wrapper" > 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
