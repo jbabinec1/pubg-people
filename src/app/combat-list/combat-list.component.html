@@ -16,29 +16,15 @@
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
           <div class="wrapper-holder"> 
-<!----
-   <div class="outer-season-name">        
-    <div>    
-        <div class="outer-div" style="display:flex"> 
-            <div class="inner-div"> 
-                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 5 </p> </span> 
-      
-                <div> 
-                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-04'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-              
-              </div>           
-            </div> 
-    </div>   
-    </div>
-  -->
 
-         <div *ngIf="player" class="table-wrapper">
+
+         <div *ngIf="player?" class="table-wrapper">
        <div class="inner-table-wrapper"> 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
 
-        <table *ngIf="player" class="table" border="2">
+        <table *ngIf="player?" class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
