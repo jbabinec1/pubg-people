@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { lifeTimeStat} from '../../app/model/combat';
 import { Player } from '../../app/model/player';
 import { PlayerService } from '../services/player.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Data } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import {SeasonsService } from '../services/seasons.service';
 import { Seasons } from '../model/seasons';
@@ -56,6 +56,10 @@ export class CareerComponent implements OnInit {
   public id: any;
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player'); 
+
+
+@Input() public error: any; 
+
   
 
   ngOnInit() {
@@ -78,7 +82,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
      .subscribe(id => this.player = id);
  
       
-     
+     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
 
   
   

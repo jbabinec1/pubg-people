@@ -263,6 +263,11 @@
     margin-bottom: 9px;
 }
 
+.error {
+    font-size: 20px;
+    color: red; 
+}
+
 
 
 @media screen and (max-width: 375px) {

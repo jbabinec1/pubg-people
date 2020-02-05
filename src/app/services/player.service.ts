@@ -38,7 +38,7 @@ export class PlayerService {
 
 
 
-      /* Makes request to my endpoint that makes a request to the PUBG API  */
+      /* Makes request to my endpoint that makes a request to the PUBG API */ 
 
   getPlayer(player: string):Observable<Player[]> {
 
@@ -64,7 +64,7 @@ export class PlayerService {
 
    
 
-    /*    Testing version of getSeasonStats until I can get my proxy working 
+     /*   Testing version of getSeasonStats until I can get my proxy working 
 
         getSeasonStats(id: string):Observable<SeasonStats[]> {
 
@@ -78,26 +78,26 @@ export class PlayerService {
 
 
 
-   /*     getSeasonFourStats(id: string):Observable<SeasonStats[]> {
+        getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
           let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
         
             return this.http.get<SeasonStats[]>(`/season4/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
-          }  */
+          }  
 
 
 
 
-          
+          /*
           getSeasonFourStats(id: string):Observable<SeasonStats[]> {
 
             let getHeaders = new HttpHeaders({'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDUzZmEyMC02MzhjLTAxMzctMGNlYi0wMGQxMWQwYzg3MzQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTU5MDU3ODgxLCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6ImpiYWJpbmVjMS1nbWFpIn0.LI-UQ8XiwVQ-vpbE5nmPzbe0sLj7ROJjpPGgXQHRuug', 'Accept': 'application/vnd.api+json'}); 
           
               return this.http.get<SeasonStats[]>(`https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`,  { observe:'body',   responseType: 'json', headers: getHeaders });     
-          }  
+          }  */
 
-
+    
 
 
 

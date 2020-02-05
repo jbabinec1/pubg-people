@@ -1,11 +1,22 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, $ } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+  
+  
+  id = $('input[name="player"]');
+  submit = element(by.buttonText('Search'));
+
+  playerFind(id: string): void {
+    this.id.sendKeys(id);
+    this.submit.click();
+  }
+  
+  
+   
+  
+  navigateToPlayer() {
+    return browser.get('/home') as Promise<any>;
   }
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
-  }
+  
 }
