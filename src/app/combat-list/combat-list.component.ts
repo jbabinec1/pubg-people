@@ -39,6 +39,7 @@ public seasons: Seasons[];
  public ID: any;
  public searchString: string = '';
  @Input() public playa: any = [];
+ @Input() public error: any; 
  
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player');  
@@ -74,6 +75,8 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
      //this.lifeTimeStats$ = {} as Observable<lifeTimeStat[]>
 
    //  this.seasonStats.getSeasonStats().subscribe(data => { this.seasonstats = data});
+
+   this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
       
     }  
 

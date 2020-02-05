@@ -161,6 +161,11 @@ p.ng-star-inserted {
 
 } 
 
+.error {
+    
+    display: none;
+}
+
 
 @media screen and (max-width: 611px) {
 
