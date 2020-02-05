@@ -10,8 +10,9 @@
        <div class="test" style="height: 13px;">  <div> 
            
      <!--****** RANK POINT COMPONENT HERE ****-->
-        <div *ngIf="error" class="error"> 
+        
         <div class="top-wrapper">
+        <div *ngIf="error" class="error"> 
         <mat-tab-group animationDuration="0ms" dynamicHeight="true">
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
           <div class="wrapper-holder"> 
@@ -517,9 +518,11 @@
 
 
                     </mat-tab-group>
+
+                  </div> <!--END ERROR WRAPPER--> 
                     </div>
 
-                    </div> <!--END ERROR WRAPPER-->
+                   
 
 
 
