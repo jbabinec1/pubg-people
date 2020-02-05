@@ -58,7 +58,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 //public playerName: string = this.route.snapshot.paramMap.get('player'); 
 
 
-@Input() public error: any; 
+@Input() public error: any = []; 
 
   
 

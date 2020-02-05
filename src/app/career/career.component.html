@@ -5,7 +5,8 @@
     <div class="title-info-container">  <span class="platform" *ngIf="playa">{{ playa?.data && playa?.data[0].attributes?.shardId}}  </span> 
 
       <!--Testing error message-->
-      <span class="error" *ngIf="error">{{ error?.errors && error?.errors[0].detail }}  </span> 
+      <div> 
+      <span class="error" *ngIf="error">{{ error?.errors && error?.errors[0].detail }}  </span> </div>
 
 
      

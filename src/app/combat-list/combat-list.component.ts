@@ -39,7 +39,7 @@ public seasons: Seasons[];
  public ID: any;
  public searchString: string = '';
  @Input() public playa: any = [];
- @Input() public error: any; 
+
  
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player');  
