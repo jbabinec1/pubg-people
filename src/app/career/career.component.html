@@ -15,7 +15,7 @@
     
 
     
-      <mat-form-field *ngIf="playa">   
+      <mat-form-field *ngIf="playa; else no_select">   
           <mat-select class="panelClass" [(value)]="selected">
               
             <mat-option value="option1"(click)="seasonFiveSwitch()">Current Season</mat-option>
@@ -23,6 +23,8 @@
              
           </mat-select>
         </mat-form-field> <br>
+
+        <ng-template style="display:none;" #no_select> test  </ng-template>
 
 
 
