@@ -18,13 +18,13 @@
           <div class="wrapper-holder"> 
 
 
-         <div *ngIf="player.data !== null" class="table-wrapper">
+         <div class="table-wrapper">
        <div class="inner-table-wrapper"> 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
 
-        <table *ngIf="player.data !== null" class="table" border="2">
+        <table *ngIf="player" class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
@@ -32,28 +32,28 @@
                     
                 <tr>
                  
-                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
-                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyKills | json }}</td>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills | json }} </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills | json }}</td>
                 </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.dailyKills | json }}       </td>
-                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:  </span> {{ player?.data?.attributes?.gameModeStats?.solo?.roadKills | json }}    </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player.data.attributes.gameModeStats.solo.dailyKills | json }}       </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:  </span> {{ player.data.attributes.gameModeStats.solo.roadKills | json }}    </td>
                 </tr>
                 <tr>
-                  <td style="width: 122px;">&nbsp;<span class="td-title">Headshots:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.headshotKills | json }}     </td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title">    Assists:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.assists | json }}     </td>
+                  <td style="width: 122px;">&nbsp;<span class="td-title">Headshots:</span>  {{ player.data.attributes.gameModeStats.solo.headshotKills | json }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">    Assists:</span>  {{ player.data.attributes.gameModeStats.solo.assists | json }}     </td>
                     </tr>
                     <tr>
-                    <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.dBNOs | json }}     </td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.teamKills | json }}   </td>
+                    <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player.data.attributes.gameModeStats.solo.dBNOs | json }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player.data.attributes.gameModeStats.solo.teamKills | json }}   </td>
                     </tr>
                     <tr>
-                     <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed: </span> {{player?.data?.attributes?.gameModeStats?.solo?.vehicleDestroys | json }}     </td>
-                     <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>    {{ player?.data?.attributes?.gameModeStats?.solo?.longestKill | json }}</td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed: </span> {{player.data.attributes.gameModeStats.solo.vehicleDestroys | json }}     </td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>    {{ player.data.attributes.gameModeStats.solo.longestKill | json }}</td>
                      </tr>
                      <tr>
-                     <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.roundMostKills | json }}     </td>
-                     <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.damageDealt | json }}     </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>  {{ player.data.attributes.gameModeStats.solo.roundMostKills | json }}     </td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player.data.attributes.gameModeStats.solo.damageDealt | json }}     </td>
                      </tr>
                     
                 </tbody>
