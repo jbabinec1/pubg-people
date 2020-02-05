@@ -6,7 +6,7 @@
 
       <!--Testing error message-->
       <div> 
-      <span class="error" *ngIf="error">{{ error?.errors && error?.errors[0].detail }}  </span> </div>
+      <span class="error" *ngIf="error">{{ error.errors[0].detail }}  </span> </div>
 
 
      
@@ -15,7 +15,7 @@
     
 
     
-      <mat-form-field *ngIf="playa; else no_select">   
+      <mat-form-field>   
           <mat-select class="panelClass" [(value)]="selected">
               
             <mat-option value="option1"(click)="seasonFiveSwitch()">Current Season</mat-option>
@@ -24,7 +24,7 @@
           </mat-select>
         </mat-form-field> <br>
 
-        <ng-template style="display:none;" #no_select> test  </ng-template>
+        
 
 
 

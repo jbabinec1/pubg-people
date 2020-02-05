@@ -32,13 +32,13 @@
     </div>
   -->
 
-         <div *ngIf="player" class="table-wrapper">
+         <div *ngIf="player?" class="table-wrapper">
        <div class="inner-table-wrapper" > 
 
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
 
-        <table class="table" border="2">
+        <table *ngIf="player" class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
