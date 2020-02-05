@@ -6,7 +6,7 @@
 
       <!--Testing error message-->
       <div> 
-      <span class="error" *ngIf="error">{{ error.errors[0].detail }}  </span> </div>
+      <span class="error" *ngIf="error">{{ error?.errors && error?.errors[0].detail }}  </span> </div>
 
 
      
