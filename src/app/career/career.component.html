@@ -15,7 +15,7 @@
     
 
     
-      <mat-form-field>   
+      <mat-form-field *ngIf="playa">   
           <mat-select class="panelClass" [(value)]="selected">
               
             <mat-option value="option1"(click)="seasonFiveSwitch()">Current Season</mat-option>
