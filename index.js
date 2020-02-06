@@ -6,6 +6,7 @@ const rateLimit = require("express-rate-limit");
 const retry = require('retry');
 const request = require('request');
 require('dotenv').config();
+var errorHandler = require('api-error-handler');
 
 
 
@@ -49,16 +50,16 @@ app.get('/players/:player', apiLimiter, function(request, response) {
         }) 
  
         res.on("end", () => { 
-          
-          if(res.errors) {
-            res.status(404).send("Not found.");
-          }
              
               //let objectParsed = JSON.parse(data);
                let objectParsed =  JSON.parse(JSON.stringify(data)); 
 
                response.send(objectParsed);               
         }) 
+
+        if(objectParsed.errors) {
+          res.status(404).send("Not found.");
+        }
 
         
     })
@@ -128,6 +129,7 @@ app.use('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
 }); 
 
+app.use(errorHandler());
 app.use("/player/:player", apiLimiter);
 app.use("/player/:id", apiLimiter);
 
