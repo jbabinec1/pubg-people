@@ -56,7 +56,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
               // typeof objectParsed.data === 'undefined'
               let objectSelect = objectParsed["data"];
                
-               if (typeof objectSelect === "undefined" ) {
+               if ( objectSelect === "undefined" ) {
               response.status(404).send("No data for that player name.");
                 
             } else {
