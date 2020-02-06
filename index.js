@@ -54,7 +54,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
               //let objectParsed = JSON.parse(data);
                let objectParsed = JSON.parse(JSON.stringify(data));
                
-               if ( objectParsed.data === 'Not Found' ) {
+               if ( typeof objectParsed.data === "undefined" ) {
                 response.status(404).send("No data for that player name.");
             } else {
                 response.send(objectParsed);
