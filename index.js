@@ -56,9 +56,9 @@ app.get('/players/:player', apiLimiter, function(request, response) {
                
                if(objectParsed.errors) {
                 res.status(404).send("Not found.");
-              }
+              } else {
 
-               response.send(objectParsed);               
+               response.send(objectParsed); }              
         }) 
 
 
