@@ -6,7 +6,7 @@ const rateLimit = require("express-rate-limit");
 const retry = require('retry');
 const request = require('request');
 require('dotenv').config();
-var errorHandler = require('api-error-handler');
+
 
 
 
@@ -129,7 +129,7 @@ app.use('/*', function(req, res) {
    res.sendFile(path.join(__dirname, '/dist/pubg-app/index.html'));
 }); 
 
-app.use(errorHandler());
+
 app.use("/player/:player", apiLimiter);
 app.use("/player/:id", apiLimiter);
 
