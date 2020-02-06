@@ -54,10 +54,9 @@ app.get('/players/:player', apiLimiter, function(request, response) {
               //let objectParsed = JSON.parse(data);
                let objectParsed =  JSON.parse(JSON.stringify(data));
                
-               if ( objectParsed.errors ) {
+               if ( typeof data === 'undefined' ) {
                 res.status(404).send("Not found.");
               } else {
-
                response.send(objectParsed);   
               }            
         }) 
