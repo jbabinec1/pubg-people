@@ -106,9 +106,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
        }) 
 
 
-       app.use(function(req, res, next) {
-        return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
-      });
+      
   
 
      
@@ -125,6 +123,9 @@ app.use('/*', function(req, res) {
 
 app.use("/player/:player", apiLimiter);
 app.use("/player/:id", apiLimiter);
+app.use(function(req, res, next) {
+  return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
+});
 
 app.use((req, res, next) => {
 
