@@ -22,6 +22,7 @@ const apiLimiter = rateLimit({
 
 app.get('/players/:player', apiLimiter, function(request, response) {
 
+
    var key = process.env.API_KEY;
     
     const player = request.params.player;
@@ -40,23 +41,24 @@ app.get('/players/:player', apiLimiter, function(request, response) {
   
        let apiRequest = https.request(api_url, options, function (res) {
 
+
         let data = "";
  
         res.on("data", chunk => {
             data += chunk;
         }) 
  
-        res.on("end", () => {          
+        res.on("end", () => { 
+          
+          if(res.errors) {
+            res.status(404).send("Not found.");
+          }
              
               //let objectParsed = JSON.parse(data);
                let objectParsed =  JSON.parse(JSON.stringify(data)); 
 
                response.send(objectParsed);               
         }) 
-
-        if (res.errors) {
-          res.status(404).send("Not found.");
-        }
 
         
     })
