@@ -21,7 +21,7 @@ intercept(req: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>> {
 
     .pipe(
     catchError(error => {
-        if (error instanceof HttpErrorResponse && error.status == 404) {
+        if (error instanceof HttpErrorResponse && error.status == 404  ) {
             this.router.navigateByUrl('/not-found', {replaceUrl: true})
 
             return empty();
