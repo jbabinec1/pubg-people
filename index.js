@@ -82,7 +82,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
   
      let data = "";
   
-      let seasonRequest = https.request(stats_url, options, function (res) {
+      let seasonRequest = https.request(stats_url, options, function (res)  {
   
           console.log("connected sonion");
   
@@ -99,6 +99,11 @@ app.get('/players/:player', apiLimiter, function(request, response) {
               response.send(objectParsed);
 
           }) 
+
+          if(!request.params.id) {
+            res.status(404).send("Not found.");
+          }
+
       })
       seasonRequest.end();
      
@@ -123,9 +128,7 @@ app.use('/*', function(req, res) {
 
 app.use("/player/:player", apiLimiter);
 app.use("/player/:id", apiLimiter);
-app.use(function(req, res, next) {
-  return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
-});
+
 
 app.use((req, res, next) => {
 
