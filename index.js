@@ -57,7 +57,7 @@ app.get('/players/:player', apiLimiter, function(request, response) {
               //let objectSelect = objectParsed["data"];
               
                
-               if ( "errors" in objectParsed ) {
+               if ( objectParsed.includes('errors') ) {
               response.status(404).send("No data for that player name.");
                 
             } else {
