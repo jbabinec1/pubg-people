@@ -50,9 +50,6 @@ app.get('/players/:player', apiLimiter, function(request, response) {
              
               //let objectParsed = JSON.parse(data);
                let objectParsed =  JSON.parse(JSON.stringify(data)); 
-               if (!res) {
-                res.status(404).send("Not found.");
-              }
                
                response.send(objectParsed);               
         }) 
@@ -107,6 +104,11 @@ app.get('/players/:player', apiLimiter, function(request, response) {
      
       //if (err) return console.log(err);
        }) 
+
+
+       app.use(function(req, res, next) {
+        return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
+      });
   
 
      
