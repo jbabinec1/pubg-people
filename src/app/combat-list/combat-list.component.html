@@ -24,7 +24,7 @@
 <app-player-rank [player]="player" class="player-rank-app"></app-player-rank>
 
 
-        <table *ngIf="player" class="table" border="2">
+        <table *ngIf="player && player.data && player.data.attributes && player.data.attributes.gameModeStats && player.data.attributes.gameModeStats.solo" class="table" border="2">
                 <tbody>
                     <tr>
                         <th colspan="2"> Combat </th>
@@ -32,7 +32,7 @@
                     
                 <tr>
                  
-                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills | json }} </td>
                 <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills | json }}</td>
                 </tr>
                 <tr>
