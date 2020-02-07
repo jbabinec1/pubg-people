@@ -32,7 +32,7 @@
                     
                 <tr>
                  
-                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills | json }} </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.kills | json }} </td>
                 <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills | json }}</td>
                 </tr>
                 <tr>
