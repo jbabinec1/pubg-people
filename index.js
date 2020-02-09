@@ -120,6 +120,51 @@ app.get('/players/:player', apiLimiter, function(request, response) {
        }) 
 
 
+
+       app.get('/season4/:id', apiLimiter, function(request, response, next) {
+
+        var key = process.env.API_KEY;
+  
+         const id = request.params.id;
+         const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`;
+         
+         var options = {
+    
+            method: "GET",
+            observe: 'body',
+            responseType: 'json',
+            headers: {
+                "authorization": key,
+                "accept": 'application/vnd.api+json' }
+            };
+    
+       let data = "";
+    
+        let seasonRequest = https.request(stats_url, options, function (res)  {
+    
+            console.log("connected sonion");
+    
+            res.on("data", chunk => {
+                data += chunk;
+            })
+    
+            res.on("end", () => {
+                console.log("data collect motha efffa");
+             
+                //response.end(JSON.stringify(data));
+               
+                let objectParsed =  JSON.parse(JSON.stringify(data)); 
+                response.send(objectParsed);
+  
+            }) 
+  
+        })
+        seasonRequest.end();
+       
+        //if (err) return console.log(err);
+         })   
+
+
       
   
 

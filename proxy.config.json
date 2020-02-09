@@ -1,8 +1,14 @@
 {
-    "/players/:player": {
+    "/players?player=": {
 
        "target": "http://localhost:3000",
-        "secure": false
+        "secure": false,
+        "pathRewrite": {
+            "^/players?player=": ""
+          },
+          "changeOrigin": true,
+          "logLevel": "debug"
+      
     }
 }
 
