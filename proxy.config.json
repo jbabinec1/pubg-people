@@ -1,14 +1,16 @@
-{
-    "/players?player=": {
 
-       "target": "http://localhost:3000",
-        "secure": false,
-        "pathRewrite": {
-            "^/players?player=": ""
-          },
-          "changeOrigin": true,
-          "logLevel": "debug"
-      
+
+[
+    {
+      "context": ["/players/", "/player/", "/season4/"],
+      "target": "http://127.0.0.1:8081",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^players?player=": ""
+      }
     }
-}
+  ]
+
+
 
