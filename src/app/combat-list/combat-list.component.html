@@ -32,28 +32,30 @@
                     
                 <tr>
                  
-                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills | json }} </td>
-                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills | json }}</td>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills.toFixed() }} </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills.toFixed() }}</td>
                 </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player.data.attributes.gameModeStats.solo.dailyKills | json }}       </td>
-                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:  </span> {{ player.data.attributes.gameModeStats.solo.roadKills | json }}    </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player.data.attributes.gameModeStats.solo.dailyKills.toFixed() }}       </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:  </span> {{ player.data.attributes.gameModeStats.solo.roadKills.toFixed() }}    </td>
                 </tr>
                 <tr>
-                  <td style="width: 122px;">&nbsp;<span class="td-title">Headshots:</span>  {{ player.data.attributes.gameModeStats.solo.headshotKills | json }}     </td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title">    Assists:</span>  {{ player.data.attributes.gameModeStats.solo.assists | json }}     </td>
+                  <td style="width: 122px;">&nbsp;<span class="td-title">Headshots:</span>  {{ player.data.attributes.gameModeStats.solo.headshotKills.toFixed() }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">    Assists:</span>  {{ player.data.attributes.gameModeStats.solo.assists.toFixed() }}     </td>
                     </tr>
                     <tr>
-                    <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player.data.attributes.gameModeStats.solo.dBNOs | json }}     </td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player.data.attributes.gameModeStats.solo.teamKills | json }}   </td>
+                    <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player.data.attributes.gameModeStats.solo.dBNOs.toFixed() }}     </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player.data.attributes.gameModeStats.solo.teamKills.toFixed() }}   </td>
                     </tr>
                     <tr>
-                     <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed: </span> {{player.data.attributes.gameModeStats.solo.vehicleDestroys | json }}     </td>
-                     <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>    {{ player.data.attributes.gameModeStats.solo.longestKill | json }}</td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed: </span> {{player.data.attributes.gameModeStats.solo.vehicleDestroys.toFixed() }}     </td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>    {{ player.data.attributes.gameModeStats.solo.longestKill.toFixed()  }}</td>
                      </tr>
                      <tr>
-                     <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>  {{ player.data.attributes.gameModeStats.solo.roundMostKills | json }}     </td>
-                     <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player.data.attributes.gameModeStats.solo.damageDealt | json }}     </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>  {{ player.data.attributes.gameModeStats.solo.roundMostKills.toFixed()  }}     </td>
+
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player.data.attributes.gameModeStats.solo.damageDealt.toFixed() }}     </td>
+
                      </tr>
                     
                 </tbody>
@@ -66,28 +68,28 @@
                         <th colspan="2"> Survival </th>
                     </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp; <span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.wins | json }}     </td>
-                <td style="width: 133px;">&nbsp; <span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.top10s | json }}      </td>
+                <td style="width: 122px;">&nbsp; <span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.wins.toFixed() }}     </td>
+                <td style="width: 133px;">&nbsp; <span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.top10s.toFixed() }}      </td>
                 </tr>
                 <tr>
-                <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.roundsPlayed | json }}     </td>
-                <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.losses | json }}    </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.roundsPlayed.toFixed() }}     </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.losses.toFixed() }}    </td>
                 </tr>
                 <tr>
-                  <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.dailyWins | json }}</td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:   </span>  {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyWins | json }}      </td>
+                  <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins:</span> {{ player?.data?.attributes?.gameModeStats?.solo?.dailyWins.toFixed() }}</td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:   </span>  {{ player?.data?.attributes?.gameModeStats?.solo?.weeklyWins.toFixed() }}      </td>
                     </tr>
                     <tr>
-                    <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.revives | json }}  </td>
-                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.teamKills | json }}     </td>
+                    <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.revives.toFixed() }}  </td>
+                    <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.teamKills.toFixed() }}     </td>
                     </tr>
                     <tr>
-                     <td style="width: 122px;">&nbsp;<span class="td-title">Longest Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.longestTimeSurvived | json }}  </td>
-                     <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.weaponsAcquired | json }} </td>
+                     <td style="width: 122px;">&nbsp;<span class="td-title">Longest Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.longestTimeSurvived.toFixed() }}  </td>
+                     <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.weaponsAcquired.toFixed() }} </td>
                      </tr>
                      <tr>
-                      <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.boosts | json }}   </td>
-                      <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:  </span>  {{ player?.data?.attributes?.gameModeStats?.solo?.heals | json }} </td>
+                      <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats?.solo?.boosts.toFixed() }}   </td>
+                      <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:  </span>  {{ player?.data?.attributes?.gameModeStats?.solo?.heals.toFixed() }} </td>
                      </tr>
                 </tbody>
                 </table>
