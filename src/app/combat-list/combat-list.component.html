@@ -32,7 +32,7 @@
                     
                 <tr>
                  
-                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills.toFixed() }} </td>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span>  {{ player.data.attributes.gameModeStats.solo.kills?.toFixed() }} </td>
                 <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{ player.data.attributes.gameModeStats.solo.weeklyKills.toFixed() }}</td>
                 </tr>
                 <tr>
@@ -104,411 +104,421 @@
             <!------- Solo FPP Combat ------>
 
             <mat-tab label="Solo FPP">
-            <div class="table-wrapper">
-
-            <div class="inner-table-wrapper"> 
-
-      <app-rank-solo-fpp [player]="player" class="player-rank-app"></app-rank-solo-fpp> 
-
-            <table class="table" border="2">
-            <tbody> 
-            <tr>
-            <th colspan="2"> Combat </th>
-              </tr>
+              <div class="table-wrapper">
+  
+              <div class="inner-table-wrapper"> 
+  
+        <app-rank-solo-fpp [player]="player" class="player-rank-app"></app-rank-solo-fpp> 
+  
+              <table class="table" border="2">
+              <tbody> 
               <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span> {{player?.data?.attributes?.gameModeStats["solo-fpp"].kills | json }} </td>
-              <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{player?.data?.attributes?.gameModeStats["solo-fpp"].weeklyKills | json }}</td>
-              </tr>
-               <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title">Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats["solo-fpp"].dailyKills | json }}  </td>
-              <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].roadKills | json }}    </td>
-              </tr>
-               <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].headshotKills | json }} </td>
-              <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].assists | json }}    </td>
-              </tr>
-              <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title">dBNOS:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].dBNOs | json }}</td>
-              <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].teamKills | json }}</td>
-              </tr>
-              <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].vehicleDestroys | json }}   </td>
-              <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].longestKill | json }} </td>
-              </tr>
-              <tr>
-              <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>          {{player?.data?.attributes?.gameModeStats["solo-fpp"].roundMostKills | json }}</td>
-              <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>        {{player?.data?.attributes?.gameModeStats["solo-fpp"].damageDealt | json }}   </td>
-              </tr>
-
-              </tbody>
-              </table> <!---*********---First Table End----->
-                         <!--Solo FPP Survival-->
-
-                          <table class="table" border="2">
+              <th colspan="2"> Combat </th>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Total Kills:</span> {{player?.data?.attributes?.gameModeStats["solo-fpp"].kills | json }} </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Kills:</span> {{player?.data?.attributes?.gameModeStats["solo-fpp"].weeklyKills | json }}</td>
+                </tr>
+                 <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats["solo-fpp"].dailyKills | json }}  </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].roadKills | json }}    </td>
+                </tr>
+                 <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].headshotKills | json }} </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].assists | json }}    </td>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title">dBNOS:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].dBNOs | json }}</td>
+                <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].teamKills | json }}</td>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Vehicles destroyed:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].vehicleDestroys | json }}   </td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].longestKill.toFixed() }} </td>
+                </tr>
+                <tr>
+                <td style="width: 122px;">&nbsp;<span class="td-title">Most Kills in Match:</span>          {{player?.data?.attributes?.gameModeStats["solo-fpp"].roundMostKills | json }}</td>
+                <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>        {{player?.data?.attributes?.gameModeStats["solo-fpp"].damageDealt | json }}   </td>
+                </tr>
+  
+                </tbody>
+                </table> <!---*********---First Table End----->
+                           <!--Solo FPP Survival-->
+  
+                            <table class="table" border="2">
+                              <tbody>
+                                  <tr>
+                                      <th colspan="2"> Survival </th>
+                                  </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title">Wins:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].wins | json }}  </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].top10s | json }}</td>
+                              </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].roundsPlayed | json }} </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].losses | json }}</td>
+                              </tr>
+                              <tr>
+                                <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins:    </span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].dailyWins | json }}</td>  
+                                  <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].weeklyWins | json }} </td>
+                                  </tr>
+                                  <tr>
+                                  <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].revives | json }} </td>
+                                  <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].teamKills | json }}   </td>
+                                  </tr>
+                                  <tr>
+                                   <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].longestTimeSurvived | json }}  </td>
+                                   <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].weaponsAcquired | json }} </td>
+                                   </tr>
+  
+                                   <tr>
+                                    <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].boosts | json }}</td>
+                                    <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].heals | json }}</td>
+                                   </tr>
+                              </tbody>
+                              </table>
+  
+                          </div>
+                          </div>
+                        </mat-tab>
+  
+            <!------------*** Duo third person start ***----------->
+  
+                        <mat-tab label="Duo TPP">
+                            <div class="table-wrapper">
+                            <div class="inner-table-wrapper"> 
+                            <app-duo-tpp [player]="player" class="player-rank-app"></app-duo-tpp>
+                            <table class="table" border="2">
                             <tbody>
-                                <tr>
-                                    <th colspan="2"> Survival </th>
-                                </tr>
                             <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title">Wins:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].wins | json }}  </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].top10s | json }}</td>
-                            </tr>
-                            <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].roundsPlayed | json }} </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].losses | json }}</td>
-                            </tr>
-                            <tr>
-                              <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins:    </span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].dailyWins | json }}</td>  
-                                <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].weeklyWins | json }} </td>
-                                </tr>
-                                <tr>
-                                <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].revives | json }} </td>
-                                <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].teamKills | json }}   </td>
-                                </tr>
-                                <tr>
-                                 <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{player?.data?.attributes?.gameModeStats["solo-fpp"].longestTimeSurvived | json }}  </td>
-                                 <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].weaponsAcquired | json }} </td>
-                                 </tr>
-
-                                 <tr>
-                                  <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].boosts | json }}</td>
-                                  <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:</span>   {{player?.data?.attributes?.gameModeStats["solo-fpp"].heals | json }}</td>
-                                 </tr>
-                            </tbody>
-                            </table>
-
-                        </div>
-                        </div>
-                      </mat-tab>
-
-          <!------------*** Duo third person start ***----------->
-
-                      <mat-tab label="Duo TPP">
-                          <div class="table-wrapper">
-                          <div class="inner-table-wrapper"> 
-                          <app-duo-tpp [player]="player" class="player-rank-app"></app-duo-tpp>
-                          <table class="table" border="2">
-                          <tbody>
-                          <tr>
-                          <th colspan="2"> Combat </th>
-                            </tr>
-                            <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.kills | json }} </td>
-                            <td style="width: 133px;">&nbsp; <span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.weeklyKills | json }}</td>
-                            </tr>
-                             <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.dailyKills | json }} </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title">Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roadKills | json }}  </td>
-                            </tr>
-                             <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots: </span>  {{ player?.data?.attributes?.gameModeStats.duo?.headshotKills | json }}     </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title">Assists:</span> 
-                              {{ player?.data?.attributes?.gameModeStats.duo?.assists | json }}
-                            </td>
-                            </tr>
-                            <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>       {{ player?.data?.attributes?.gameModeStats.duo?.dBNOs | json }}   </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.teamKills | json }}    </td>
-                            </tr>
-                            <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title">  Vehicles destroyed:</span>   {{ player?.data?.attributes?.gameModeStats.duo?.vehicleDestroys | json }}      </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title">  Farthest Kill: </span>   {{ player?.data?.attributes?.gameModeStats.duo?.longestKill | json }}     </td>
-                            </tr>
-                            <tr>
-                            <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roundMostKills | json }}    </td>
-                            <td style="width: 133px;">&nbsp;<span class="td-title">Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.damageDealt | json }}   </td>
-                            </tr>
-
-                            </tbody>
-                            </table> <!---*********---First Table End----->
-                                       <!--Duo TPP Survival-->
-
-                                        <table class="table" border="2">
+                            <th colspan="2"> Combat </th>
+                              </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.kills | json }} </td>
+                              <td style="width: 133px;">&nbsp; <span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.weeklyKills | json }}</td>
+                              </tr>
+                               <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span> {{ player?.data?.attributes?.gameModeStats.duo?.dailyKills | json }} </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title">Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roadKills | json }}  </td>
+                              </tr>
+                               <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots: </span>  {{ player?.data?.attributes?.gameModeStats.duo?.headshotKills | json }}     </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title">Assists:</span> 
+                                {{ player?.data?.attributes?.gameModeStats.duo?.assists | json }}
+                              </td>
+                              </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>       {{ player?.data?.attributes?.gameModeStats.duo?.dBNOs | json }}   </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.teamKills | json }}    </td>
+                              </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title">  Vehicles destroyed:</span>   {{ player?.data?.attributes?.gameModeStats.duo?.vehicleDestroys | json }}      </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title">  Farthest Kill: </span>   {{ player?.data?.attributes?.gameModeStats.duo?.longestKill | json }}     </td>
+                              </tr>
+                              <tr>
+                              <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roundMostKills | json }}    </td>
+                              <td style="width: 133px;">&nbsp;<span class="td-title">Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.damageDealt | json }}   </td>
+                              </tr>
+  
+                              </tbody>
+                              </table> <!---*********---First Table End----->
+                                         <!--Duo TPP Survival-->
+  
+                                          <table class="table" border="2">
+                                            <tbody>
+                                                <tr>
+                                                    <th colspan="2"> Survival </th>
+                                                </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.wins | json }}    </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.top10s | json }} </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;"><span class="td-title"> Games Played</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roundsPlayed | json }}     </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.losses | json }}     </td>
+                                            </tr>
+                                            <tr>
+                                              <td style="width: 122px;">&nbsp;<span class="td-title">  Daily Wins:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.dailyWins | json }} </td>
+                                                <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>         {{ player?.data?.attributes?.gameModeStats.duo?.weeklyWins | json }}</td>
+                                                </tr>
+                                                <tr>
+                                                <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.revives | json }}    </td>
+                                                <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.teamKills | json }}    </td>
+                                                </tr>
+                                                <tr>
+                                                 <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.longestTimeSurvived | json }}  </td>
+                                                 <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.weaponsAcquired | json }}  </td>
+                                                 </tr>
+        
+                                                 <tr>
+                                                  <td style="width: 122px;">&nbsp;<span class="td-title"> Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.boosts | json }}  </td>
+                                                  <td style="width: 133px;">&nbsp;<span class="td-title">  Healing items used:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.heals | json }}  </td>
+                                                 </tr>
+                                            </tbody>
+                                            </table>
+  
+                                        </div>
+                                        </div>
+                                      </mat-tab>
+  
+  
+                                    <!-- Tab for Duo FPP -->
+                                      <mat-tab label="Duo FPP">
+                                          <div class="table-wrapper">
+                                          <div class="inner-table-wrapper">  
+                                          <app-duo-fpp [player]="player" class="player-rank-app"></app-duo-fpp>      
+                                          <table class="table" border="2">
                                           <tbody>
-                                              <tr>
-                                                  <th colspan="2"> Survival </th>
-                                              </tr>
                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.wins | json }}    </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.top10s | json }} </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;"><span class="td-title"> Games Played</span>  {{ player?.data?.attributes?.gameModeStats.duo?.roundsPlayed | json }}     </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.losses | json }}     </td>
-                                          </tr>
-                                          <tr>
-                                            <td style="width: 122px;">&nbsp;<span class="td-title">  Daily Wins:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.dailyWins | json }} </td>
-                                              <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>         {{ player?.data?.attributes?.gameModeStats.duo?.weeklyWins | json }}</td>
-                                              </tr>
-                                              <tr>
-                                              <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.revives | json }}    </td>
-                                              <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.teamKills | json }}    </td>
-                                              </tr>
-                                              <tr>
-                                               <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.longestTimeSurvived | json }}  </td>
-                                               <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.weaponsAcquired | json }}  </td>
-                                               </tr>
-      
-                                               <tr>
-                                                <td style="width: 122px;">&nbsp;<span class="td-title"> Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.boosts | json }}  </td>
-                                                <td style="width: 133px;">&nbsp;<span class="td-title">  Healing items used:</span>  {{ player?.data?.attributes?.gameModeStats.duo?.heals | json }}  </td>
-                                               </tr>
-                                          </tbody>
-                                          </table>
-
-                                      </div>
-                                      </div>
-                                    </mat-tab>
-
-
-                                  <!-- Tab for Duo FPP -->
-                                    <mat-tab label="Duo FPP">
-                                        <div class="table-wrapper">
-                                        <div class="inner-table-wrapper">  
-                                        <app-duo-fpp [player]="player" class="player-rank-app"></app-duo-fpp>      
-                                        <table class="table" border="2">
-                                        <tbody>
-                                        <tr>
-                                        <th colspan="2"> Combat </th>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].kills | json }} </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weeklyKills | json }}</td>
-                                          </tr>
-                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dailyKills | json }}  </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roadKills | json }}   </td>
-                                          </tr>
-                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].headshotKills | json }}   </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].assists | json }}  </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dBNOs | json }}  </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].teamKills | json }}  </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].vehicleDestroys | json }}  </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].longestKill | json }}   </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roundMostKills | json }}   </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title">  Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].damageDealt | json }}    </td>
-                                          </tr>
-                                         
-                                          </tbody>
-                                          </table> <!---*********---First Table End----->
-                                                     <!--- Duo FPP Survival --->
-
-                                                      <table class="table" border="2">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th colspan="2"> Survival </th>
-                                                            </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].wins | json }}   </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title">Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].top10s | json }}   </td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title">Games Played:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roundsPlayed | json }}   </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].losses | json }}    </td>
-                                                        </tr>
-                                                        <tr>
-                                                          <td style="width: 122px;">&nbsp;<span class="td-title">Daily Wins:</span>          {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dailyWins | json }}</td>
-                                                            <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Wins:</span>        {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weeklyWins | json }}</td>
-                                                            </tr>
-                                                            <tr>
-                                                            <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>      {{ player?.data?.attributes?.gameModeStats["duo-fpp"].revives | json }}</td>
-                                                            <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].teamKills | json }}      </td>
-                                                            </tr>
-                                                            <tr>
-                                                             <td style="width: 122px;">&nbsp;<span class="td-title">Max Survival Time: </span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].longestTimeSurvived | json }}    </td>
-                                                             <td style="width: 133px;">&nbsp;<span class="td-title">Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weaponsAcquired | json }}    </td>
-                                                             </tr>
-                                      
-                                                             <tr>
-                                                              <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>      {{ player?.data?.attributes?.gameModeStats["duo-fpp"].boosts | json }}</td>
-                                                              <td style="width: 133px;">&nbsp;<span class="td-title">Healing items used:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].heals | json }}    </td>
-                                                             </tr>
-                                                        </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                    </div>
-                                                  </mat-tab>
-
-     
-
-                                       <!--Squad TPP-->
-
-  <mat-tab label="Squad TPP">
-                                        <div class="table-wrapper">
-                                        <div class="inner-table-wrapper"> 
-                                      <app-squad-tpp [player]="player" class="player-rank-app"></app-squad-tpp>   
-                                        <table class="table" border="2">
-                                        <tbody>
-                                        <tr>
-                                        <th colspan="2"> Combat </th>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.squad?.weeklyKills | json }}</td>
-                                          </tr>
-                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.dailyKills | json }}    </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.roadKills | json }}      </td>
-                                          </tr>
-                                           <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title" >Headshots:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.headShotKills | json }}     </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.assists | json }}     </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.dBNOs | json }}    </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.teamKills | json }}    </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.vehicleDestroys | json }}    </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.longestKill | json }}     </td>
-                                          </tr>
-                                          <tr>
-                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.roundMostKills | json }}     </td>
-                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.damageDealt | json }}    </td>
-                                          </tr>
-                                         
-                                          </tbody>
-                                          </table> <!---*********---First Table End----->
-                                                     <!--- Duo TPP Survival --->
-
-                                                      <table class="table" border="2">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th colspan="2"> Survival </th>
-                                                            </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.wins | json }}    </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.top10s | json }}   </td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title">Games Played:</span>        {{ player?.data?.attributes?.gameModeStats.squad?.roundsPlayed | json }} </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.losses | json }} </td>
-                                                        </tr>
-                                                        <tr>
-                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins: </span>         {{ player?.data?.attributes?.gameModeStats.squad?.dailyWins | json }} </td>
-                                                            <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Wins:</span>         {{ player?.data?.attributes?.gameModeStats.squad?.weeklyWins | json }} </td>
-                                                            </tr>
-                                                            <tr>
-                                                            <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>     {{ player?.data?.attributes?.gameModeStats.squad?.revives | json }} </td>
-                                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>   {{ player?.data?.attributes?.gameModeStats.squad?.teamKills | json }}      </td>
-                                                            </tr>
-                                                            <tr>
-                                                             <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.longestTimeSurvived | json }}   </td>
-                                                             <td style="width: 133px;">&nbsp;<span class="td-title">Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.weaponsAcquired | json }}     </td>
-                                                            </tr>
-                                                             <tr>
-                                                              <td style="width: 122px;">&nbsp;<span class="td-title"> Drugs used:</span>      {{ player?.data?.attributes?.gameModeStats.squad?.boosts | json }}  </td>
-                                                              <td style="width: 133px;">&nbsp;<span class="td-title">Healing items used: </span>   {{ player?.data?.attributes?.gameModeStats.squad?.heals | json }}       </td>
-                                                             </tr>
-                                                        </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                    </div>
-                                                  </mat-tab>
-                                          
-                                                  <!---* Squadzzzz -*-->      
-
-                                                  <mat-tab label="Squad FPP">
-                                                      <div class="table-wrapper">
-                                                      <div class="inner-table-wrapper"> 
-                                                          <app-squad-fpp [player]="player" class="player-rank-app"></app-squad-fpp>    
-                                                      <table class="table" border="2">
-                                                      <tbody>
-                                                      <tr>
-                                                      <th colspan="2"> Combat </th>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Total Season Kills:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].kills | json }} </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title">  Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weeklyKills | json }}</td>
-                                                        </tr>
-                                                         <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>     {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dailyKills | json }} </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>          {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roadKills | json }}</td>
-                                                        </tr>
-                                                         <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].headshotKills | json }}    </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].assists | json }}    </td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dBNOs | json }}    </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].teamKills | json }}     </td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].vehicleDestroys | json }}   </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>        {{ player?.data?.attributes?.gameModeStats["squad-fpp"].longestKills | json }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roundMostKills | json }}    </td>
-                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt: </span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].damageDealt | json }}      </td>
-                                                        </tr>
-                                                   
-                                                        </tbody>
-                                                        </table> <!---*********---First Table End----->
-                                                                   <!--- Squad TPP Survival --->
-                                                                   <table class="table" border="2">
-                                                                      <tbody>
-                                                                          <tr>
-                                                                              <th colspan="2"> Survival </th>
-                                                                          </tr>
-                                                                      <tr>
-                                                                      <td style="width: 122px;">&nbsp; <span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].wins | json }}   </td>
-                                                                      <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>   {{ player?.data?.attributes?.gameModeStats["squad-fpp"].top10s | json }}   </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                      <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roundsPlayed | json }}    </td>
-                                                                      <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].losses | json }}    </td>
-                                                                      </tr>
-                                                                      <tr>
-                                                                        <td style="width: 122px;">&nbsp;<span class="td-title" > Daily Wins:</span>          {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dailyWins | json }} </td>
-                                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weeklyWins | json }}      </td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                          <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].revives | json }}   </td>
-                                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].teamKills | json }}   </td>
-                                                                          </tr>
-                                                                          <tr>
-                                                                           <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>       {{ player?.data?.attributes?.gameModeStats["squad-fpp"].longestTimeSurvived | json }}</td>
-                                                                           <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>     {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weaponsAcquired | json }}  </td>
-                                                                           </tr>
-                                                                
-                                                                           <tr>
-                                                                            <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].boosts | json }}  </td>
-                                                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].heals | json }}       </td>
-                                                                           </tr>
-                                                                      </tbody>
-                                                                      </table>
-                                                                 
-                                                                   
-
-                                                                  
-                                                                  </div>
-                                                                  </div>
-
-                                                                
-                                                                </mat-tab>
-
+                                          <th colspan="2"> Combat </th>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].kills.toFixed() }} </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weeklyKills.toFixed() }}</td>
+                                            </tr>
+                                             <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dailyKills.toFixed() }}  </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roadKills.toFixed() }}   </td>
+                                            </tr>
+                                             <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].headshotKills.toFixed() }}   </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].assists.toFixed() }}  </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dBNOs.toFixed() }}  </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].teamKills.toFixed() }}  </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].vehicleDestroys.toFixed() }}  </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].longestKill.toFixed() }}   </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roundMostKills.toFixed() }}   </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title">  Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].damageDealt.toFixed() }}    </td>
+                                            </tr>
+                                           
+                                            </tbody>
+                                            </table> <!---*********---First Table End----->
+                                                       <!--- Duo FPP Survival --->
+  
+                                                        <table class="table" border="2">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <th colspan="2"> Survival </th>
+                                                              </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].wins | json }}   </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title">Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].top10s | json }}   </td>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title">Games Played:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].roundsPlayed | json }}   </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].losses | json }}    </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="width: 122px;">&nbsp;<span class="td-title">Daily Wins:</span>          {{ player?.data?.attributes?.gameModeStats["duo-fpp"].dailyWins | json }}</td>
+                                                              <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Wins:</span>        {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weeklyWins | json }}</td>
+                                                              </tr>
+                                                              <tr>
+                                                              <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>      {{ player?.data?.attributes?.gameModeStats["duo-fpp"].revives | json }}</td>
+                                                              <td style="width: 133px;">&nbsp;<span class="td-title">Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].teamKills | json }}      </td>
+                                                              </tr>
+                                                              <tr>
+                                                               <td style="width: 122px;">&nbsp;<span class="td-title">Max Survival Time: </span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].longestTimeSurvived | json }}    </td>
+                                                               <td style="width: 133px;">&nbsp;<span class="td-title">Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats["duo-fpp"].weaponsAcquired | json }}    </td>
+                                                               </tr>
+                                        
+                                                               <tr>
+                                                                <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>      {{ player?.data?.attributes?.gameModeStats["duo-fpp"].boosts | json }}</td>
+                                                                <td style="width: 133px;">&nbsp;<span class="td-title">Healing items used:</span>   {{ player?.data?.attributes?.gameModeStats["duo-fpp"].heals | json }}    </td>
+                                                               </tr>
+                                                          </tbody>
+                                                          </table>
+  
+                                                      </div>
+                                                      </div>
+                                                    </mat-tab>
+  
        
-
-
-
-
-
-
-
-
-                    </mat-tab-group>
-
-                
-                    </div>
+  
+                                         <!--Squad TPP-->
+  
+    <mat-tab label="Squad TPP">
+                                          <div class="table-wrapper">
+                                          <div class="inner-table-wrapper"> 
+                                        <app-squad-tpp [player]="player" class="player-rank-app"></app-squad-tpp>   
+                                          <table class="table" border="2">
+                                          <tbody>
+                                          <tr>
+                                          <th colspan="2"> Combat </th>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Total Kills: </span> {{ player?.data?.attributes?.gameModeStats.squad?.kills | json }} </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats.squad?.weeklyKills | json }}</td>
+                                            </tr>
+                                             <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.dailyKills | json }}    </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.roadKills | json }}      </td>
+                                            </tr>
+                                             <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title" >Headshots:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.headshotKills | json }}     </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.assists | json }}     </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.dBNOs | json }}    </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.teamKills | json }}    </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.vehicleDestroys.toFixed() }}    </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.longestKill | json }}     </td>
+                                            </tr>
+                                            <tr>
+                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.roundMostKills | json }}     </td>
+                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.damageDealt | json }}    </td>
+                                            </tr>
+                                           
+                                            </tbody>
+                                            </table> <!---*********---First Table End----->
+                                                       <!--- Duo TPP Survival --->
+  
+                                                        <table class="table" border="2">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <th colspan="2"> Survival </th>
+                                                              </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.wins | json }}    </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.top10s | json }}   </td>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title">Games Played:</span>        {{ player?.data?.attributes?.gameModeStats.squad?.roundsPlayed | json }} </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title">Losses:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.losses | json }} </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="width: 122px;">&nbsp;<span class="td-title"> Daily Wins: </span>         {{ player?.data?.attributes?.gameModeStats.squad?.dailyWins | json }} </td>
+                                                              <td style="width: 133px;">&nbsp;<span class="td-title">Weekly Wins:</span>         {{ player?.data?.attributes?.gameModeStats.squad?.weeklyWins | json }} </td>
+                                                              </tr>
+                                                              <tr>
+                                                              <td style="width: 122px;">&nbsp;<span class="td-title">Team Revives:</span>     {{ player?.data?.attributes?.gameModeStats.squad?.revives | json }} </td>
+                                                              <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>   {{ player?.data?.attributes?.gameModeStats.squad?.teamKills | json }}      </td>
+                                                              </tr>
+                                                              <tr>
+                                                               <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.longestTimeSurvived | json }}   </td>
+                                                               <td style="width: 133px;">&nbsp;<span class="td-title">Weapons Acquired:</span>  {{ player?.data?.attributes?.gameModeStats.squad?.weaponsAcquired | json }}     </td>
+                                                              </tr>
+                                                               <tr>
+                                                                <td style="width: 122px;">&nbsp;<span class="td-title"> Drugs used:</span>      {{ player?.data?.attributes?.gameModeStats.squad?.boosts | json }}  </td>
+                                                                <td style="width: 133px;">&nbsp;<span class="td-title">Healing items used: </span>   {{ player?.data?.attributes?.gameModeStats.squad?.heals | json }}       </td>
+                                                               </tr>
+                                                          </tbody>
+                                                          </table>
+  
+                                                      </div>
+                                                      </div>
+                                                    </mat-tab>
+                                            
+                                                    <!---* Squadzzzz -*-->      
+  
+                                                    <mat-tab label="Squad FPP">
+                                                        <div class="table-wrapper">
+                                                        <div class="inner-table-wrapper"> 
+                                                            <app-squad-fpp [player]="player" class="player-rank-app"></app-squad-fpp>    
+                                                        <table class="table" border="2">
+                                                        <tbody>
+                                                        <tr>
+                                                        <th colspan="2"> Combat </th>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Total Season Kills:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].kills | json }} </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title">  Weekly Kills:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weeklyKills | json }}</td>
+                                                          </tr>
+                                                           <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Last Match Kills:</span>     {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dailyKills | json }} </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Road Kills:</span>          {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roadKills | json }}</td>
+                                                          </tr>
+                                                           <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Headshots:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].headshotKills | json }}    </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Assists:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].assists | json }}    </td>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> dBNOS:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dBNOs | json }}    </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].teamKills | json }}     </td>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Vehicles destroyed:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].vehicleDestroys | json }}   </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Farthest Kill:</span>        {{ player?.data?.attributes?.gameModeStats["squad-fpp"].longestKill.toFixed() }}</td>
+                                                          </tr>
+                                                          <tr>
+                                                          <td style="width: 122px;">&nbsp;<span class="td-title"> Most Kills in Match:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roundMostKills | json }}    </td>
+                                                          <td style="width: 133px;">&nbsp;<span class="td-title"> Total Damage Dealt: </span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].damageDealt | json }}      </td>
+                                                          </tr>
+                                                     
+                                                          </tbody>
+                                                          </table> <!---*********---First Table End----->
+                                                                     <!--- Squad TPP Survival --->
+                                                                     <table class="table" border="2">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th colspan="2"> Survival </th>
+                                                                            </tr>
+                                                                        <tr>
+                                                                        <td style="width: 122px;">&nbsp; <span class="td-title"> Wins:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].wins | json }}   </td>
+                                                                        <td style="width: 133px;">&nbsp;<span class="td-title"> Top 10s:</span>   {{ player?.data?.attributes?.gameModeStats["squad-fpp"].top10s | json }}   </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                        <td style="width: 122px;">&nbsp;<span class="td-title"> Games Played:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].roundsPlayed | json }}    </td>
+                                                                        <td style="width: 133px;">&nbsp;<span class="td-title">  Losses:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].losses | json }}    </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <td style="width: 122px;">&nbsp;<span class="td-title" > Daily Wins:</span>          {{ player?.data?.attributes?.gameModeStats["squad-fpp"].dailyWins | json }} </td>
+                                                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Weekly Wins:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weeklyWins | json }}      </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                            <td style="width: 122px;">&nbsp;<span class="td-title">  Team Revives:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].revives | json }}   </td>
+                                                                            <td style="width: 133px;">&nbsp;<span class="td-title"> Friendly Fire Kills:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].teamKills | json }}   </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                             <td style="width: 122px;">&nbsp;<span class="td-title"> Max Survival Time:</span>       {{ player?.data?.attributes?.gameModeStats["squad-fpp"].longestTimeSurvived | json }}</td>
+                                                                             <td style="width: 133px;">&nbsp;<span class="td-title"> Weapons Acquired:</span>     {{ player?.data?.attributes?.gameModeStats["squad-fpp"].weaponsAcquired | json }}  </td>
+                                                                             </tr>
+                                                                  
+                                                                             <tr>
+                                                                              <td style="width: 122px;">&nbsp;<span class="td-title">Drugs used:</span>  {{ player?.data?.attributes?.gameModeStats["squad-fpp"].boosts | json }}  </td>
+                                                                              <td style="width: 133px;">&nbsp;<span class="td-title"> Healing items used:</span> {{ player?.data?.attributes?.gameModeStats["squad-fpp"].heals | json }}       </td>
+                                                                             </tr>
+                                                                        </tbody>
+                                                                        </table>
+                                                                   
+                                                                     
+  
+                                                                    
+                                                                    </div>
+                                                                    </div>
+  
+                                                                  
+                                                                  </mat-tab>
+  
+         
+  
+  
+  
+  
+  
+  
+  
+  
+                      </mat-tab-group>
+  
+                  
+                      </div>
+  
+                     
+  
+  
+  
+  
+  
+  
+  
+  
 
                    
 
