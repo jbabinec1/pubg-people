@@ -84,7 +84,7 @@ mat-tab-content-0-0 {
 
 .mat-tab-body-wrapper {
     background: #17181a;
-    padding-top: 18px;
+    padding-top: 25px;
 }
 
 .outer-season-name {
@@ -157,9 +157,12 @@ p.ng-star-inserted {
 .seasonNumber {
 
     margin: 2;
+    color: #ffffff;
     
 
 } 
+
+
 
 
 

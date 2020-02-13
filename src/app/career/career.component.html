@@ -2,6 +2,7 @@
 <div class="stats-header"> 
 
  
+   <div style="display:flex; justify-content: center;"> 
     <div class="title-info-container">  <span class="platform" *ngIf="playa">{{ playa?.data && playa?.data[0].attributes?.shardId}}  </span> 
 
       <!--Testing error message-->
@@ -9,11 +10,8 @@
       <span class="error" *ngIf="error">{{ error?.errors && error?.errors[0].detail }}  </span> </div>
 
 
-     
       
     <h3 class="player-name"> {{ playa?.data && playa.data[0]?.attributes?.name  }}  </h3> 
-    
-
     
       <mat-form-field *ngIf="playa">   
           <mat-select class="panelClass" [(value)]="selected">
@@ -25,11 +23,11 @@
         </mat-form-field> <br>
 
         
-
-
-
       
       </div>
+      </div>
+
+
       
 
       <div class="outer-season-name">     
@@ -38,13 +36,13 @@
             
             
               <div class="outer-div" style="display:flex"> 
-                  <div class="inner-div"> 
+              <!----   <div class="inner-div"> 
                       <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 5 </p> </span> 
             
                       <div> 
                           <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-04'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
                     
-                    </div> 
+                    </div>  -->
                   
             
                   

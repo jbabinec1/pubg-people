@@ -6,7 +6,8 @@
     height: 40px; 
     align-items: flex-start;
     padding-left: 18px;
-    padding-bottom: 11px;
+    padding-bottom: 18px;
+    padding-top: 7px;
 }
 
 .select-season {
@@ -139,7 +140,7 @@
    }
 
    .mat-option.mat-active::after{
-       content: "\2713";
+       content: "\2713"; 
        
    }
 
@@ -236,7 +237,7 @@
 
 .stats-header {
 
-    padding-top: 27px;
+    padding-top: 47px;
 }
    
    
@@ -259,7 +260,7 @@
 
 .seasonNumber {
     margin-left: 8px;
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 9px;
 }
 
