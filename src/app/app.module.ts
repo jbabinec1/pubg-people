@@ -28,6 +28,7 @@ import { from } from 'rxjs';
 import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
+import { Experience1Component } from './all-ranks/experience1/experience1.component';
 
 
 
@@ -53,6 +54,7 @@ import { AboutComponent } from './about/about.component';
     RedirectComponentComponent,
     HeaderComponent,
     AboutComponent,
+    Experience1Component,
     
     
     

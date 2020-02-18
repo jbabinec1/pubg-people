@@ -170,7 +170,7 @@ p.ng-star-inserted {
 
     .inner-table-wrapper {
         display: block!important;
-        width: 1241px!important;
+        width: 1300px!important; /*1241px!important;*/
         justify-content: space-evenly;
 
     }
