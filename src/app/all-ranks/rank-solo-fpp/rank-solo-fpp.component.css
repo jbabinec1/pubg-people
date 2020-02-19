@@ -45,3 +45,26 @@
 p.no-rank {     
     color: #eeec;
 }
+
+
+/*  Progress Bar */
+
+.progress-reward-bar-wrapper {
+    margin-left: 1.19791667vw;
+    width: 15.625vw;
+    display: inline-flex;
+}
+
+.progress-bar {
+background-color: #fdc914; /*rgb(253, 201, 20);*/
+height: 100%;
+
+}
+
+
+.progress-bar-wrapper {
+background-color: grey; /*rgba(255, 255, 255, 0.25);*/
+height: 6px; /*1.462963vh;*/  /*.46296296vh;*/
+width: 100%;
+margin-bottom: .92592593vh; 
+}

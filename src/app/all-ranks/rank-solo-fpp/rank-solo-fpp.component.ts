@@ -14,6 +14,7 @@ export class RankSoloFppComponent implements OnInit {
 
   @Input() public playersolofpp: any = [];
   @Input() public player: any = [];
+  Math = Math;
   
 
   constructor(private http: HttpClient, public playerService: PlayerService) { }

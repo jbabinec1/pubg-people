@@ -69,8 +69,16 @@
       <span>
       <div class="rank-title">Novice V</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-novice-5.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 1999 </div>
-      <div> <app-experience1></app-experience1> </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} /  1200 </div>
+      <div> 
+        
+      <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats?.solo?.rankPoints  - 1000) / (1200 - 1000) * 100)"> </div>
+      </div>  
+      </div>       
+            
+      </div>
       </span>
       </div>
 

@@ -25,8 +25,13 @@
       <span>
       <div class="rank-title">Beginner IV</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-beginner-4.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 400 </div>
   
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+                  <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 200) / (400 - 200) * 100)"> </div>
+            </div>  
+            </div>
       </span>
       </div>
 
