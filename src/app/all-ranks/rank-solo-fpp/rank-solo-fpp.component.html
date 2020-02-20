@@ -25,7 +25,7 @@
       <span>
       <div class="rank-title">Beginner IV</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-beginner-4.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 400 </div>
+      <div class="rank-number"> {{ player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 400 </div>
   
       <div class="progress-reward-bar-wrapper">
             <div class="progress-bar-wrapper">
@@ -83,6 +83,8 @@
                   <div class="rank-title"> Novice IV </div>
                   <img class="rank-img" src="../../assets/Emblems/emblem-novice-4.png" width="146px">
                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>
+
+                 
                  
               </span>
                 </div>

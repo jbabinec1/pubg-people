@@ -69,7 +69,7 @@
       <span>
       <div class="rank-title">Novice V</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-novice-5.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} /  1200 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints.toFixed() }} /  1200 </div>
       <div> 
         
       <div class="progress-reward-bar-wrapper">
@@ -87,9 +87,18 @@
       <span>
       <div class="rank-title"> Novice IV </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-novice-4.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 1999 </div>  
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints.toFixed() }} / 1999 </div>
+      
+      
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+                  <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats?.solo?.rankPoints  - 1200) / (1400 - 1200) * 100)"> </div>
+            </div>  
+            </div>
       </span>
       </div>
+
+      
 
    <!-- Silver 3-->
  <div *ngSwitchCase="'2-3'">
