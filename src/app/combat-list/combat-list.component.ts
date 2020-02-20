@@ -59,16 +59,8 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 
     // Non query string name lookup const playerCode = this.route.snapshot.paramMap.get('player');  
 
-/* TESTT
-      this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),
-      switchMap( player => { 
-       let playerData = player["data"][0];
-       let anotherID = playerData.id;
-       return this.playerService.getSeasonStats(anotherID)   
-     })).subscribe(id => this.player = id); */
-     
-        
-      
+
+           
 
    //this.playerService.getPlayer(playerCode).subscribe(data => {this.player = data});  
      
@@ -91,7 +83,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
             let playerData = player["data"][0];
             let anotherID = playerData.id;
               
-            return this.playerService.getSeasonStats(anotherID);
+            return this.playerService.getSeasonSixStats(anotherID);
               
           })) 
          

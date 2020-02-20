@@ -121,12 +121,12 @@ app.get('/players/:player', apiLimiter, function(request, response) {
 
 
 
-       app.get('/season4/:id', apiLimiter, function(request, response, next) {
+       app.get('/season6/:id', apiLimiter, function(request, response, next) {
 
         var key = process.env.API_KEY;
   
          const id = request.params.id;
-         const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-04`;
+         const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-06`;
          
          var options = {
     

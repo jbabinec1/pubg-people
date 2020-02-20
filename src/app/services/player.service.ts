@@ -53,7 +53,7 @@ export class PlayerService {
 
 
 
-      /* GET SEASON 5 STATS HIDING KEY */
+      /* GET SEASON 5 STATS HIDING KEY */  
       getSeasonStats(id: string):Observable<SeasonStats[]> {
 
         //const api_key = process.env.API_KEY;  
@@ -78,11 +78,11 @@ export class PlayerService {
 
 
 
-        getSeasonFourStats(id: string):Observable<SeasonStats[]> {
+        getSeasonSixStats(id: string):Observable<SeasonStats[]> {
 
           let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
         
-            return this.http.get<SeasonStats[]>(`/season4/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
+            return this.http.get<SeasonStats[]>(`/season6/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
           }   
 

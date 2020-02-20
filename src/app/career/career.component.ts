@@ -77,7 +77,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonStats(anotherID);        
+       return this.playerService.getSeasonSixStats(anotherID);        
      }))    
      .subscribe(id => this.player = id);
  
@@ -94,7 +94,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 
 
 
-  seasonFourSwitch() {
+  seasonSixSwitch() {
 
   /*  const playerName: string = this.route.snapshot.queryParamMap.get('player');
     this.playerService.getPlayer(playerName).pipe(share()).subscribe(data => {this.player = data});  */
@@ -105,7 +105,7 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonFourStats(anotherID).pipe(share());        
+       return this.playerService.getSeasonSixStats(anotherID).pipe(share());        
      }))    
      .subscribe(id => this.player = id); 
 

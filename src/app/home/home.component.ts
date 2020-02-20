@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
           let playerData = player["data"][0];
           let anotherID = playerData.id;
             
-           return this.playerService.getSeasonStats(anotherID)       
+           return this.playerService.getSeasonSixStats(anotherID)       
         }))
        
        .subscribe(id => this.player = id);
