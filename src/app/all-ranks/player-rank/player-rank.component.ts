@@ -20,6 +20,7 @@ export class PlayerRankComponent implements OnInit {
 
  @Input() public player: Player[]; 
   Math = Math;
+  data: any;
   constructor(private http: HttpClient, public playerService: PlayerService) { }
 
   ngOnInit() {
