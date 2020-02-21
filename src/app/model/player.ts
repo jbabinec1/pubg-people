@@ -13,6 +13,7 @@ export interface Player {
     friendly?: number,
     vehicles?: number,
     farthestkill?: number,
-    rankPointsTitle?: any
+    rankPointsTitle?: any,
+    data?: any
 
 }
