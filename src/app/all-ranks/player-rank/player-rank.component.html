@@ -7,7 +7,7 @@
  <!-- <p *ngIf="rankPoint == bestRankPoint">Best Rank Point</p> -->
 
 <div *ngIf="player">
- <p *ngIf="player && player?.data?.attributes?.gameModeStats?.solo?.rankPoints === player?.data?.attributes?.bestRankPoint && player?.data?.attributes?.gameModeStats?.solo?.rankPoints && player?.data?.attributes?.gameModeStats?.solo?.rankPoints  > 0 || null">Best Rank Point</p></div>
+ <p *ngIf="player && player?.data?.attributes?.gameModeStats?.solo?.rankPoints === player?.data?.attributes?.bestRankPoint && player?.data?.attributes?.gameModeStats?.solo?.rankPoints && player?.data?.attributes?.gameModeStats?.solo?.rankPoints  > 0 || null"> Best Rank Point</p> </div>
 
 
 
@@ -17,7 +17,13 @@
       <span>
       <div class="rank-title">Beginner V</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-beginner-5.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 999 </div> 
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 200 </div> 
+
+      <div class="progress-reward-bar-wrapper">
+        <div class="progress-bar-wrapper">
+        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats?.solo?.rankPoints  - 1) / (200 - 1) * 100)"> </div>
+         </div>  
+        </div>
    
       </span>
       </div>
@@ -27,7 +33,7 @@
  <span>
  <div class="rank-title">Beginner IV</div>
  <img class="rank-img" src="../../assets/Emblems/emblem-beginner-4.png" width="146px">
- <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 999 </div>
+ <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 400 </div>
  
  </span>
  </div>
@@ -38,7 +44,7 @@
        <span>
        <div class="rank-title">Beginner III</div>
        <img class="rank-img" src="../../assets/Emblems/emblem-beginner-3.png" width="146px">
-       <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 999 </div>
+       <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 600 </div>
        
        </span>
        </div>
@@ -48,7 +54,7 @@
       <span>
       <div class="rank-title">Beginner II</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-beginner-2.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 800 </div>
       
       </span>
       </div>
@@ -58,7 +64,7 @@
       <span>
       <div class="rank-title">Beginner I</div>
       <img class="rank-img" src="../../assets/Emblems/emblem-beginner-1.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints | json}} / 1000 </div>
       </span>
       </div>
 
@@ -87,7 +93,7 @@
       <span>
       <div class="rank-title"> Novice IV </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-novice-4.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints.toFixed() }} / 1999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats?.solo?.rankPoints.toFixed() }} / 1400 </div>
       
       
       <div class="progress-reward-bar-wrapper">

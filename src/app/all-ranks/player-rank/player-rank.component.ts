@@ -15,10 +15,10 @@ export class PlayerRankComponent implements OnInit {
 
  @Input() rankPoints: number;
  @Input() bestRankPoint: number;
-
- 
  //@Input() public player: Player[];
-  @Input() public player: any = [];
+ // @Input() public player: any = [];
+
+ @Input() public player: Player[]; 
   Math = Math;
   constructor(private http: HttpClient, public playerService: PlayerService) { }
 
