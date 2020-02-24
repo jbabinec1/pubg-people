@@ -41,17 +41,30 @@
             <span>
             <div class="rank-title">Beginner III</div>
             <img class="rank-img" src="../../assets/Emblems/emblem-beginner-3.png" width="146px">
-            <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 999 </div>
+            <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed()  }} / 600 </div>
+
+            <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 400) / (600 - 400) * 100)"> </div>
+                  </div>  
+                  </div>
+
             </span>
             </div>
 
   <!-- Beginner 1-2 --->
       <div *ngSwitchCase="'1-2'">
            <span>
-           <h3>Rank</h3>
+            <div class="rank-title">Beginner II</div>
            <img class="rank-img" src="../../assets/Emblems/emblem-beginner-2.png" width="146px">
-           <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 999 </div>
-           <div class="rank-title">Beginner II</div>
+           <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 800 </div>
+
+           <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 600) / (800 - 600) * 100)"> </div>
+                  </div>  
+                  </div>
+           
            </span>
            </div>
 
@@ -60,7 +73,13 @@
            <span>
           <div class="rank-title">Beginner I</div>
            <img class="rank-img" src="../../assets/Emblems/emblem-beginner-1.png" width="146px">
-           <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 999 </div>
+           <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 1000 </div>
+
+           <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 800) / (1000 - 800) * 100)"> </div>
+                  </div>  
+                  </div>
          
            </span>
            </div>
@@ -73,7 +92,13 @@
           <span>
       <div class="rank-title">Novice V</div>
           <img class="rank-img" src="../../assets/Emblems/emblem-novice-5.png" width="146px">
-         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>
+         <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 1200 </div>
+
+         <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 1000) / (1200 - 1000) * 100)"> </div>
+                  </div>  
+                  </div>
       </span>
         </div>
 
@@ -82,7 +107,13 @@
                   <span>
                   <div class="rank-title"> Novice IV </div>
                   <img class="rank-img" src="../../assets/Emblems/emblem-novice-4.png" width="146px">
-                 <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>
+                 <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 1400 </div>
+
+                 <div class="progress-reward-bar-wrapper">
+                  <div class="progress-bar-wrapper">
+                  <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 1200) / (1400 - 1200) * 100)"> </div>
+                        </div>  
+                        </div>
 
                  
                  
@@ -94,7 +125,13 @@
                   <span>
                   <div class="rank-title"> Novice IV </div>
                   <img class="rank-img" src="../../assets/Emblems/emblem-novice-3.png" width="146px">
-                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>
+                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 1600 </div>
+
+                  <div class="progress-reward-bar-wrapper">
+                        <div class="progress-bar-wrapper">
+                        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 1400) / (1600 - 1400) * 100)"> </div>
+                              </div>  
+                              </div>
                   </span>
                   </div>
 
@@ -105,7 +142,13 @@
                    <span>
                    <div class="rank-title"> Novice IV </div>
                    <img class="rank-img" src="../../assets/Emblems/emblem-novice-2.png" width="146px">
-                   <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>  
+                   <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 1800 </div>  
+
+                   <div class="progress-reward-bar-wrapper">
+                        <div class="progress-bar-wrapper">
+                        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 1600) / (1800 - 1600) * 100)"> </div>
+                              </div>  
+                              </div>
                    </span>
                    </div>
 
@@ -117,7 +160,13 @@
                    <span>
                    <div class="rank-title"> Novice IV </div>
                    <img class="rank-img" src="../../assets/Emblems/emblem-novice-1.png" width="146px">
-                   <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 1999 </div>
+                   <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 2000 </div>
+
+                   <div class="progress-reward-bar-wrapper">
+                        <div class="progress-bar-wrapper">
+                        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 1800) / (2000 - 1800) * 100)"> </div>
+                              </div>  
+                              </div>
                   
                    </span>
                    </div>
@@ -132,7 +181,13 @@
           <span>
           <div class="rank-title"> Experienced V </div>
           <img class="rank-img" src="../../assets/Emblems/emblem-experienced-5.png" width="146px">
-          <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 2999 </div>
+          <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 2200 </div>
+
+          <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 2000) / (2200 - 2000) * 100)"> </div>
+                  </div>  
+                  </div>
          
           </span>
           </div>
@@ -143,7 +198,13 @@
                <span>
                <div class="rank-title"> Experienced IV </div>
                <img class="rank-img" src="../../assets/Emblems/emblem-experienced-4.png" width="146px">
-               <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 2999 </div>  
+               <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 2400 </div>  
+
+               <div class="progress-reward-bar-wrapper">
+                  <div class="progress-bar-wrapper">
+                  <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 2200) / (2400 - 2200) * 100)"> </div>
+                        </div>  
+                        </div>
                </span>
                </div>
 
@@ -152,7 +213,13 @@
                   <span>
                   <div class="rank-title"> Experienced III </div>
                   <img class="rank-img" src="../../assets/Emblems/emblem-experienced-3.png" width="146px">
-                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 2999 </div>
+                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 2600 </div>
+
+                  <div class="progress-reward-bar-wrapper">
+                        <div class="progress-bar-wrapper">
+                        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 2400) / (2600 - 2400) * 100)"> </div>
+                              </div>  
+                              </div>
                   
                   </span>
                   </div>
@@ -162,7 +229,13 @@
                  <span>
                  <div class="rank-title"> Experienced II </div>
                  <img class="rank-img" src="../../assets/Emblems/emblem-experienced-2.png" width="146px">
-                 <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 2999 </div> 
+                 <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 2800 </div> 
+
+                 <div class="progress-reward-bar-wrapper">
+                  <div class="progress-bar-wrapper">
+                  <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 2600) / (2800 - 2600) * 100)"> </div>
+                        </div>  
+                        </div>
                  </span>
                  </div>
 
@@ -171,7 +244,13 @@
                  <span>
                  <div class="rank-title"> Experienced I </div>
                   <img class="rank-img" src="../../assets/Emblems/emblem-experienced-1.png" width="146px">
-                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 2999 </div>
+                  <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 3000 </div>
+
+                  <div class="progress-reward-bar-wrapper">
+                        <div class="progress-bar-wrapper">
+                        <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 2800) / (3000 - 2800) * 100)"> </div>
+                              </div>  
+                              </div>
                  
                   </span>
                   </div>
@@ -184,7 +263,13 @@
      <span>
      <div class="rank-title"> Skilled V </div>
      <img class="rank-img" src="../../assets/Emblems/emblem-skilled-5.png" width="146px">
-     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>  
+     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 3200 </div>
+     
+     <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 3000) / (3200 - 3000) * 100)"> </div>
+            </div>  
+            </div>
      </span>
      </div>
 
@@ -192,7 +277,13 @@
      <span>
      <div class="rank-title"> Skilled IV </div>
      <img class="rank-img" src="../../assets/Emblems/emblem-skilled-4.png" width="146px">
-     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 3400 </div>
+
+     <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 3200) / (3400 - 3200) * 100)"> </div>
+            </div>  
+            </div>
     
      </span>
      </div>
@@ -202,7 +293,13 @@
      <span>
      <div class="rank-title"> Skilled III </div>
      <img class="rank-img" src="../../assets/Emblems/emblem-skilled-3.png" width="146px">
-     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>   
+     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 3600 </div> 
+     
+     <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 3400) / (3600 - 3400) * 100)"> </div>
+            </div>  
+            </div>
      </span>
      </div>
 
@@ -212,7 +309,13 @@
      <span>
      <div class="rank-title"> Skilled II </div>
      <img class="rank-img" src="../../assets/Emblems/emblem-skilled-2.png" width="146px">
-     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 3800 </div>
+
+     <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 3600) / (3800 - 3600) * 100)"> </div>
+            </div>  
+            </div>
     
      </span>
      </div>
@@ -222,7 +325,13 @@
      <span>
     <div class="rank-title"> Skilled I </div>
      <img class="rank-img" src="../../assets/Emblems/emblem-skilled-1.png" width="146px">
-     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+     <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 4000 </div>
+
+     <div class="progress-reward-bar-wrapper">
+      <div class="progress-bar-wrapper">
+      <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 3800) / (4000 - 3800) * 100)"> </div>
+            </div>  
+            </div>
     
      </span>
      </div>
@@ -234,7 +343,13 @@
       <span>
       <div class="rank-title"> Specialist V </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-specialist-5.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 4200 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 4000) / (4200 - 4000) * 100)"> </div>
+                  </div>  
+                  </div>
       
       </span>
       </div>
@@ -244,7 +359,13 @@
       <span>
       <div class="rank-title"> Specialist IV </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-specialist-4.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 4400 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 4200) / (4400 - 4200) * 100)"> </div>
+                  </div>  
+                  </div>
       
       </span>
       </div>
@@ -254,7 +375,13 @@
       <span>
       <div class="rank-title"> Specialist III </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-specialist-3.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 4600 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 4400) / (4600 - 4400) * 100)"> </div>
+                  </div>  
+                  </div>
       
       </span>
       </div>
@@ -265,7 +392,13 @@
       <span>
       <div class="rank-title"> Specialist II </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-specialist-2.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 4800 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 4600) / (4800 - 4600) * 100)"> </div>
+                  </div>  
+                  </div>
      
       </span>
       </div>
@@ -275,7 +408,13 @@
       <span>
      <div class="rank-title"> Specialist I </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-specialist-5.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 3999 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 5000 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 4800) / (5000 - 4800) * 100)"> </div>
+                  </div>  
+                  </div>
       </span>
       </div>
 
@@ -286,7 +425,13 @@
       <span>
       <div class="rank-title"> Expert </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-expert.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}} / 6000 </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }} / 6000 </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="Math.floor((player?.data?.attributes?.gameModeStats['solo-fpp'].rankPoints  - 5000) / (6000 - 5000) * 100)"> </div>
+                  </div>  
+                  </div>
       
       </span>
       </div>
@@ -297,7 +442,13 @@
       <span>
       <div class="rank-title"> Survivor </div>
       <img class="rank-img" src="../../assets/Emblems/emblem-expert.png" width="146px">
-      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints | json}}  </div>
+      <div class="rank-number"> {{player?.data?.attributes?.gameModeStats["solo-fpp"].rankPoints.toFixed() }}  </div>
+
+      <div class="progress-reward-bar-wrapper">
+            <div class="progress-bar-wrapper">
+            <div class="progress-bar" [style.width.%]="100"> </div>
+                  </div>  
+                  </div>
     
       </span>
       </div>
