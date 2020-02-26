@@ -33,8 +33,8 @@ export class CombatListComponent implements OnInit {
  
 @Input() public lifeTimeStats:lifeTimeStat[];
 @Input() public seasonstats: SeasonStats[];
-//@Input() public player: any = [];
-@Input() public player: Player[]
+@Input() public player: any = [];
+//@Input() public player: Player[]
 public seasons: Seasons[];
 @Input() public seasonStats: SeasonStats[];
  public ID: any;
