@@ -1,19 +1,54 @@
 import { MergeMapSubscriber } from 'rxjs/internal/operators/mergeMap';
 
-export interface Player {
- 
-    
-    totalKills?: number,
-    weeklyKills?: number,
-    lastmatchkills?: number,
-    roadkills?: number,
-    headshots?: number,
-    assists?: number,
-    downs?: number,
-    friendly?: number,
-    vehicles?: number,
-    farthestkill?: number,
-    rankPointsTitle?: any,
-    data?: any
 
-}
+ 
+
+    export interface Player {
+        assists: number;
+        boosts: number;
+        dBNOs: number;
+        dailyKills: number;
+        dailyWins: number;
+        damageDealt: number;
+        days: number;
+        headshotKills: number;
+        heals: number;
+        killPoints: number;
+        kills: number;
+        longestKill: number;
+        longestTimeSurvived: number;
+        losses: number;
+        maxKillStreaks: number;
+        mostSurvivalTime: number;
+        rankPoints: number;
+        rankPointsTitle: string;
+        revives: number;
+        rideDistance: number;
+        roadKills: number;
+        roundMostKills: number;
+        roundsPlayed: number;
+        suicides: number;
+        swimDistance: number;
+        teamKills: number;
+        timeSurvived: number;
+        top10s: number;
+        vehicleDestroys: number;
+        walkDistance: number;
+        weaponsAcquired: number;
+        weeklyKills: number;
+        weeklyWins: number;
+        winPoints: number;
+        wins: number;
+        data: any;
+        id: any;
+        solo: {
+        kills: number;
+
+        };
+    }
+
+    
+    
+  
+
+    

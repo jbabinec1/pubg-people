@@ -48,11 +48,16 @@ export class CareerComponent implements OnInit {
   constructor(public playerService: PlayerService, private route: ActivatedRoute, public seasonService: SeasonsService, public seasonstatsservice: SeasonstatsService, public fb: FormBuilder) { }
 
  @Input() public player: any = [];
+ //@Input() public player: Player[]
+
   public searchString: string = '';
   public seasons: Seasons[];
  @Input() public seasonStats: SeasonStats[];
   public ID: any;
+
   @Input() public playa: any =[];
+  //@Input() public playa: Player[]
+
   public id: any;
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player'); 
