@@ -2,12 +2,12 @@
 
 [
     {
-      "context": ["/players/", "/player/", "/season6/"],
+      "context": ["/players/", "/player/", "/season6Console/", "/lifetime/", "/platform/", "players/player/platform", "/season5Console/", "/season6PC/", "/season5PC/"],
       "target": "http://127.0.0.1:8081",
       "secure": false,
       "changeOrigin": true,
       "pathRewrite": {
-        "^players?player=": ""
+        "^/players/player/platform": ""
       }
     }
   ]

@@ -11,16 +11,19 @@
 
 
       
-    <h3 class="player-name"> {{ playa?.data && playa.data[0]?.attributes?.name  }}  </h3> 
+    <h3 class="player-name"> {{ playa?.data && playa.data[0]?.attributes?.name   }}  </h3> 
     
-      <mat-form-field *ngIf="playa">   
+      <mat-form-field >   
           <mat-select class="panelClass" [(value)]="selected">
-              
-            <mat-option value="option1"(click)="seasonSixSwitch()">Current Season</mat-option>
-            <mat-option value="option2"(click)="seasonFiveSwitch()">Season 5 </mat-option>
-             
-          </mat-select>
-        </mat-form-field> <br>
+
+            <mat-option value="option0"(click)="lifetimeSwitch()">Lifetime </mat-option>  
+            <mat-option *ngIf="playa?.data && playa?.data[0].attributes?.shardId == 'xbox' "value="option1"(click)="seasonSixSwitchConsole()">Season 6 </mat-option>
+            <mat-option *ngIf="playa?.data && playa?.data[0].attributes?.shardId == 'steam' "value="option1"(click)="getSeasonSixStatsPC()">Season 6 </mat-option>
+            <mat-option *ngIf="playa?.data && playa?.data[0].attributes?.shardId == 'xbox' " value="option2"(click)="seasonFiveSwitchConsole()">Season 5 </mat-option>
+            <mat-option *ngIf="playa?.data && playa?.data[0].attributes?.shardId == 'steam' " value="option2"(click)="seasonFiveSwitchPC()">Season 5 </mat-option>
+            
+          </mat-select>   
+        </mat-form-field> 
 
         
       

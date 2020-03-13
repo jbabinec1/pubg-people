@@ -39,11 +39,13 @@ public seasons: Seasons[];
 @Input() public seasonStats: SeasonStats[];
  public ID: any;
  public searchString: string = '';
+ public selected: string = '';
  @Input() public playa: any = [];
 
  
 public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
 //public playerName: string = this.route.snapshot.paramMap.get('player');  
+public platformName: string = this.route.snapshot.queryParamMap.get('platform');
 
 
   constructor(public combatService: CombatService, public seasonStatsService: SeasonstatsService, public seasonService: SeasonsService, private route: ActivatedRoute, public playerService: PlayerService
@@ -79,12 +81,12 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
 
     search() {
   
-      this.playerService.getPlayer(this.searchString).pipe(retryWhen((err) => err.pipe(delay(5000))),
+      this.playerService.getPlayer(this.searchString, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),
            switchMap( player => { 
             let playerData = player["data"][0];
             let anotherID = playerData.id;
               
-            return this.playerService.getSeasonSixStats(anotherID);
+            return this.playerService.LifeTimeStats(anotherID, this.platformName);
               
           })) 
          

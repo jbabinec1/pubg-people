@@ -1,3 +1,5 @@
+
+
 .searchArea {
     padding-top: 60px;
     width: 100%;
@@ -27,12 +29,14 @@
 .input {
     padding: 5px;
     font-size: large;
+    margin-left: 18px;
 }
 
 .the-form   {
     display: flex;
-    height: 34px;
+    height: 37px; /* 34px */
     caret-color: #ffc107;
+    
    
 }
 
@@ -71,3 +75,271 @@ input:focus {
     height: 100%;
     align-items: flex-end;
 }
+
+
+
+
+/* Platform Select */
+
+
+.title-info-container {
+    display:inline-flex;
+    width: 504px;
+    justify-content: space-between;
+    
+    height: 40px; 
+    align-items: flex-start;
+    padding-left: 18px;
+    padding-bottom: 18px;
+    padding-top: 7px;
+}
+
+.select-season {
+    align-self: center;
+    list-style: none;
+    border: 1px solid #ffffff;
+    padding: 1px;
+    padding-left: 21px;
+    padding-right: 20px;
+}
+
+
+.season-rank {
+    height: 61px;
+}
+
+
+.season-rank-title-wrapper {
+    width: 974px;
+}
+
+.season-rank-title { 
+    color: #ffffff;
+    width: 100%;
+    max-width: 97%;
+    height: 43px;
+}
+
+.player-name {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.platform {
+    display: flex;
+    align-items: center; 
+    font-weight: 400;
+}
+
+.sub-nav {
+    background-color: #000000;
+   /* top: 100%; */
+    position: absolute;
+    display: none;
+    opacity: 1;
+    z-index: 10;
+    margin-top: 0;
+    list-style: none;
+    padding-left: 0;
+    transition: opacity 0.4s 0.4s ease, visibility 0s 0.8s ease, transform 0.4s 0.4s ease;
+   
+}
+
+.sub-item {
+    text-decoration: none;
+    padding: 5px 32px 0px 32px;
+    border: 1px solid;
+    cursor: pointer; 
+    margin-bottom: 2px;
+}
+
+.sub-item:hover{
+    color: #ffffff;
+}
+.seasons-yeah {
+    color:#ffffff;
+    margin: 2px;
+    cursor: pointer;
+}
+
+/* Seasons SVG styling */
+#Capa_1 {
+    width: 12px;
+    height: 13px;
+    fill: #ffffff; /*currentColor;*/
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.Seasons:hover .sub-nav {
+    display: block;
+}
+
+    /* Dropdown SVG */
+#Rounded_Rectangle_33_copy_4_1_:hover {
+    fill: #ffffff;
+    }
+
+
+    .mat-select-value {
+
+        color: #9a9a9a;
+
+    }
+
+    .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {
+        text-align: center;
+    }
+
+
+    .mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option:hover {
+
+        color: #ffffff!important;
+        background: #000000;
+        
+    }
+
+    
+    .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple):hover {
+       color: #ffffff;
+       background: #000000;
+   }
+
+   .mat-option #mat-option-0 .mat-option.mat-selected.mat-active {
+     color: #ffffff;
+     background: #000000;
+   }
+
+   .mat-option {
+       background: #000000;
+       color: #ffffff;
+   } 
+
+   .mat-option.mat-active {
+       background: #000000!important;
+       color: #ffffff!important;
+       border: 2px solid #FFC600;
+       cursor: auto;
+   }
+
+   .mat-option.mat-active::after{
+       content: "\2713"; 
+       
+   }
+
+   .mat-option.mat-active::after{
+    background: #000000!important;
+    color:  #FFC600!important;        
+    
+} 
+
+
+
+   .mat-form-field .mat-form-field-infix {
+
+       text-align:center!important;
+       border: 1px solid; 
+       /*top: 10px; */
+
+   }
+
+   .mat-form-field .mat-form-field-infix .mat-select::before {
+    content: "\02C7";    /*"\25BE"; */
+    background: inherit;
+    padding-right: 4px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    font-size: 27px;
+    position: absolute;
+    left: 146px;
+    font-size: 38px; 
+    font-weight: 300;
+    
+   }
+
+   .mat-form-field-appearance-legacy .mat-form-field-infix {
+       padding: 0.5075em 1px;
+   }
+
+   .mat-form-field .mat-form-field-infix:hover .mat-select-value {
+
+    color: #ffffff;
+
+   }
+   .mat-form-field-infix:hover{
+    color: white;
+}
+
+.mat-select-arrow-wrapper {
+    opacity: 0;
+}
+
+   .mat-select .panelClass .mat-select:hover .ng-tns-c3-1 .ng-star-inserted {
+
+    color: white;
+    border: 1px solid white;
+    font-weight: 400;
+
+   }
+
+   .ng-tns-c3-1 .ng-star-inserted p {
+       font-weight: 400;
+   }
+
+   .mat-form-field-appearance-legacy .mat-form-field-underline {
+       display: none;
+   }
+
+    #cdk-overlay-0.cdk-overlay-pane {
+
+    margin-top: -9px;
+   }
+
+ 
+
+.stats-header {
+
+    padding-top: 47px;
+}
+   
+   
+.outer-div {
+    display: flex!important; 
+    justify-content: flex-end;
+    max-width: 67%;
+    width: 71%;
+    color: #ffffff;
+    font-size: medium;
+    
+}
+
+.inner-div {
+    max-width: 39%;
+    width: 100%;
+   
+
+}
+
+.seasonNumber {
+    margin-left: 8px;
+    font-size: 24px;
+    margin-bottom: 9px;
+}
+
+.error {
+    font-size: 20px;
+    color: red; 
+}
+
+.error-wrapper {
+    display:none;
+}
+
+
+
+@media screen and (max-width: 375px) {
+    .mat-form-field-wrapper {
+      margin-right: 97px;
+    }
+  }

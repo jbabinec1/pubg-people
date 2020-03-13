@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, empty } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 //import { CareerComponent } from '/Users/Jared/pubg-app/src/app/career/career.component';
 //import { query } from '@angular/core/src/render3';
@@ -40,29 +40,37 @@ export class PlayerService {
 
       /* Makes request to my endpoint that makes a request to the PUBG API */ 
 
-  getPlayer(player: string):Observable<Player[]> {
+  getPlayer(player: string, platform: string):Observable<Player[]> {
 
     //const api_key = process.env.API_KEY;
     //let getHeaders = new HttpHeaders({ 'Accept': 'application/vnd.api+json'});
 
     let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'Cache-Control': 'no-cache'}); 
   
-    return this.http.get<Player[]> (`/players/${player}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
+    return this.http.get<Player[]> (`/players/${player}/${platform}`,  { observe:'body',   responseType: 'json', headers: getHeaders }).pipe(share()); 
   
       } 
 
 
 
-      /* GET SEASON 5 STATS HIDING KEY */  
-      getSeasonStats(id: string):Observable<Player[]> {
+      /* GET SEASON 5 STATS HIDING KEY *TESTING WITH LIFETIME STATS RN* */  
+      getSeasonFiveStatsConsole(id: string):Observable<Player[]> {
 
         //const api_key = process.env.API_KEY;  
         let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'Cache-Control': 'no-cache'}); 
-          return this.http.get<Player[]>(`/player/${id}`, {observe:'body', responseType: 'json', headers: getHeaders }).pipe(share());
+          return this.http.get<Player[]>(`/season5Console/${id}`, {observe:'body', responseType: 'json', headers: getHeaders }).pipe(share());
              
         }   
 
+        getSeasonFiveStatsPC(id: string):Observable<Player[]> {
+
+          //const api_key = process.env.API_KEY;  
+          let getHeaders = new HttpHeaders({'Accept': 'application/vnd.api+json', 'Cache-Control': 'no-cache'}); 
+            return this.http.get<Player[]>(`/season5PC/${id}`, {observe:'body', responseType: 'json', headers: getHeaders }).pipe(share());         
+          }   
+
    
+    
 
      /*   Testing version of getSeasonStats until I can get my proxy working 
 
@@ -76,13 +84,23 @@ export class PlayerService {
 
 
 
+        /** Get Season Six Stats for one platform.. **/
 
-
-        getSeasonSixStats(id: string):Observable<Player[]> {
+        getSeasonSixStatsConsole(id: string):Observable<Player[]> {
 
           let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
-        
-            return this.http.get<Player[]>(`/season6/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
+            return this.http.get<Player[]>(`/season6Console/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
+    
+          }   
+
+
+
+                  /** Get Season Six Stats for pc.. **/
+
+        getSeasonSixStatsPC(id: string):Observable<Player[]> {
+
+          let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
+            return this.http.get<Player[]>(`/season6PC/${id}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
     
           }   
 
@@ -98,6 +116,18 @@ export class PlayerService {
           }  */
 
     
+
+
+
+
+   LifeTimeStats(id: string, platform: string):Observable<Player[]> {
+
+      let getHeaders = new HttpHeaders({'Authorization':'API_KEY', 'Accept': 'application/vnd.api+json'}); 
+      return this.http.get<Player[]>(`/lifetime/${id}/${platform}`,  { observe:'body',   responseType: 'json', headers: getHeaders });       
+    
+          }   
+
+
 
 
 

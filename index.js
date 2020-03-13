@@ -18,16 +18,15 @@ const apiLimiter = rateLimit({
     message: "Too many requests. Wait one minute. "
   });
 
+
 // Make request to get ID property of player object
 
+app.get('/players/:player/:platform', apiLimiter, function(request, response) {
 
-app.get('/players/:player', apiLimiter, function(request, response) {
-
-
-   var key = process.env.API_KEY;
-    
+    var key = process.env.API_KEY;
+   let platform = request.params.platform; 
     const player = request.params.player;
-    const api_url = `https://api.pubg.com/shards/steam/players?filter[playerNames]=${player}`;
+    const api_url = `https://api.pubg.com/shards/${platform}/players?filter[playerNames]=${player}`;
     
     var options = {
        method: "GET",
@@ -36,7 +35,6 @@ app.get('/players/:player', apiLimiter, function(request, response) {
        headers: {
            "authorization": key,
            "accept": 'application/vnd.api+json'}     
-
        };
 
   
@@ -74,14 +72,19 @@ app.get('/players/:player', apiLimiter, function(request, response) {
     }) 
 
 
-   
 
-    app.get('/player/:id', apiLimiter, function(request, response, next) {
+
+
+   /* Season 5 stats. Currently testing with Lifetime stats endpoint   */
+
+    app.get('/season5Console/:id', apiLimiter, function(request, response, next) {
 
       var key = process.env.API_KEY;
-
+       
+      //const platform = request.params.platform; 
        const id = request.params.id;
-       const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
+       platform = request.params.platform; 
+       const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-05`; 
        
        var options = {
   
@@ -121,7 +124,106 @@ app.get('/players/:player', apiLimiter, function(request, response) {
 
 
 
-       app.get('/season6/:id', apiLimiter, function(request, response, next) {
+
+       /* Season 5 PC */
+       app.get('/season5PC/:id', apiLimiter, function(request, response, next) {
+
+        var key = process.env.API_KEY;
+  
+         const id = request.params.id;
+         const stats_url = `https://api.pubg.com/shards/steam/players/${id}/seasons/division.bro.official.pc-2018-05`;
+         
+         var options = {
+    
+            method: "GET",
+            observe: 'body',
+            responseType: 'json',
+            headers: {
+                "authorization": key,
+                "accept": 'application/vnd.api+json' }
+            };
+    
+       let data = "";
+    
+        let seasonRequest = https.request(stats_url, options, function (res)  {
+    
+            console.log("connected sonion");
+    
+            res.on("data", chunk => {
+                data += chunk;
+            })
+    
+            res.on("end", () => {
+                console.log("data collect motha efffa");
+             
+                //response.end(JSON.stringify(data));
+               
+                let objectParsed =  JSON.parse(JSON.stringify(data)); 
+                response.send(objectParsed);
+  
+            }) 
+  
+        })
+        seasonRequest.end();
+       
+        //if (err) return console.log(err);
+         })   
+
+
+
+
+
+
+
+
+
+/* Season 6 Console */
+       app.get('/season6Console/:id', apiLimiter, function(request, response, next) {
+
+        var key = process.env.API_KEY;
+  
+         const id = request.params.id;
+         const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;
+         
+         var options = {
+    
+            method: "GET",
+            observe: 'body',
+            responseType: 'json',
+            headers: {
+                "authorization": key,
+                "accept": 'application/vnd.api+json' }
+            };
+    
+       let data = "";
+    
+        let seasonRequest = https.request(stats_url, options, function (res)  {
+    
+            console.log("connected sonion");
+    
+            res.on("data", chunk => {
+                data += chunk;
+            })
+    
+            res.on("end", () => {
+                console.log("data collect motha efffa");
+             
+                //response.end(JSON.stringify(data));
+               
+                let objectParsed =  JSON.parse(JSON.stringify(data)); 
+                response.send(objectParsed);
+  
+            }) 
+  
+        })
+        seasonRequest.end();
+       
+        //if (err) return console.log(err);
+         })   
+
+
+        /* Season 6 PC */
+       app.get('/season6PC/:id', apiLimiter, function(request, response, next) {
 
         var key = process.env.API_KEY;
   
@@ -165,7 +267,65 @@ app.get('/players/:player', apiLimiter, function(request, response) {
          })   
 
 
-      
+
+
+
+
+
+
+
+
+    
+
+         /*.....      Lifetime Stats     ...*/ 
+
+     app.get('/lifetime/:id/:platform', apiLimiter, function(request, response, next) {
+
+
+        var key = process.env.API_KEY;    
+        //const platform = request.params.platform; 
+        const id = request.params.id;
+        platform = request.params.platform; 
+         const stats_url = `https://api.pubg.com/shards/${platform}/players/${id}/seasons/lifetime`;
+         
+         var options = {
+            method: "GET",
+            observe: 'body',
+            responseType: 'json',
+            headers: {
+                "authorization": key,
+                "accept": 'application/vnd.api+json' }
+            };
+    
+       let data = "";
+    
+        let seasonRequest = https.request(stats_url, options, function (res)  {
+    
+            console.log("connected sonion");
+    
+            res.on("data", chunk => {
+                data += chunk;
+            })
+    
+            res.on("end", () => {
+                console.log("data collect motha efffa");
+             
+                //response.end(JSON.stringify(data));
+               
+                let objectParsed =  JSON.parse(JSON.stringify(data)); 
+                response.send(objectParsed);
+  
+            }) 
+  
+        })
+        seasonRequest.end();
+       
+        //if (err) return console.log(err);
+         }) 
+
+ 
+
+
   
 
      

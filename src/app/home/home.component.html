@@ -4,23 +4,39 @@
 <div>  
 <img src="../../assets/helm3.png" style="max-height:132px;">
 </div>
+<div class="label-container"> 
 <p style="color: #9a9a9a!important; font-size: 14px; padding-top: 8px;">
 Find player stats 
 </p>
 
 <div class="label"> 
-      <form autocomplete="off" class="the-form" ngNoForm style="background-color: #17181a;" method="get" action="/players">
+      <form (ngSubmit)="search()" ngNativeValidate autocomplete="off" class="the-form" style="background-color: #17181a;" 
+      >
+
+      <mat-form-field>   
+        <mat-select name="select" id="select"  [(ngModel)]="selected">            
+        <mat-option value="xbox">Xbox</mat-option>
+        <mat-option value="steam">Steam</mat-option>    
+        </mat-select>   
+      </mat-form-field> 
+
         <input class="input" name="player"
              [(ngModel)]="searchString"
              placeholder="case sensitive"
              required
+             #nameSearch="ngModel" 
              [(ngModel)]="ID"
+             
+             
+            
              >
              
-   
-             <button class="btn" type="submit" (click)="search()"> Search </button> 
+             <button (click)="search()" 
+               class="btn" type="button" [disabled]="!nameSearch.valid"> Search </button> 
        </form>
        </div>
+      </div>
+
       <div class="copyright"> <p> © PUBG People <br>
         2020
         </p> </div>

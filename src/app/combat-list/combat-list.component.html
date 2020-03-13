@@ -18,13 +18,26 @@
 
         <mat-tab class=".mat-tab-label-active" label="Solo TPP">
           
-          <div> 
+          <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
             <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+
+            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
   
             <div> 
-                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-          
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+              
+              
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+
+
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+              
+              </div>   
+
+
+
           </div> 
+
 
           <div class="wrapper-holder"> 
 
@@ -116,12 +129,24 @@
 
             <mat-tab label="Solo FPP">
               
-              <div> 
+              <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
                 <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+    
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
       
                 <div> 
-                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-              
+                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+                  
+                  
+                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+    
+    
+                    <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+                  
+                  </div>   
+    
+    
+    
               </div> 
 
               <div class="table-wrapper">
@@ -205,13 +230,25 @@
   
                         <mat-tab label="Duo TPP">
 
-                                    <div> 
-            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
-  
-            <div> 
-                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-          
-          </div> 
+                          <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
+                            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+                
+                            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+                  
+                            <div> 
+                                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+                              
+                              
+                                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+                
+                
+                                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+                              
+                              </div>   
+                
+                
+                
+                          </div> 
                             <div class="table-wrapper">
                             <div class="inner-table-wrapper"> 
                             <app-duo-tpp [player]="player" class="player-rank-app"></app-duo-tpp>
@@ -291,13 +328,24 @@
   
                                     <!-- Tab for Duo FPP -->
                                       <mat-tab label="Duo FPP">
-
-                                        <div> 
+                                        <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
                                           <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+                              
+                                          <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
                                 
                                           <div> 
-                                              <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-                                        
+                                              <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+                                            
+                                            
+                                              <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+                              
+                              
+                                              <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+                                            
+                                            </div>   
+                              
+                              
+                              
                                         </div> 
 
                                           <div class="table-wrapper">
@@ -380,13 +428,24 @@
   
                                            <mat-tab label="Squad TPP">
 
-                                            <div> 
+                                            <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
                                               <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+                                  
+                                              <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
                                     
                                               <div> 
-                                                  <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-                                            
+                                                  <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+                                                
+                                                
+                                                  <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+                                  
+                                  
+                                                  <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+                                                
+                                                </div>   
+                                  
                                             </div> 
+
 
                                           <div class="table-wrapper">
                                           <div class="inner-table-wrapper"> 
@@ -465,13 +524,25 @@
   
                                                     <mat-tab label="Squad FPP">
 
-                                                      <div> 
-                                                        <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
-                                              
-                                                        <div> 
-                                                            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> </div>
-                                                      
-                                                      </div> 
+                                                     <div> <!-- const stats_url = `https://api.pubg.com/shards/xbox/players/${id}/seasons/division.bro.official.console-06`;-->  
+            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+
+            <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-06'; else"> <p class="seasonNumber" style="margin-top:8px;"> Season 6 </p> </span> 
+  
+            <div> 
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.pc-2018-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p> </span> 
+              
+              
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'division.bro.official.console-05'; else"> <p class="seasonNumber" style="margin: 8px;"> Last Season </p>  </span> 
+
+
+                <span *ngIf="player?.data?.relationships?.season?.data?.id == 'lifetime'; else"> <p class="seasonNumber" style="margin: 8px;"> Lifetime </p>  </span> 
+              
+              </div>   
+
+
+
+          </div> 
 
                                                         <div class="table-wrapper">
                                                         <div class="inner-table-wrapper"> 

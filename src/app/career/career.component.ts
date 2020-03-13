@@ -33,16 +33,10 @@ export interface SeasonsSelectLink {
 
 export class CareerComponent implements OnInit {
 
-  selected = 'option1';
-  n: any;
-  objectKeys = Object.keys;
-
   
- /* seasonsSelect: SeasonsSelectLink[] = [
-    //{value: 'steak-0', viewValue: 'Steak'},
-    {value: 'seasonThree-1', viewValue: 'Season Three'},
-    {value: 'seasonFour-2', viewValue: 'Season Four'}
-  ]; */
+  n: any;
+  objectKeys = Object.keys; 
+
  
   
   constructor(public playerService: PlayerService, private route: ActivatedRoute, public seasonService: SeasonsService, public seasonstatsservice: SeasonstatsService, public fb: FormBuilder) { }
@@ -51,6 +45,7 @@ export class CareerComponent implements OnInit {
  //@Input() public player: Player[]
 
   public searchString: string = '';
+  
   public seasons: Seasons[];
  @Input() public seasonStats: SeasonStats[];
   public ID: any;
@@ -59,10 +54,21 @@ export class CareerComponent implements OnInit {
   //@Input() public playa: Player[]
 
   public id: any;
-public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
-//public playerName: string = this.route.snapshot.paramMap.get('player'); 
+//public playerName: string = this.route.snapshot.queryParamMap.get('player'); 
+public playerName: string = this.route.snapshot.paramMap.get('player');
+public platformName: string = this.route.snapshot.paramMap.get('platform');
 
 
+//How do I get Career component to detect the platform selected from Home? 
+//public platformName: string = this.route.snapshot.queryParamMap.get('platform');
+
+
+//public platformName: string = this.route.snapshot.queryParamMap.get('platform'); 
+//_platformName = '';
+
+
+
+public selected: string = 'option0';
 @Input() public error: any = []; 
 
   
@@ -70,70 +76,131 @@ public playerName: string = this.route.snapshot.queryParamMap.get('player');
   ngOnInit() {
 
     //const playerName: string = this.route.snapshot.queryParamMap.get('player');
-
+   
    // Non query string way of name lookup const playerCode = this.route.snapshot.paramMap.get('player'); 
 
-  
-     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.playa = data});  
+     this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.playa = data});  
 
     
-    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),
+    this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),
       switchMap( player => { 
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonSixStats(anotherID);        
+       return this.playerService.LifeTimeStats(anotherID, this.platformName);        
      }))    
      .subscribe(id => this.player = id);
+
+     
+
+     /*
+    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),
+    switchMap( player => { 
+     let playerData = player["data"][0];
+     let anotherID = playerData.id;
+       
+     return this.playerService.getLifeTimeStats(anotherID)        
+   }))    
+   .subscribe(id => this.player = id);   */
+
+
  
       
-     this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
+     this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
 
-  
+
+
+     
   
 
   //  this.playerService.getPlayer(this.searchString).subscribe(data => {this.player = data});  
 
     
-  }
+  } 
 
 
 
-  seasonSixSwitch() {
+
+
+
+  seasonSixSwitchConsole() {
 
   /*  const playerName: string = this.route.snapshot.queryParamMap.get('player');
     this.playerService.getPlayer(playerName).pipe(share()).subscribe(data => {this.player = data});  */
 
-
-    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
+    //let playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
       switchMap( player => { 
        let playerData = player["data"][0];
        let anotherID = playerData.id;
          
-       return this.playerService.getSeasonSixStats(anotherID).pipe(share());        
+       return this.playerService.getSeasonSixStatsConsole(anotherID).pipe(share());        
      }))    
      .subscribe(id => this.player = id); 
-
-
   }
 
 
-  
-  seasonFiveSwitch() {
+
+
+  getSeasonSixStatsPC() {
+
+    this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
+    switchMap( player => { 
+     let playerData = player["data"][0];
+     let anotherID = playerData.id;
+       
+     return this.playerService.getSeasonSixStatsPC(anotherID).pipe(share());        
+   }))    
+   .subscribe(id => this.player = id); 
+  }
+
+
+
 
   
-    this.playerService.getPlayer(this.playerName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
+  seasonFiveSwitchConsole() {
+
+   //let playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
          switchMap( player => { 
           let playerData = player["data"][0];
           let anotherID = playerData.id;
             
-          return this.playerService.getSeasonStats(anotherID);
-            
-        })) 
-       
+          return this.playerService.getSeasonFiveStatsConsole(anotherID);      
+        }))     
         .subscribe(id => this.player = id);
 
       } 
+
+
+      seasonFiveSwitchPC() {
+    //let playerName: string = this.route.snapshot.queryParamMap.get('player');
+    this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
+    switchMap( player => { 
+     let playerData = player["data"][0];
+     let anotherID = playerData.id;  
+     return this.playerService.getSeasonFiveStatsPC(anotherID);      
+   }))     
+   .subscribe(id => this.player = id);
+      }
+
+
+
+
+
+        
+  lifetimeSwitch() {
+
+    //let playerName: string = this.route.snapshot.queryParamMap.get('player');
+     this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share(),
+          switchMap( player => { 
+           let playerData = player["data"][0];
+           let anotherID = playerData.id;
+             
+           return this.playerService.LifeTimeStats(anotherID, this.platformName);      
+         }))     
+         .subscribe(id => this.player = id);
+       } 
 
 
 
