@@ -105,8 +105,8 @@ public selected: string = 'option0';
 
 
  
-      
-     this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data}); 
+      /*  TESTT I don't know if this actually does anything
+     this.playerService.getPlayer(this.playerName, this.platformName).pipe(retryWhen((err) => err.pipe(delay(5000))),share()).subscribe(data => {this.error = data});  */
 
 
 

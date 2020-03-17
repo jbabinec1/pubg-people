@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-/*
+/* Cutting all this to limit extra requests.. 
   searchPlayer() {
 
     this._router.navigate(['/players']);
@@ -70,10 +70,11 @@ export class HomeComponent implements OnInit {
 
 
 
-  search() {
+ /* search() {
     this._router.navigate(['players', this.searchString, this.selected ]);
-    this.playerService.getPlayer(this.searchString, this.selected).pipe(
-         switchMap( player => { 
+   this.playerService.getPlayer(this.searchString, this.selected).pipe(
+         
+      switchMap( player => { 
 
           let playerData = player["data"][0];
           let accountID = playerData.id;
@@ -81,10 +82,19 @@ export class HomeComponent implements OnInit {
            return this.playerService.LifeTimeStats(accountID, this.selected)       
         }))
        
-       .subscribe(id => this.player = id);
+       .subscribe(id => this.player = id); 
 
        //this.sendStats.emit(this.player);
-      }  
+
+      }  */
+
+
+      search() {
+        
+          this._router.navigate(['players', this.searchString, this.selected ]);
+      }
+
+
 
       
-}
+    }

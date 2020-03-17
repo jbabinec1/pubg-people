@@ -4,7 +4,7 @@
 
 
 <div *ngIf="player">
-<p *ngIf="player && player?.data?.attributes?.gameModeStats?.duo?.rankPoints == player?.data?.attributes?.bestRankPoint && player?.data?.attributes?.gameModeStats?.solo?.rankPoints  > 0">Best Rank Point</p> </div>
+<p *ngIf="player && player?.data?.attributes?.gameModeStats?.duo?.rankPoints == player?.data?.attributes?.bestRankPoint && player?.data?.attributes?.gameModeStats?.duo?.rankPoints  > 0">Best Rank Point</p> </div>
 
     <!------* START BEGINNER TITLES ------->
     <div *ngSwitchCase="'1-5'">
